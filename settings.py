@@ -16,7 +16,7 @@ CACHES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'eps',
+        'NAME': 'eps1',
         'PORT': '5432',
         'HOST': '46.101.246.85',
         'USER': 'mfelek',
