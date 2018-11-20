@@ -1,0 +1,8 @@
+{% extends "shop/"|add:SHOP_TEMPLATE|add:"/base.html" %}
+{% load shop_tags fb_versions %}
+
+{% block content %}
+<div id="Content" class="pt10">
+    <a href="{{ product|get_product_link }}">{{ product.name }}</a> ürününü takip etmeye başladınız.
+</div>
+{% endblock %}

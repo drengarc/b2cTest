@@ -1,0 +1,37 @@
+{% extends "shop/"|add:SHOP_TEMPLATE|add:"/customer/account/base.html" %}
+{% block page_content %}
+    <div class="LoginHead clearfix">
+        <h1>{% if form.instance.pk %}Adres Düzenle ({{ form.instance.address_name }}){% else %}Yeni adres ekle{% endif %}</h1>
+    </div>
+    <div class="LoginConAdress">
+        <form action="" method="post"
+              {% if form.is_multipart %}enctype="multipart/form-data"{% endif %}>{% csrf_token %}
+            {% for error in form.non_field_errors %}
+                <div>{{ error }}</div>
+            {% endfor %}
+            {% if form.errors %}
+                <div>Lütfen aşağıdaki hataları düzeltin</div>
+            {% endif %}
+            {% for field in form %}
+                <div class="fieldWrapper" id="{{ field.name }}-field">
+                    {% for error in field.errors %}
+                        <div class="alert alert-error">
+                            <strong>{{ error|escape }}</strong>
+                        </div>
+                    {% endfor %}
+                    {{ field.label_tag }} {{ field }}
+                </div>
+            {% endfor %}
+            <div style="padding:5px; width:300px; background:#eee">Burada bildirdiğiniz bilgilerin doğruluğunu kontrol etmiyoruz. Vergi yükümlülükleriniz ya da kanuni haklarınız (garanti gibi) için bilgileri doğru olarak girmenizi öneririz.</div>
+            <input class="button_blue1 button_size3" type="submit" value="{% if form.instance.pk %}Düzenle{% else %}Ekle{% endif %}">
+        </form>
+    </div>
+    <style>
+        #id_invoice_type li {
+            display: inline-block;
+        }
+    </style>
+{% endblock %}
+{% block javascript_end %}
+    {{ form.media }}
+{% endblock %}

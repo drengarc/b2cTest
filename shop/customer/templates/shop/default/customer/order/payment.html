@@ -1,0 +1,259 @@
+{% extends "shop/"|add:SHOP_TEMPLATE|add:"/base.html" %}
+{% load shop_tags fb_versions staticfiles simit_tags i18n humanize %}
+
+{% block content %}
+    <style type="text/css" media="screen">
+        input.invalid {
+            border: 2px solid red;
+        }
+
+        .validation.failed:after {
+            color: red;
+            content: 'Validation failed';
+        }
+
+        .validation.passed:after {
+            color: green;
+            content: 'Validation passed';
+        }
+    </style>
+    <div id="crumbs">
+        <ul>
+            <li><a href="{% url "shop_order_address" %}">{% trans "Address" %}</a></li>
+            <li><a href="{% url "shop_order_shipment" %}">{% trans "Shipment" %}</a></li>
+            <li><a class="selected">{% trans "Payment" %}</a></li>
+        </ul>
+    </div>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <div class="basket-little">
+        <table class="basket minimized">
+            <tr>
+                <th>Ürün İsmi</th>
+                <th>Miktar</th>
+                <th>Toplam Fiyat</th>
+            </tr>
+            {% for item in basket.basket %}
+                <tr>
+                    <td>{{ item.product.name }}</td>
+                    <td class="quantity">{{ item.quantity }}</td>
+                    <td class="price">
+                        {% if item.total_price_without_discount > item.total_price %}
+                            <del>{{ item.total_price_without_discount|floatformat:2|intcomma }} TL</del><br>
+                        {% endif %}
+                        {{ item.total_price|floatformat:2|intcomma }} TL
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        <div class="calculation" style="font-size:16px">
+            <div class="row"><span>Toplam:</span> {{ basket.final_price_without_kdv|floatformat:2|intcomma }} TL</div>
+            <div class="row"><span>KDV:</span> {{ basket.kdv|floatformat:2|intcomma }} TL</div>
+            {% if total_discount %}
+                <div class="row"><span>İndirim:</span> {{ basket.total_discount|floatformat:2|intcomma }} TL
+                </div>{% endif %}
+            <div class="row big"><span>Genel Toplam:</span> {{ basket.total_basket|floatformat:2|intcomma }} TL</div>
+            <div class="row big"><span>Kargo:</span> {{ shipment_price|floatformat:2|intcomma }} TL</div>
+            <div class="row big"><span>Ödenecek Miktar:</span> {{ price|floatformat:2|intcomma }} TL</div>
+        </div>
+        <div style="clear:both"></div>
+    </div>
+    <div class="tabContainer simple payment">
+        <ul class="tabs">
+
+            <li><a data-href="tab1">Kredi kartı</a></li>
+            <li><a data-href="tab2">Havale</a></li>
+
+        </ul>
+        <div class="container" id="tab1" style="padding:0">
+            {% if error_message %}
+                <div class="error_message_payment">{{ error_message }}</div>
+            {% endif %}
+            <form action="" id="payment" method="post">{% csrf_token %}
+                <input name="payment_type" type="hidden" value="credit_card">
+                {% if form.errors %}
+                    <div>Lütfen aşağıdaki hataları düzeltin</div>
+                {% endif %}
+                {% for error in form.non_field_errors %}
+                    <div>{{ error }}</div>
+                {% endfor %}
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <div class="alert alert-error">
+                            <strong>{{ field.label_tag }}: {{ error|escape }}</strong>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+                <div class="rowForm">
+                    <div class="formRow">
+                        <label class="fixed">Kart Numarası</label>:
+                        <input class="styled cc-number"
+                               type="text" name="cc_number"
+                               inputmode="numeric" autocomplete="cc-number" autocompletetype="cc-number"
+                               x-autocompletetype="cc-number" value="{{ request.POST.cc_number }}"
+                               placeholder="&#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149;">
+
+                        <!--div class="bank-image"></div-->
+                        <div class="card-type" style="display:none"></div>
+                    </div>
+                    <div class="formRow">
+                        <label class="fixed">Son Kullanma Tarihi</label>:
+                        <input class="styled cc-exp"
+                               type="text" name="cc_exp"
+                               placeholder="MM / YY" value="{{ request.POST.cc_exp }}">
+                    </div>
+                    <div class="formRow">
+                        <label class="fixed">Güvenlik Kodu</label>:
+                        <input class="styled cc-cvv"
+                               inputmode="numeric"
+                               pattern="\d*"
+                               type="text" name="cc_cvv"
+                               placeholder="&#149;&#149;&#149;" value="{{ request.POST.cc_cvv }}">
+                    </div>
+                    <div class="formRow">
+                        <label class="fixed">Kart üzerindeki isim</label>:
+                        <input class="styled" type="text" name="cc_owner" value="{{ request.POST.cc_owner }}">
+                    </div>
+                    {% with "ACTIVATE_3D"|variable as activate_3d %}
+                        {% if activate_3d %}
+                            <div class="formRow">
+                                <input type="checkbox" name="3d_pay" id="3d_pay"><label for="3d_pay">3D ile öde</label>
+                            </div>
+                        {% endif %}
+                    {% endwith %}
+
+                    <div class="formRow">
+                        <input type="checkbox" name="sozlesme" id="sozlesme"><label for="sozlesme"><a
+                            href="javascript:void(0)"
+                            onclick="box({type:'iframe', width: 800, height:600, padding: 10, source: '{% url "shop_api_order_satis_sozlesmesi" %}?payment_type=kredi-karti', modal: true, title:'Satış Sözleşmesi'});">Sözleşmeyi
+                        kabul ediyorum.</a></label>
+                    </div>
+                </div>
+                <div class="payment_alternatives" style="display:none"></div>
+                <script id="payment_alternatives_template" type="text/template">
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>taksit</th>
+                            <th>tutar</th>
+                        </tr>
+                        <% _.each(installments, function(i) { %>
+                        <tr>
+                            <td><input type="radio" name="installment" value="<%= i.installment %>"></td>
+                            <td><%= i.installment %></td>
+                            <td><%= i.price %> TL</td>
+                        </tr>
+                        <% }); %>
+                    </table>
+                </script>
+            <div class="installments" style="width:400px; float:right">
+                {% include "shop/default/includes/installments.html" %}
+            </div>
+                <div class="buttons">
+                    <input type="submit" class="button_blue1 submitBtn" style="margin-right:10px" name="credit_card"
+                           id="credit_card"
+                           value="Siparişi tamamla">
+                </div>
+                <div style="clear:both; height:10px"></div>
+        </form>
+        </div>
+        <div class="container" id="tab2" style="padding:0">
+            <form action="" id="moneyorder" style="padding:10px" method="post">{% csrf_token %}
+                <input name="payment_type" type="hidden" value="money_ordlok651*-
+                {% variable "SHOP_MONEYORDER_INFORMATION" "Havale Bilgileri" "TEXTAREA" "Alışveriş" "Havale Bilgileri" %}
+                <!--div class="buttons">
+                    <!--input type="submit" class="button_blue1 submitBtn" name="money_order" id="money_order"
+                           value="Siparişi tamamla.">
+                </div-->
+            </form>
+            <div style="clear:both; height:10px"></div>
+        </div>
+    </div>
+    <div style="clear:both; height:10px"></div>
+{% endblock %}
+
+{% block javascript_end %}
+    <script type="text/javascript" src="{% static "js/creditly.js" %}"></script>
+    <script type="text/javascript">
+        $(function () {
+            window.price = {{ price|stringformat:"f" }};
+            window.prepared_form = false;
+
+            var options = {
+                "security_code_message": "Güvenlik kodunu yanlış girdiniz.",
+                "number_message": "Kredi kartı numaranızı yanlış girdiniz.",
+                "expiration_message": "Son kullanma tarihini yanlış girdiniz."
+            };
+
+            var creditly = Creditly.initialize(
+                    '.cc-exp',
+                    '.cc-number',
+                    '.cc-cvv',
+                    '.card-type', options);
+
+            var $form = $("#payment");
+
+            $form.on('card_type', function (e, name) {
+                $('.card-type').attr('class', 'card-type').attr('type', name).addClass(name);
+            });
+
+            $("body").on("creditly_client_validation_error", function (e, data) {
+                alert(data["messages"].join("\n"));
+            });
+
+
+            $form.submit(function (e) {
+                if (prepared_form) return true;
+
+                var output = creditly.validate(), goon = true;
+                if (!output) {
+                    e.preventDefault();
+                    goon = false;
+                }
+                var al = [];
+                if ($form.find('input[name="installment"]:checked').length == 0) {
+                    al.push("Lütfen ödeme türünü seçiniz.");
+                    $('.payment_alternatives').css('border', '1px solid red');
+                    goon = false;
+                    e.preventDefault();
+                } else {
+                    $('.payment_alternatives').css('border', 'none');
+                }
+                if ($('#sozlesme:checked').length == 0) {
+                    al.push("Ödemeyi tamamlayabilmek için sözleşmeyi kabul etmeniz gerekmektedir.");
+                    goon = false;
+                    e.preventDefault();
+                }
+                if (al.length > 0)
+                    alert(al.join("\n"));
+
+                if (goon && $('#3d_pay').prop('checked')) {
+
+                    e.preventDefault();
+
+                    var map = {Visa: 1, MasterCard: 2};
+                    var card_type = map[$('.card-type').attr('type')];
+
+                    if (!card_type) {
+                        alert('bilinmeyen kart tipi!');
+                        return false;
+                    }
+
+                    var installment = $('input[name="installment"]').val();
+                    var bin = $('.cc-number').val().substring(0, 6).replace(' ', '');
+
+                    var input = $form.find('.buttons').append('<div class="typing_loader">').find('input');
+                    input.css('width', input.outerWidth()).attr('value', '').attr('disabled', true);
+                }
+            });
+
+
+        });
+    </script>
+    {% include 3d_javascript_template %}
+{% endblock %}

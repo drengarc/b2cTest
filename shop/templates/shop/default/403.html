@@ -1,0 +1,6 @@
+{% extends "shop/"|add:SHOP_TEMPLATE|add:"/base.html" %}
+{% load i18n %}
+
+{% block content %}
+<h1>{% trans "You don't have enough permission to be able to see this page." %}</h1>
+{% endblock %}

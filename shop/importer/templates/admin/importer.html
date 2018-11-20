@@ -1,0 +1,83 @@
+{% load shop_tags static %}
+
+<script type="text/javascript" src="{% static "admin/js/core.js" %}"></script>
+<script type="text/javascript" src="{% static "admin/js/jquery.js" %}"></script>
+<script type="text/javascript" src="{% static "admin/js/jquery.init.js" %}"></script>
+<script type="text/javascript" src="{% static "admin/js/actions.js" %}"></script>
+<script type="text/javascript" src="{% static "admin/js/urlify.js" %}"></script>
+<script type="text/javascript" src="{% static "admin/js/prepopulate.js" %}"></script>
+<script type="text/javascript" src="{% url 'admin:jsi18n' %}"></script>
+<script type="text/javascript">
+(function($) {
+    $(document).ready(function($) {
+        $("tr input.action-select").actions();
+    });
+})(django.jQuery);
+</script>
+<div class="module" id="changelist">
+
+    <form id="changelist-form" action="?form" method="post">{% csrf_token %}
+
+        <div class="actions">
+            <label>Action: <select name="action">
+                <option value="" selected="selected">---------</option>
+                <option value="delete_selected">Delete selected rows</option>
+            </select></label><input class="select-across" name="select_across" type="hidden" value="0">
+            <button type="submit" class="button" title="Run the selected action" name="index" value="0">Go</button>
+
+            <script type="text/javascript">var _actions_icnt="{{ total }}";</script>
+            <span class="action-counter" style="display: inline;">0 of {{ total }} selected</span>
+
+
+        </div>
+
+
+        <div class="results">
+            <table id="result_list">
+             {% for sheet in sheets %}
+                <thead>
+                <tr><th scope="col" class="column-sheet" colspan="{{ sheet.columns|length|add:2 }}">{{ sheet.name }}</th></tr>
+                <input type="hidden" name="sheets[{{ forloop.counter0 }}][name]" value="{{ sheet.name }}">
+                <tr>
+
+                    <th scope="col" class="action-checkbox-column">
+
+                        <div class="text"><span><input type="checkbox" id="action-toggle" style="display: inline-block;"></span></div>
+                        <div class="clear"></div>
+                    </th>
+                    {% for column in sheet.columns %}
+                    <th scope="col" class="column-__str__">
+                        <div class="text"><span>{{ column }}</span></div>
+                        <input type="hidden" name="sheets[{{ forloop.parentloop.counter0 }}][columns][]" value="{{ column }}">
+                        <div class="clear"></div>
+                    </th>
+                    {% endfor %}
+                    <th scope="col" class="column-__str__">
+                        <div class="text"><span>Actions</span></div>
+                        <div class="clear"></div>
+                    </th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+                {% for row in sheet.rows %}
+                <tr class="row1">
+                    <td class="action-checkbox"><input class="action-select" name="act[{{ forloop.parentloop.counter0 }}]" type="checkbox" value="{{ forloop.counter0 }}"></td>
+
+                    {% for field in row %}
+                        <td>{{ field }}</td>
+                        <input type="hidden" name="sheets[{{ forloop.parentloop.parentloop.counter0 }}][rows][{{ forloop.parentloop.counter0 }}][]" value="{{ field }}">
+                    {% endfor %}
+                    <td><a href="{% url "admin:shop_product_add" %}?{% for col in sheet.columns %}{{ col }}={{ row|lookup:forloop.counter0 }}&{% endfor %}">Add</a></td>
+                </tr>
+                {% endfor %}
+
+                </tbody>
+                 <tr><th scope="col" class="column-rowlength" colspan="{{ sheet.columns|length|add:1 }}">{{ sheet.rows|length }} row</th></tr>
+                {% endfor %}
+            </table>
+        </div>
+
+    </form>
+</div>

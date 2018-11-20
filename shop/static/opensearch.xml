@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OpenSearchDescription xmlns:moz="http://www.mozilla.org/2006/browser/search/"
+      xmlns="http://a9.com/-/spec/opensearch/1.1/">
+ <ShortName>parca1.com</ShortName>
+ <Description>Yedek Parça Hızlı Arama</Description>
+ <Tags>yedek parca araç araba</Tags>
+ <InputEncoding>UTF-8</InputEncoding>
+ <Url type="text/html"
+      template="http://www.parca1.com/list?q={searchTerms}"/>
+</OpenSearchDescription>

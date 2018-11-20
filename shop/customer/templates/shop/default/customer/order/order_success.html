@@ -1,0 +1,100 @@
+{% extends "shop/"|add:SHOP_TEMPLATE|add:"/base.html" %}
+{% load shop_tags fb_versions i18n %}
+{% load shop_tags fb_versions staticfiles simit_tags i18n humanize %}
+{% block content %}
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <br>
+    <table class="styled_table" style="width:100%">
+    <tr>
+        <th></th>
+        <th ALIGN="left">Açıklama</th>
+        <th ALIGN="left">Miktar</th>
+        <th ALIGN="left">Birim Fiyat</th>
+        <th ALIGN="left">İndirim</th>
+        <th ALIGN="left">Net Fiyat</th>
+    </tr>
+    {% for row in products %}
+        <tr>
+            <td>{{ row.product.image.0 }}</td>
+            <td>{{ row.product.name }}</td>
+            <td>{{ row.quantity }}</td>
+            <td>{{ row.price|add:row.discount|floatformat:2|intcomma }}&nbsp; TL</td>
+            <td>{{ row.discount|floatformat:2|intcomma }}&nbsp;TL</td>
+            <td>{{ row.price|floatformat:2|intcomma }}&nbsp;TL</td>
+        </tr>
+    {% endfor %}
+    </table>
+    <div class="order_information">
+        <div>
+            <div class="small_effective" style="margin:3px 0;">{% trans "date" %}:</div>
+            <div>{{ order.date_processed }}</div>
+        </div>
+        <div>
+            <div class="small_effective" style="margin:3px 0;">Teslimat Adresi:</div>
+            <div>{{ order.delivery_name }} {{ order.delivery_phone }} {{ order.delivery_address }} {{ order.delivery_city }}</div>
+        </div>
+        <div>
+            <div class="small_effective" style="margin:3px 0;">Fatura Adresi:</div>
+            {% if order.billing_name %}
+            <div>{{ order.billing_name }} {{ order.billing_phone }} {{ order.billing_address }} {{ order.billing_city }}</div>
+            {% else %}
+            <div>{{ order.delivery_name }} {{ order.delivery_phone }} {{ order.delivery_address }} {{ order.delivery_city }}</div>
+            {% endif %}
+        </div>
+        {% if order.comment %}
+        <div>
+            <div class="medium">{% trans "comments" %}:</div>
+            <div>{{ order.comment }}</div>
+        </div>
+        {% endif %}
+    </div>
+    <table style="float:right; margin:10px 0;" class="">
+        <tr>
+            <td class="medium">Toplam:</td>
+            <td align="left">{{ order.total_net_basket|floatformat:2|intcomma }}</td>
+            <td align="left">&nbsp;TL</td>
+        </tr>
+        <tr>
+            <td class="medium">{% trans "discount" %}:</td>
+            <td align="left">{{ order.discount|floatformat:2|intcomma }}</td>
+            <td align="left">&nbsp;TL</td>
+        </tr>
+        <tr>
+            <td class="medium">KDV:</td>
+            <td align="left">{{ order.final_kdv|floatformat:2|intcomma }}</td>
+            <td align="left">&nbsp;TL</td>
+        </tr>
+        <tr>
+            <td class="medium">Toplam Sepet Fiyatı:</td>
+            <td align="left">{{ order.total_basket|floatformat:2|intcomma }}</td>
+            <td align="left">&nbsp;TL</td>
+        </tr>
+        <tr>
+            <td class="medium">Kargo Fiyatı:</td>
+            <td align="left">{{ order.shipment_price|floatformat:2|intcomma }}</td>
+            <td align="left">&nbsp;TL</td>
+        </tr>
+        <tr>
+            <td class="medium">Ödediğiniz miktar:</td>
+            <td align="left">{{ order.final_price|floatformat:2|intcomma }}</td>
+            <td align="left">&nbsp;TL</td>
+        </tr>
+    </table>
+    <div style="clear:both"></div>
+{% endblock %}
+
+{% block javascript_end %}
+
+{#    {% if messages %}#}
+        <script>
+           rakam.logEvent('order', {product_count: {{ products|length }}, total_price: {{ order.final_price|stringformat:"f" }}, _time: {{order.date_processed|date:"U"}}});
+        </script>
+{#    {% endif %}#}
+
+{% endblock %}

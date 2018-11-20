@@ -1,0 +1,10 @@
+{% extends "shop/"|add:SHOP_TEMPLATE|add:"/base.html" %}
+{% load simit_tags %}
+
+
+{% block content %}
+    <div class="wrapper">
+        <h1>Hakkımızda</h1>
+        <div>{% variable "ABOUT_US" "Hakkımızda" "RICH_TEXT" "Hakkımızda" "Hakkımızda sayfasının içeriği" %}</div>
+    </div>
+{% endblock %}

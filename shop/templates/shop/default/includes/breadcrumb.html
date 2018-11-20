@@ -1,0 +1,17 @@
+{% load shop_tags %}
+<!-- Starter : Breadcrumb -->
+<div class="breadcrumb">
+    <div class="left" xmlns:v="http://rdf.data-vocabulary.org/#">
+        <ul class="list-unstyled">
+            {% if render_homepage != False %}<li style="display: inline-block"><span typeof="v:Breadcrumb"><a class="no" href="{% url 'shop_homepage' %}" rel="v:url" property="v:title" title="Anasayfa">Anasayfa</a></span></li>{% endif %}
+            {% for item in items %}
+                <li style="display: inline-block"><span typeof="v:Breadcrumb"><a href="{% if tag == "url" %}{% url property item.slug %}{% elif tag == "link" %}{{ item.url }}{% else %}{% change_parameter_url property item.slug %}{% endif %}" rel="v:url" property="v:title" title="yedek parça">{{ item.name }}</a></span></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- <a href="" target="_blank" class="print sprite-icon-print" title="Ürünü Yazdır" rel="nofollow">Ürünü yazdır</a> -->
+
+    <div class="clear"></div>
+</div>
+<!-- End : Breadcrumb -->

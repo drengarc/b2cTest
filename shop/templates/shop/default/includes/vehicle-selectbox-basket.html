@@ -1,0 +1,29 @@
+{% load shop_tags %}
+
+<select class="category_selectbox tree brand">
+    <option class="fixed" value="">Marka Seç</option>
+    {% for item in levels.0 %}
+        <option value="{{ item.slug }}">{{ item.name }}</option>
+    {% endfor %}
+</select>
+
+
+<select class="category_selectbox tree model">
+        <option class="fixed" value="">Model Seç</option>
+</select>
+
+<select class="category_selectbox tree model_type">
+        <option class="fixed" value="">Model Tip Seç</option>
+</select>
+
+<select class="category_selectbox motor">
+        <option class="fixed" value="">Motor Tip Seç</option>
+</select>
+
+<select class="category_selectbox fuel">
+        <option class="fixed" value="">Yakıt Tip Seç</option>
+</select>
+
+<select class="category_selectbox years">
+        <option class="fixed" value="">Yıl Seç</option>
+</select>

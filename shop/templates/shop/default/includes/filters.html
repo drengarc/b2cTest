@@ -1,0 +1,128 @@
+{% load shop_tags %}
+
+
+{% if categories|length > 0 %}
+    <div class="category-filter filter-container">
+        <a class="sub-anchor-title">Kategoriler<span class="filter-close">filtrelemeyi kapat</span></a>
+        <ul class="filter-middle cat-anch-main margin-top-10px">
+            {% if category %}
+                {% recursetree category.cached_ancestors %}
+                    <li>
+                    {% if category.id == node.id %}
+                        <a class="selected" href="{% change_parameter_url "c" node.slug %}">
+                            <p style="display:inline-block" rakam-event-attribute="category">{{ node.name }}</p>
+                            {% if result.facets.count %} <span>({{ result.facets.count }})</span>
+                                <a class="close_button" href="{% remove_parameter_url "c" %}">filtre
+                                    kapat</a>{% endif %}</a>
+                    {% else %}
+                        <a href="{% change_parameter_url "c" node.slug %}">{{ node.name }}</a>
+                    {% endif %}
+                    {% if not node.is_leaf_node %}
+                        <ul class="filter-middle">
+                            {{ children }}
+                        </ul>
+                    {% endif %}
+
+                {% endrecursetree %}
+            {% endif %}
+            <ul class="filter-middle">
+                {% for item in result.facets.category %}
+                    <li>
+                    <a href="{% change_parameter_url "c" item.slug %}" title="{{ item.name }}">{{ item.name }}</a>
+                    {% if show_count %}<span>({{ item.count }})</span>{% endif %}
+                {% endfor %}
+            </ul>
+            </li>
+        </ul>
+    </div>
+{% endif %}
+
+{% if result.facets.vehicle and vlevel < 5 %}
+    <div class="vehicle-filter filter-container">
+        <a class="sub-anchor-title">{% if vlevel == 0 %}Araç Modeli{% elif vlevel == 1 %}Araç Model
+            Tipi{% elif vlevel == 2 %}Motor Tipi{% elif vlevel == 3 %}Yakıt Tipi{% elif vlevel == 4 %}Araç
+            Yılı{% else %}Araç Markası{% endif %}<span class="filter-close">filtrelemeyi kapat</span></a>
+        {% if result.facets.vehicle|length > 10 %}
+            <input type="search" class="filter-input" data-notfound="Aramanızla eşleşen araç bulunamadı."
+                   data-target="vehicle_list" placeholder="Sayfa içi filtre">{% endif %}
+        <ul id="vehicle_list" class="filter-middle cat-anch-main margin-top-10px fixed-max-height">
+            {% for item in result.facets.vehicle %}
+                <li data="{{ item.name|lower }}"><a href="
+
+                    {% if vlevel < 2 %}{% change_parameter_url 'v' item.slug %}{% elif vlevel == 2 %}{% change_parameter_url 'motor' item.slug %}{% elif vlevel == 3 %}{% change_parameter_url 'fuel' item.slug %}{% elif vlevel == 4 %}{% change_parameter_url 'vyear' item.slug %}{% endif %}"
+                                                    title="{{ item.name }}">{{ item.name }}
+                {% if show_count and item.count %}
+                    <span>({{ item.count }})</span>{% endif %}</a> <span></span>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+
+{% if result.facets.tag %}
+    <div class="tag-filter filter-container">
+        <a href="#" class="anchor-title sub-anchor-title sub-anchor-title-first-child">Etiket</a>
+        <ul class="filter-middle checkbox-styled-anchor fixed-max-height margin-top-10px">
+            {% for tag in result.facets.tag %}
+                <li><a {% param_exists "tag" tag.id %}class="checked"  {% endparam_exists %}
+                       href="{% toggle_parameter_url "tag" tag.id %}"><p {% param_exists "tag" tag.id %}rakam-event-attribute="tag"
+                                                                         rakam-event-attribute-multi{% endparam_exists %}
+                                                                         style="display:inline">{{ tag.name }}</p>
+                        {% if tag.count %}<span>
+                            ({{ tag.count }})</span>{% endif %}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+
+{% if result.facets.manufacturer %}
+    <div class="manufacturer-filter filter-container">
+        <a href="#" class="anchor-title sub-anchor-title sub-anchor-title-first-child">Marka</a>
+        {% if result.facets.manufacturer|length > 10 %}
+            <input type="search" class="filter-input" data-notfound="Aramanızla eşleşen marka bulunamadı."
+                   data-target="manufacturer_list" placeholder="Sayfa içi filtre">{% endif %}
+        <ul id="manufacturer_list" class="filter-middle checkbox-styled-anchor fixed-max-height margin-top-10px">
+            {% for manufacturer in result.facets.manufacturer %}
+                <li data="{{ manufacturer.name|lower }}"><a
+                        {% param_exists "br" manufacturer.id %}class="checked"{% endparam_exists %}
+                        href="{% toggle_parameter_url "br" manufacturer.id %}">
+                    <p {% param_exists "br" manufacturer.id %}rakam-event-attribute="manufacturer" rakam-event-attribute-multi{% endparam_exists %}
+                       style="display:inline">{{ manufacturer.name }}</p>{% if manufacturer.count %}
+                    <span>({{ manufacturer.count }})</span>{% endif %}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+
+{% if categoryfields %}
+    <div class="categoryyfields-filter filter-container">
+        <a href="#" class="anchor-title sub-anchor-title sub-anchor-title-first-child">Ürün Özellikleri</a>
+        <ul class="filter-middle checkbox-styled-anchor">
+            {% for name, choices in categoryfields.items %}
+                <li class="title">{{ name }}</li>
+                {% for choice in choices %}
+                    <li><a href="{% change_parameter_url name choice %}">{{ choice }}</a></li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+
+<a href="#" class="anchor-title sub-anchor-title">Fiyat Aralığı</a>
+<ul class="filter-middle price-filter filter-container">
+    <form>
+        {% for key, value in request.GET.items %}
+            {% if key != "price0" and key != "price1" %}
+                <input type="hidden" name="{{ key }}" value="{{ value }}">
+            {% endif %}
+        {% endfor %}
+        <input name="price0" type="text" class="small-input number" placeholder="min TL"
+               rakam-event-attribute="min_price"
+               value="{{ request.GET.price0 }}"/>
+
+        <div class="splitter">-</div>
+        <input name="price1" type="text" class="small-input number" placeholder="max TL"
+               rakam-event-attribute="max_price"
+               value="{{ request.GET.price1 }}"/>
+        <input type="submit" class="button_blue1 small-btn search-button" value="" style="position: relative;top: 4px;">
+    </form>
+</ul>

@@ -1,0 +1,29 @@
+{% load shop_tags fb_versions %}
+<li class="thumb_square">
+    <div class="GF-Thumb">
+        <a class="imglink lazyload-img" href="{{ product|get_product_link }}">
+            <img class="lazyload-img" alt="{{ product.name }}"
+                 src="{% version product.image 'product_list_square' "images/placeholder/default-product-square.png" %}"
+                 alt="{{ product.name }}"/>
+        </a>
+        {% if product.discount_price < product.price %}
+            <div class="GF-Discount rdiscount">
+                <div class="GF-DiscountTxt"><strong>{{ product|get_discount_rate:product.discount_price }}</strong>
+                    <span>indirim</span></div>
+            </div>
+        {% endif %}
+    </div>
+    <div class="GF-Details">
+        <p class="GF-Name"><a href="{{ product|get_product_link }}" class="black">{{ product.name }}</a></p>
+
+        <p class="GF-Price">{{ product.discount_price|decimalparser:"sup"|safe }} TL</p>
+        {% if product.discount_price < product.price %}
+            <del>{{ product.price|decimalparser:"sup"|safe }} TL</del>
+        {% endif %}
+
+        {% if product.in_stock %}
+            <a href="/account/basket-action?quantity=1&product={{ product.id }}&action=add" class="add-basket-square">sepete
+                ekle</a>
+        {% endif %}
+    </div>
+</li>

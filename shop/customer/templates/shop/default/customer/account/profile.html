@@ -1,0 +1,19 @@
+{% extends "shop/"|add:SHOP_TEMPLATE|add:"/customer/account/base.html" %}
+{% load widget_tweaks %}
+
+{% block page_content %}
+    <h1>Kişisel Bilgilerim</h1>
+    <form action="" method="post" {% if form.is_multipart %}enctype="multipart/form-data"{% endif %}>{% csrf_token %}
+        {% for error in form.non_field_errors %}
+            {{ error }}
+        {% endfor %}
+        {% for field in form %}
+            <div class="fieldWrapper">
+                {{ field.errors }}
+                {{ field.label_tag }}
+                {{ field }}
+            </div>
+        {% endfor %}
+        <input class="button_blue1 button_size3" type="submit" value="Güncelle">
+    </form>
+{% endblock %}

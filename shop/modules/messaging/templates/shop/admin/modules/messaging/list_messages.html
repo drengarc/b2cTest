@@ -1,0 +1,36 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_static admin_modify %}
+{% load admin_urls %}
+
+{% block extrastyle %}{{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static "admin/css/forms.css" %}"/>
+{% endblock %}
+
+{% block content_title %}
+    <h1>{{ activeCategory.name }}</h1>
+
+{% endblock %}
+
+{% block extra_menu %}
+{% endblock %}
+
+{% block content %}
+    {% for message in customermessages %}
+        <div>
+            <div>
+                <div>from: {% if message.staff %}staff ({{ message.staff.username }}) {% else %}{{ message.customer.email }} {% endif %}</div>
+                <div>time: {{ message.time }}</div>
+                <div>content: {{ message.message }}</div>
+                <div>order: {{ message.order_id }}</div>
+            </div>
+        </div>
+        <br>
+    {% endfor %}
+    <div>
+    <form method="post">{% csrf_token %}
+        <textarea name="message"></textarea>
+        <input type="hidden" name="top_message" value="{{ original.top_message_id }}">
+        <input type="submit" value="add">
+    </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,10 @@
+<table class="styled_table">
+    {% if oem_codes|length == 0 %}
+        Bu ürüne ait bir OEM kodu bulunamadı.
+    {% else %}
+    <tr><th>Marka</th><th>Oem Kodu</th></tr>
+    {% for oem in oem_codes %}
+    <tr><td>{{ oem.arac_marka }}</td><td>{{ oem.oem_no }}</td></tr>
+    {% endfor %}
+    {% endif %}
+</table>

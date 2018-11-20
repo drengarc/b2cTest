@@ -1,0 +1,28 @@
+{% extends "shop/"|add:SHOP_TEMPLATE|add:"/base.html" %}
+
+{% block content %}
+    <div class="wrapper">
+        <div class="loginSection">
+            <div class="LoginHead clearfix">
+                <h1>Üye Girişi</h1>
+            </div>
+            <div class="LoginCon">
+                <form action="" method="post" {% if form.is_multipart %}enctype="multipart/form-data"{% endif %}>{% csrf_token %}
+                    {% for error in form.non_field_errors %}
+                        {{ error }}
+                    {% endfor %}
+                    {% for field in form %}
+                        <div class="fieldWrapper {{ field.id_for_label }}_container">
+                            {{ field.errors }}
+                            {{ field.label_tag }} {{ field }}
+                        </div>
+                    {% endfor %}
+                    <div><a href="{% url "password_reset" %}">Şifremi Unuttum</a></div>
+                    <input class="button_blue1 button_size3" type="submit" id="L-Enter" value="Giriş Yap" tabindex="4" name="pass" alt="Giriş Yap" title="Giriş Yap">
+                </form>
+            </div>
+        </div>
+                <a href="{% url "shop_customer_register" %}" class="sign-up-btn button_blue1 button_size3">Üye Değil Misin? <span>30 saniyede kayıt ol</span></a>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "shop/"|add:SHOP_TEMPLATE|add:"/customer/account/base.html" %}
+
+{% block page_content %}
+    <h2>Mesajlarım</h2>
+    {% for message in customer_messages %}
+        <div>
+            <div>
+                <div>mesajı yazan: {% if message.staff %}{{ message.staff.name }}{% else %}siz{% endif %}</div>
+                <div>tarih: {{ message.time }}</div>
+                <div>
+                    {{ message.message }}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    <form action="" method="post">{% csrf_token %}
+    {{ form }}
+    <p><input type="submit" value="Mesaj gönder" /></p>
+    </form>
+{% endblock %}

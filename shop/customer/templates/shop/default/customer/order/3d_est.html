@@ -1,0 +1,54 @@
+{% load simit_tags %}
+<script>
+    $(function () {
+        var check_bin = function (_this) {
+            $.post('{% url "payment_est_check_bin" %}', {bin: _this.value.replace(/ /g, '').substring(0, 6), csrfmiddlewaretoken: $.cookie('csrftoken')}, function (data) {
+                if (data['bank'] && data['bank']['image']) {
+                    $('.bank-image').css('background-image', "url("+data['bank']['image']+")").attr('title', data['bank']['name']);
+                }
+                var body = $('.payment_alternatives');
+
+                var str = _.template($('#payment_alternatives_template').html(), {price: window.price, installments: data['installments']});
+
+                body.html(str).show();
+            });
+        };
+
+        var bin;
+        $('.cc-number').keyup(function (e) {
+            var b = this.value.replace(' ', '');
+            if (b.length >= 6 && b.substring(0, 6) != bin) {
+                bin = b.substring(0, 6);
+                check_bin(this);
+            }
+        }).change(function () {
+            if (!bin && this.value.replace(' ', '').length > 6) {
+                check_bin(this);
+            }
+        }).trigger('keyup');
+
+        var $form = $("#payment");
+
+        $form.submit(function () {
+            if(!$form.find('input[name="3d_pay"]').prop('checked')) return true;
+            if (prepared_form) return true;
+
+            $.post('{% url 'payment_est_action_3d' %}', {installment: $('input[name="installment"]').val(), expire: $('.cc-exp').val(), cvv: $('.cc-cvv').val(), credit_card: $('.cc-number').val().replace(' ', ''), csrfmiddlewaretoken: $.cookie('csrftoken')}, function (data) {
+                _.map(data.parameters, function (value, key) {
+                    $form.append('<input type="hidden" name="{0}" value="{1}">'.format(key, value));
+                });
+
+                $form.attr('action', data.submit_url);
+                //$form.find('input[name="csrfmiddlewaretoken"]').remove();
+                $form.find('input[name="payment_type"]').attr('value', '3d_pay');
+                $form.find('input[name="cc_exp"]').attr('disabled', true);
+                $form.find('input[name="cc_owner"]').attr('disabled', true);
+                $form.find('input[name="3d_pay"]').attr('disabled', true);
+                $form.find('input[name="installment"]').attr('disabled', true);
+                window.prepared_form = true;
+
+                $form.submit();
+            });
+        });
+    });
+</script>

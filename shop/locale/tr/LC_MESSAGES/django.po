@@ -1,0 +1,1011 @@
+# Copyright (C) 2014
+# This file is distributed under the same license as the shop package.
+# Burak Emre Kabakcı <emrekabakci@gmail.com>, 2014.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-08 07:21-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: BURAK EMRE KABAKCI <emrekabakci@gmail.com>\n"
+"Language-Team: TURKISH <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: admin.py:71 models.py:165 customer/models.py:150
+#: modules/messaging/admin.py:15
+msgid "price"
+msgstr "fiyat"
+
+#: admin.py:146 models.py:127
+msgid "manufacturer"
+msgstr "üretici"
+
+#: admin.py:153 models.py:88
+msgid "category"
+msgstr "kategori"
+
+#: admin.py:209 models.py:78
+msgid "parent category"
+msgstr "üst kategori"
+
+#: admin.py:260
+msgid "Add child page"
+msgstr "Alt kategori ekle"
+
+#: admin.py:262
+msgid "View on site"
+msgstr "Sitede görüntüle"
+
+#: admin.py:346
+msgid "Shop"
+msgstr "Dükkan"
+
+#: admin.py:351 customer/templates/customer/order/address.html:8
+#: customer/templates/customer/order/payment.html:25
+#: customer/templates/customer/order/shipment.html:8
+msgid "Shipment"
+msgstr "Kargo"
+
+#: admin.py:356 customer/templates/customer/order/address.html:9
+#: customer/templates/customer/order/payment.html:26
+#: customer/templates/customer/order/shipment.html:9
+msgid "Payment"
+msgstr "Ödeme"
+
+#: admin.py:368
+msgid "CMS"
+msgstr ""
+
+#: admin.py:377
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: models.py:29
+msgid "male"
+msgstr "erkek"
+
+#: models.py:30
+msgid "female"
+msgstr "kadın"
+
+#: models.py:31
+msgid "hidden"
+msgstr "gizli"
+
+#: models.py:36 models.py:50 models.py:63 models.py:75 models.py:95
+#: models.py:116 models.py:163 models.py:254 customer/models.py:35
+#: customer/templates/customer/order/order_success.html:16
+#: discount/models.py:11 modules/messaging/models.py:9 payment/models.py:14
+#: shipment/models.py:10 shipment/models.py:24
+msgid "name"
+msgstr "isim"
+
+#: models.py:37
+msgid "iso code"
+msgstr "iso kodu"
+
+#: models.py:41
+msgid "countries"
+msgstr "ülkeler"
+
+#: models.py:42
+msgid "country"
+msgstr "ülke"
+
+#: models.py:54
+msgid "cities"
+msgstr "şehirler"
+
+#: models.py:55
+msgid "city"
+msgstr "şehir"
+
+#: models.py:76 models.py:97 models.py:117 models.py:135 banner/models.py:22
+#: customer/templates/customer/order/order_success.html:15
+#: payment/est/models.py:51 payment/est/models.py:60 shipment/models.py:12
+msgid "image"
+msgstr "resim"
+
+#: models.py:80 models.py:152 models.py:173 banner/models.py:23
+#: payment/est/models.py:97
+msgid "description"
+msgstr "açıklama"
+
+#: models.py:81 models.py:255
+msgid "slug"
+msgstr ""
+
+#: models.py:82
+msgid "Slug will be used when creating urls."
+msgstr "Kısa ad site adreslerini oluştururken kullanılacak."
+
+#: models.py:87
+msgid "categories"
+msgstr "kategoriler"
+
+#: models.py:96
+msgid "language code"
+msgstr "dil kodu"
+
+#: models.py:99 models.py:137 customer/models.py:108
+#: modules/messaging/forms.py:12
+msgid "order"
+msgstr "sipariş"
+
+#: models.py:103
+msgid "languages"
+msgstr "diller"
+
+#: models.py:104
+msgid "language"
+msgstr "dil"
+
+#: models.py:126
+msgid "manufacturers"
+msgstr "üreticiler"
+
+#: models.py:141
+msgid "product images"
+msgstr "ürün resimleri"
+
+#: models.py:142
+msgid "product image"
+msgstr "ürün resmi"
+
+#: models.py:151 banner/models.py:20 newsletter/models.py:10
+msgid "title"
+msgstr "başlık"
+
+#: models.py:153
+msgid "keywords"
+msgstr "etiketler"
+
+#: models.py:157
+msgid "product pages"
+msgstr "ürün sayfaları"
+
+#: models.py:158
+msgid "product page"
+msgstr "ürün sayfası"
+
+#: models.py:162 customer/models.py:73 customer/models.py:149
+#: customer/templates/customer/order/order_success.html:17
+msgid "quantity"
+msgstr "miktar"
+
+#: models.py:166 banner/models.py:26 customer/models.py:74
+#: customer/models.py:133 customer/models.py:163 discount/models.py:14
+#: newsletter/models.py:12
+msgid "added date"
+msgstr "eklenme tarihi"
+
+#: models.py:167
+msgid "discount price"
+msgstr "indirimli fiyat"
+
+#: models.py:168
+msgid "shipment price"
+msgstr "kargo fiyatı"
+
+#: models.py:169
+msgid "last modified"
+msgstr "son düzenlenme tarihi"
+
+#: models.py:170 banner/models.py:27 discount/models.py:17
+#: newsletter/models.py:14 shipment/models.py:11
+msgid "is active"
+msgstr "aktiflik durumu"
+
+#: models.py:175
+msgid "tags"
+msgstr ""
+
+#: models.py:176
+msgid "The tags for this product"
+msgstr "Bu ürün için etiketler"
+
+#: models.py:195
+msgid "products"
+msgstr "ürünler"
+
+#: models.py:196
+msgid "product"
+msgstr "ürün"
+
+#: models.py:208
+msgid "product attributes"
+msgstr "ürün özellikleri"
+
+#: models.py:209
+msgid "product attribute"
+msgstr "ürün özelliği"
+
+#: models.py:218
+msgid "product attribute choices"
+msgstr "ürün özelliği seçenekleri"
+
+#: models.py:219
+msgid "product attribute choice"
+msgstr "ürün özelliği seçeneği"
+
+#: models.py:259
+msgid "product tags"
+msgstr "ürün etiketleri"
+
+#: models.py:260
+msgid "product tag"
+msgstr "ürün etiketi"
+
+#: models.py:280
+msgid "key"
+msgstr "anahtar"
+
+#: models.py:281
+msgid "value"
+msgstr "değer"
+
+#: models.py:288
+msgid "configuration"
+msgstr "konfigürasyon"
+
+#: models.py:289
+msgid "configurations"
+msgstr "konfigürasyonlar"
+
+#: models.py:320
+msgid "email address"
+msgstr "e-posta adresi"
+
+#: models.py:321 customer/models.py:49
+msgid "first name"
+msgstr "ilk isim"
+
+#: models.py:322 customer/models.py:50
+msgid "last name"
+msgstr "soyisim"
+
+#: models.py:323
+msgid "staff status"
+msgstr "yetkili durumu"
+
+#: models.py:324
+msgid "Designates whether the user can log into this admin site."
+msgstr ""
+
+#: models.py:326
+msgid "active"
+msgstr ""
+
+#: models.py:327
+msgid ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+msgstr ""
+
+#: models.py:329
+msgid "date joined"
+msgstr ""
+
+#: models.py:330
+msgid "gender"
+msgstr ""
+
+#: models.py:337
+msgid "phone number"
+msgstr ""
+
+#: models.py:348
+msgid "user"
+msgstr ""
+
+#: models.py:349
+msgid "users"
+msgstr ""
+
+#: models.py:380
+msgid "synonyms"
+msgstr ""
+
+#: models.py:381
+msgid "synonym"
+msgstr ""
+
+#: views.py:59
+msgid "The category couldn't found"
+msgstr ""
+
+#: views.py:70
+msgid "The vehicle couldn't found"
+msgstr ""
+
+#: views.py:87
+msgid "The tag couldn't found."
+msgstr ""
+
+#: views.py:190
+msgid "The vehicle year combination couldn't found"
+msgstr ""
+
+#: views.py:245
+msgid "The query string is not valid"
+msgstr ""
+
+#: views.py:277
+msgid "The page couldn't found"
+msgstr "Sayfa bulunamadı"
+
+#: widgets.py:84
+msgid "Date:"
+msgstr ""
+
+#: widgets.py:98
+msgid "Time:"
+msgstr ""
+
+#: widgets.py:175 widgets.py:301
+msgid "Add Another"
+msgstr ""
+
+#: widgets.py:237 widgets.py:363
+msgid "add"
+msgstr ""
+
+#: banner/admin.py:11 customer/models.py:164 discount/admin.py:10
+#: newsletter/admin.py:9
+msgid "status"
+msgstr ""
+
+#: banner/admin.py:15 discount/admin.py:14 newsletter/admin.py:13
+msgid "scheduled"
+msgstr ""
+
+#: banner/admin.py:15 discount/admin.py:14 newsletter/admin.py:13
+msgid "past"
+msgstr "geçmiş"
+
+#: banner/models.py:24 discount/models.py:16
+msgid "end date"
+msgstr "bitiş tarihi"
+
+#: banner/models.py:25 discount/models.py:15
+msgid "start date"
+msgstr ""
+
+#: customer/admin.py:26
+msgid "current status"
+msgstr ""
+
+#: customer/admin.py:69
+msgid "Order does not exist"
+msgstr ""
+
+#: customer/admin.py:75
+msgid "Order status is not suitable for this operation"
+msgstr ""
+
+#: customer/admin.py:77
+msgid "Order successfully marked as shipped."
+msgstr ""
+
+#: customer/admin.py:143 customer/forms.py:18 customer/forms.py:78
+msgid "Password"
+msgstr "Şifre"
+
+#: customer/admin.py:144
+msgid ""
+"Raw passwords are not stored, so there is no way to see this user's "
+"password, but you can change the password using <a href=\"password/\">this "
+"form</a>."
+msgstr ""
+
+#: customer/admin.py:226
+msgid "Customer"
+msgstr ""
+
+#: customer/forms.py:17 customer/forms.py:77 customer/forms.py:96
+#: customer/forms.py:142
+msgid "Email"
+msgstr "E-posta"
+
+#: customer/forms.py:19
+msgid "Remember me"
+msgstr "Beni hatırla"
+
+#: customer/forms.py:28
+msgid "personal"
+msgstr "kişisel"
+
+#: customer/forms.py:28
+msgid "company"
+msgstr "şirket"
+
+#: customer/forms.py:32
+msgid "invoice type"
+msgstr "fatura tipi"
+
+#: customer/forms.py:58 customer/forms.py:63 customer/forms.py:65
+msgid "This field is required."
+msgstr "Bu alan gerekli."
+
+#: customer/forms.py:79
+msgid "Password *(Again)"
+msgstr "Şifre *(Tekrar)"
+
+#: customer/forms.py:80 customer/forms.py:99
+msgid "First name"
+msgstr "Ad"
+
+#: customer/forms.py:81 customer/forms.py:100
+msgid "Last name"
+msgstr "Soyad"
+
+#: customer/forms.py:82 customer/forms.py:101
+msgid "Phone number"
+msgstr "Telefon numarası"
+
+#: customer/forms.py:97
+msgid "Old Password"
+msgstr "Eski şifre"
+
+#: customer/forms.py:98
+#: customer/templates/customer/registration/password_reset_confirm.html:13
+msgid "New password"
+msgstr "Yeni şifre"
+
+#: customer/forms.py:121
+msgid "You need to enter your old password in order to update your password"
+msgstr ""
+
+#: customer/forms.py:127 customer/views/membership.py:122
+msgid "The password you entered is wrong."
+msgstr "Girdiğiniz şifre yanlış."
+
+#: customer/models.py:19
+msgid "waiting for money order"
+msgstr "havale için bekleniyor"
+
+#: customer/models.py:20
+msgid "approved"
+msgstr "onaylandı"
+
+#: customer/models.py:21
+msgid "shipped"
+msgstr "kargoya verildi"
+
+#: customer/models.py:22
+msgid "done"
+msgstr "ulaştırıldı"
+
+#: customer/models.py:23
+msgid "waiting for refund approval"
+msgstr ""
+
+#: customer/models.py:24
+msgid "waiting for refund"
+msgstr ""
+
+#: customer/models.py:25
+msgid "refunded"
+msgstr ""
+
+#: customer/models.py:29
+msgid "credit card"
+msgstr ""
+
+#: customer/models.py:30 payment/admin.py:13
+msgid "money order"
+msgstr ""
+
+#: customer/models.py:39
+msgid "customer groups"
+msgstr ""
+
+#: customer/models.py:40
+msgid "customer group"
+msgstr ""
+
+#: customer/models.py:48
+msgid "address name"
+msgstr "adres ismi"
+
+#: customer/models.py:51
+msgid "address"
+msgstr "adres"
+
+#: customer/models.py:52
+msgid "post code"
+msgstr "posta kodu"
+
+#: customer/models.py:53
+msgid "land line"
+msgstr "ev telefonu"
+
+#: customer/models.py:54
+msgid "cell phone"
+msgstr "cep telefonu numarası"
+
+#: customer/models.py:57
+msgid "identity number"
+msgstr "tc kimlik no"
+
+#: customer/models.py:58
+msgid "tax authority"
+msgstr "vergi yetkili adı"
+
+#: customer/models.py:59
+msgid "tax no"
+msgstr "vergi numarası"
+
+#: customer/models.py:63
+msgid "customer addresses"
+msgstr ""
+
+#: customer/models.py:64
+msgid "customer address"
+msgstr ""
+
+#: customer/models.py:85
+msgid "delivery name"
+msgstr ""
+
+#: customer/models.py:86
+msgid "delivery address"
+msgstr ""
+
+#: customer/models.py:88
+msgid "delivery address phone number"
+msgstr "teslimat adresi telefon numarası"
+
+#: customer/models.py:89
+msgid "billing name"
+msgstr "fatura adresi ulaştırılacak kişi"
+
+#: customer/models.py:90
+msgid "billing address"
+msgstr "fatura adresi"
+
+#: customer/models.py:92
+msgid "billing address phone number"
+msgstr "fatura adresi telefon numarası"
+
+#: customer/models.py:95
+msgid "credit card owner"
+msgstr "kredi kartı sahibi"
+
+#: customer/models.py:96
+msgid "credit card number"
+msgstr "kredi kartı numarası"
+
+#: customer/models.py:97
+msgid "purchased date"
+msgstr "satın alınmış tarih"
+
+#: customer/models.py:99
+msgid "final price"
+msgstr "son fiyat"
+
+#: customer/models.py:100
+msgid "final kdv"
+msgstr "son kdv değeri"
+
+#: customer/models.py:101 customer/models.py:134
+msgid "comment"
+msgstr "yorum"
+
+#: customer/models.py:102
+msgid "cargo tracking number"
+msgstr "kargo sipariş numarası"
+
+#: customer/models.py:103
+msgid "payment type"
+msgstr "ödeme tipleri"
+
+#: customer/models.py:107
+msgid "orders"
+msgstr "siparişler"
+
+#: customer/models.py:126
+msgid "order status types"
+msgstr "sipariş durumu tipleri"
+
+#: customer/models.py:127
+msgid "order status type"
+msgstr "sipariş durumu tipi"
+
+#: customer/models.py:138
+msgid "order status histories"
+msgstr "sipariş durumu geçmişleri"
+
+#: customer/models.py:139
+msgid "order status history"
+msgstr "sipariş durumu geçmişi"
+
+#: customer/models.py:151
+#: customer/templates/customer/order/order_success.html:19
+#: customer/templates/customer/order/order_success.html:39
+#: discount/models.py:29
+msgid "discount"
+msgstr "indirim"
+
+#: customer/models.py:155
+msgid "ordered product"
+msgstr "sipariş verilmiş ürün"
+
+#: customer/models.py:156
+msgid "ordered products"
+msgstr "sipariş verilmiş ürünler"
+
+#: customer/models.py:162
+msgid "rating"
+msgstr "oylama"
+
+#: customer/models.py:166
+msgid "review"
+msgstr "yorum"
+
+#: customer/models.py:170
+msgid "product reviews"
+msgstr "ürün yorumları"
+
+#: customer/models.py:171
+msgid "product review"
+msgstr "ürün yorumu"
+
+#: customer/templates/customer/order/address.html:7
+#: customer/templates/customer/order/payment.html:24
+#: customer/templates/customer/order/shipment.html:7
+msgid "Address"
+msgstr "Adres"
+
+#: customer/templates/customer/order/address.html:29
+msgid "Edit"
+msgstr "Düzenle"
+
+#: customer/templates/customer/order/address.html:41
+msgid "Add new address"
+msgstr "Yeni adres ekle"
+
+#: customer/templates/customer/order/address.html:42
+#: customer/templates/customer/order/shipment.html:46
+msgid "Continue"
+msgstr "Devam et"
+
+#: customer/templates/customer/order/order_success.html:18
+msgid "fiyat"
+msgstr ""
+
+#: customer/templates/customer/order/order_success.html:20
+#: customer/templates/customer/order/order_success.html:47
+msgid "paid"
+msgstr ""
+
+#: customer/templates/customer/order/order_success.html:35
+msgid "total"
+msgstr ""
+
+#: customer/templates/customer/order/order_success.html:52
+#: payment/est/models.py:40
+msgid "date"
+msgstr "tarih"
+
+#: customer/templates/customer/order/order_success.html:57
+msgid "comments"
+msgstr "yorumlar"
+
+#: customer/templates/customer/registration/password_reset_complete.html:7
+msgid "Your password has been set.  You may go ahead and log in now."
+msgstr "Şifreniz kaydedildi, giriş yapabilirsiniz."
+
+#: customer/templates/customer/registration/password_reset_complete.html:9
+msgid "Log in"
+msgstr "Giriş yap"
+
+#: customer/templates/customer/registration/password_reset_confirm.html:9
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr ""
+
+#: customer/templates/customer/registration/password_reset_confirm.html:15
+#, fuzzy
+msgid "Confirm password"
+msgstr "Şifremi değiştir"
+
+#: customer/templates/customer/registration/password_reset_confirm.html:17
+msgid "Change my password"
+msgstr "Şifremi değiştir"
+
+#: customer/templates/customer/registration/password_reset_confirm.html:22
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a new password reset."
+msgstr ""
+
+#: customer/templates/customer/registration/password_reset_done.html:7
+msgid ""
+"We've emailed you instructions for setting your password. You should be "
+"receiving them shortly."
+msgstr ""
+
+#: customer/templates/customer/registration/password_reset_done.html:9
+msgid ""
+"If you don't receive an email, please make sure you've entered the address "
+"you registered with, and check your spam folder."
+msgstr ""
+
+#: customer/templates/customer/registration/password_reset_form.html:6
+msgid ""
+"Forgotten your password? Enter your email address below, and we'll email "
+"instructions for setting a new one."
+msgstr ""
+
+#: customer/templates/customer/registration/password_reset_form.html:10
+msgid "Email address"
+msgstr "E-posta adresi"
+
+#: customer/templates/customer/registration/password_reset_form.html:15
+msgid "Reset my password"
+msgstr "Şifremi sıfırla"
+
+#: customer/views/membership.py:45
+msgid "There is another account using this email address"
+msgstr "Bu e-posta adresini kullanan başka bir kullanıcı mevcut."
+
+#: customer/views/membership.py:48
+msgid "Username is not available."
+msgstr "Kullanıcı adı mevcut değil."
+
+#: customer/views/membership.py:120
+msgid "The account has been disabled, please contact with administrators."
+msgstr "Siparişiniz devre dışı bırakıldı, lütfen bizimle iletişime geçiniz."
+
+#: customer/views/order.py:89 customer/views/order.py:109
+msgid "Please select shipment and invoice addresses"
+msgstr "Lütfen teslimat ve fatura adresinizi seçiniz."
+
+#: customer/views/user.py:34
+msgid "Your profile successfully updated"
+msgstr "Profil ayarlarınız başarıyla kaydedildi"
+
+#: discount/models.py:12 payment/est/models.py:88
+msgid "percentage"
+msgstr "yüzde"
+
+#: discount/models.py:12
+msgid "The percentage of discount will be applied to total price"
+msgstr ""
+
+#: discount/models.py:13 payment/est/models.py:90
+msgid "amount"
+msgstr "miktar"
+
+#: discount/models.py:13
+msgid "The amount of discount will be applied to total price"
+msgstr ""
+
+#: discount/models.py:21
+msgid "minimum order price"
+msgstr "minimum sipariş fiyatı"
+
+#: discount/models.py:28
+msgid "discounts"
+msgstr "indirimler"
+
+#: importer/forms.py:6
+msgid "file"
+msgstr ""
+
+#: importer/views.py:38
+msgid "product importer"
+msgstr "ürün aktarici"
+
+#: importer/views.py:41
+msgid "import product"
+msgstr "ürün aktar"
+
+#: modules/messaging/forms.py:8 modules/messaging/forms.py:14
+#: modules/messaging/models.py:21
+msgid "message"
+msgstr "mesaj"
+
+#: modules/messaging/forms.py:11 modules/messaging/models.py:20
+msgid "topic"
+msgstr "konu"
+
+#: modules/messaging/forms.py:13
+msgid "department"
+msgstr "departman"
+
+#: modules/messaging/models.py:23
+msgid "is unread"
+msgstr "okunmamış"
+
+#: modules/messaging/models.py:24
+msgid "time"
+msgstr "zaman"
+
+#: modules/pricedropalert/models.py:7
+msgid "email"
+msgstr "e-posta"
+
+#: modules/pricedropalert/models.py:9 modules/pricedropalert/models.py:21
+msgid "checkpoint price"
+msgstr "sabitlenmiş fiyat"
+
+#: modules/pricedropalert/tasks.py:20 modules/pricedropalert/tasks.py:32
+msgid "Price changed"
+msgstr "Fiyat değişti"
+
+#: modules/pricedropalert/views.py:28
+msgid "Product does not exist."
+msgstr "Ürün mevcut değil."
+
+#: modules/pricedropalert/views.py:32
+msgid "The product is already in your following list."
+msgstr "Ürün takip listenizde mevcut."
+
+#: modules/pricedropalert/views.py:34
+msgid "Succesfully saved."
+msgstr "Başarıyla kaydedildi."
+
+#: modules/pricedropalert/views.py:48
+msgid "Price drop alert confirmation e-mail"
+msgstr ""
+
+#: modules/pricedropalert/views.py:53
+msgid "Verification email is sent."
+msgstr "Onay e-postası gönderildi"
+
+#: newsletter/models.py:11
+msgid "content"
+msgstr "içerik"
+
+#: newsletter/models.py:13
+msgid "sent date"
+msgstr "gönderilme tarihi"
+
+#: newsletter/models.py:19
+msgid "newsletters"
+msgstr "haber bültenleri"
+
+#: newsletter/models.py:20
+msgid "newsletter"
+msgstr "haber bülteni"
+
+#: payment/models.py:11
+msgid "money order discount amount"
+msgstr "havale indirimi sabit miktar"
+
+#: payment/models.py:13
+msgid "money order discount percentage"
+msgstr "havale indirimi yüzdesi"
+
+#: payment/models.py:18
+msgid "payment packages"
+msgstr "ödeme paketleri"
+
+#: payment/models.py:19
+msgid "payment package"
+msgstr "ödeme paketi"
+
+#: payment/est/actions.py:113
+msgid "Your order is processed successfully!"
+msgstr "Siparişiniz başarıyla oluşturuldu!"
+
+#: payment/est/actions.py:113
+#, python-format
+msgid "Order No: %s"
+msgstr "Sipariş Numarası: %s"
+
+#: payment/est/models.py:33
+msgid "client IP address"
+msgstr "kullanıcı IP adresi"
+
+#: payment/est/models.py:41
+msgid "amount of transaction"
+msgstr "işlem bakiyesi"
+
+#: payment/est/models.py:45
+msgid "EST transaction"
+msgstr "est işlemi"
+
+#: payment/est/models.py:46
+msgid "EST transactions"
+msgstr "est işlemleri"
+
+#: payment/est/models.py:80
+msgid "est relations"
+msgstr "est ilişkileri"
+
+#: payment/est/models.py:81
+msgid "est relation"
+msgstr "est ilişkisi"
+
+#: payment/est/models.py:89
+msgid "The percentage of discount will be applied for this payment alternative"
+msgstr ""
+
+#: payment/est/models.py:91
+msgid "The amount of discount will be applied for this payment alternative"
+msgstr ""
+
+#: payment/est/models.py:92 payment/est/models.py:104
+msgid "installment"
+msgstr "taksit"
+
+#: payment/est/models.py:94
+msgid "minimum price"
+msgstr "minimum fiyat"
+
+#: payment/est/models.py:96
+msgid "maximum price"
+msgstr "maksimum fiyat"
+
+#: payment/est/models.py:100
+msgid "installment alternatives"
+msgstr "taksit seçenekleri"
+
+#: payment/est/models.py:101
+msgid "installment alternative"
+msgstr "taksit seçeneği"
+
+#: shipment/models.py:16
+msgid "shipment method"
+msgstr "kargo firması"
+
+#: shipment/models.py:17
+msgid "shipment methods"
+msgstr "kargo firmaları"
+
+#: shipment/models.py:28
+msgid "shipment package"
+msgstr "kargo paketi"
+
+#: shipment/models.py:29
+msgid "shipment packages"
+msgstr "kargo paketleri"
+
+#: shipment/models.py:38
+msgid "fixed price"
+msgstr "sabit fiyat"
+
+#: shipment/models.py:42
+msgid "shipment alternative"
+msgstr "kargo seçeneği"
+
+#: shipment/models.py:43
+msgid "shipment alternatives"
+msgstr "kargo seçenekleri"
+
+#: templates/shop/default/400.html:5
+msgid "Bad Request"
+msgstr "Hatalı istek"
+
+#: templates/shop/default/400.html:5
+msgid "The request cannot be fulfilled due to bad syntax."
+msgstr ""
+
+#: templates/shop/default/403.html:5
+msgid "You don't have enough permission to be able to see this page."
+msgstr "Bu sayfayı görebilmek için yeterli yetkiniz yok."
+
+#: templates/shop/default/404.html:5
+msgid "The page you requested was not found."
+msgstr "Aradığınız sayfaya ulaşılamadı."
+
+#: templates/shop/default/500.html:7
+msgid "The server encountered an error processing the request."
+msgstr "Sistemde bir hata oluştu, bu yüzden isteğinizi yerine getiremiyoruz."
+
+#: templates/shop/default/500.html:9
+#, python-format
+msgid "If you need assistance, you may reference this error as %(reference)s."
+msgstr ""
+"Desteğe ihtiyacınız varsa bize ulaşırken %(reference)s referans kodunu "
+"kullanabilirsiniz."

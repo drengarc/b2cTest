@@ -1,0 +1,14 @@
+.order-history {
+background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA4ElEQVQ4T6WTARHCMAxFmQMkDAfgYHMACgAFgJKBAkABOGAOwAFImAP4v9dyWZYeuSN3/7q2yUvSdsXoTysy8RXWN9Bc7V8xP0BtWrcAR2yuotMZ4ys6lxiXEOF7aMd1DWiwtoXW0ClTHeFMEiASQPLNCH4biRKkloALHMdQrTJbALowWScBdLRKzwFCFRrA7K2zgtAyAXdoKoIe+J6JOSuQlpJ+Aez7GfvvME7Ymwqypr0WWAEPcQGxAo8NDtETlHxCdqh3jV5ACh48pByAh0UroZ9P2YLIW3D9TN5Wgt8HXrAv63zVZVkAAAAASUVORK5CYII=);
+height: 16px;
+width: 16px;
+float: left;
+cursor: pointer;
+margin-left: 3px;
+opacity: .7;
+}
+p.status {
+    float:left;
+    margin: 0;
+    padding: 0;
+}

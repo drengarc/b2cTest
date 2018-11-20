@@ -1,0 +1,43 @@
+{% load shop_tags fb_versions simit_tags %}
+
+{% variable "TAKSIT_EKRANI" "Taksit Alanı" "RICH_TEXT" "Ödeme" "Ürün sayfasında yazan taksit bilgisi" %}
+<table width="100%" class="BankIns">
+    <thead>
+    <tr>
+        <th></th>
+        {% for name, method in methods.items %}
+            <th align="center" class="BankLogo"><img src="{% version method.image 'product_list_square' %}"
+                                                     alt="{{ name }}" title="{{ name }}">
+
+                <p class="Gray">({{ name }})</p></th>
+        {% endfor %}
+    </tr>
+    </thead>
+    <tbody>
+    {% for key, payments in alternatives.items %}
+        <tr>
+            <td align="center" class="BankLogo">
+                {{ key }} Taksit
+            </td>
+            {% for alternative in payments %}
+                <td align="center">
+                    <div class="posr">
+                        {% if alternative.description %}
+                            <span class="CachePrice"></span>{{ alternative.desc_counter }}
+                        {% endif %}
+
+                        <p>
+                            {% with price|installment:alternative as price %}
+                                <strong>{{ price|divide:alternative.installment|decimalparser:"sup"|safe }}
+                                    TL x {{ alternative.installment }}</strong></p>
+
+                                <p class="Gray">{{ price|decimalparser:"sup"|safe }}
+                                    TL</p>
+                            {% endwith %}
+                    </div>
+                </td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

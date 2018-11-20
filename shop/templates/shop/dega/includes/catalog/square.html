@@ -1,0 +1,50 @@
+{% load shop_tags fb_versions %}
+<div class="ajax_block_product featured_item clearfix" style="border:none" itemscope
+    itemtype="http://schema.org/Product">
+        <div class="vpbox_li wow bounceInLeft" data-wow-delay="0.1s"
+             style="visibility: hidden; animation-delay: 0.1s; animation-name: none; border: 1px solid #ddd; border-radius: 3px;">
+            <div class="product-image-container">
+{#                <span class="new-box-home hide">Yeni</span>#}
+                {% if 2 in product.tags %}<span class="sale-box-home hide">Kampanya!</span>{% endif %}
+                <a href="{{ product|get_product_link }}" title="Fiat Linea Seri A Tampon "
+                   class="product_image"><img
+                        src="{% version product.image 'product_list_square' "images/placeholder/default-product-square.png" %}" style="height:100px"
+                        alt=""></a>
+                <a class="quick-view" href="{{ product|get_product_link }}" rel="">
+                                                                        <span class="btn"><span
+                                                                                class="glyphicon glyphicon-eye-open"></span> İncele</span>
+                </a>
+            </div>
+            <h5 class="carousel-title"><a href="{{ product|get_product_link }}" itemprop="name" title="{{ product.name }}">{{ product.name }} </a>
+            </h5>
+
+            <p class="price_container">
+                <span class="price" style="font-size:120% !important">{{ product.discount_price|decimalparser:"sup"|safe }} TL</span>
+                {% if product.discount_price < product.price %}
+                    <span class="old-price product-price old-price-home" style="font-size:100% !important">{{ product.price|decimalparser:"sup"|safe }} TL</span>{% endif %}
+            </p>
+
+            <div class="cart-view clearfix">
+                <a href="" class="btn btn-default link_more hide">
+                                                                        <span data-hover="View"><i
+                                                                                class="glyphicon glyphicon-eye-open"></i> İncele</span>
+                </a>
+{#                <a class="btn btn-primary ajax_add_to_cart_button"#}
+{#                   rel="nofollow" data-id-product="2" href="">#}
+{#                                                                        <span data-hover="Add to cart"><i#}
+{#                                                                                class="fa fa-check-circle-o"></i> Sepete ekle</span>#}
+{#                </a>#}
+            </div>
+        {% if product.in_stock %}
+                    <a href="/account/basket-action?quantity=1&product={{ product.id }}&action=add">
+                    <img src="http://www.parachoques.net/themes/vp_caraudio/img/coner_cart.png" style="
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+">
+                    </a>
+                {% endif %}
+
+        </div>
+
+    </div>

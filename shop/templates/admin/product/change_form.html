@@ -1,0 +1,7 @@
+{% extends "admin/change_form.html" %}
+{% load i18n admin_modify %}
+
+{% block after_related_objects %}
+    <div style="display: none" id="id_hidden-eav-endpoint-url">{{ attr_url }}</div>
+    <div style="display: none" id="id_hidden-eav-pk">{{ attr_model_id }}</div>
+{% endblock %}

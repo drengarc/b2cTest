@@ -1,0 +1,49 @@
+{% extends "shop/"|add:SHOP_TEMPLATE|add:"/base.html" %}
+{% load shop_tags simit_tags %}
+{% block content %}
+    <div class="wrapper">
+        <div style="width:190px; float:left" class="sidebar-menu">
+            <ul>
+                <li><a href="{% url "shop_customer_orders" %}">Siparişlerim</a></li>
+                <li><a href="{% url "shop_customer_profile" %}">Profil</a></li>
+                <li><a href="{% url "shop_customer_address" %}">Adreslerim</a></li>
+                <!--li><a href="{% url "shop_modules_messaging_list" %}">Mesajlarım</a></li-->
+                <!--li><a href="{% url "shop_modules_pricedropalert_list" %}">Takip ettiklerim</a></li-->
+            </ul>
+        </div>
+        {% getmenu "KULLANICI_MENU" as topheader %}
+        {% if topheader %}
+            <div class="left nav_ust_bg">
+                <div class="nav_txt">
+                    <ul class="clearfix">
+                        {% for menu in topheader %}
+                            <li><a href="{{ menu.url }}" title="{{ menu.title }}">{{ menu.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <br>
+        {% endif %}
+        <div class="account-container">
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {% block page_content %}
+                My Page
+            {% endblock %}
+        </div>
+        <div style="clear:both"></div>
+    </div>
+{% endblock %}
+{% block javascript_end %}
+    <script>
+        $('.sidebar-menu li a').each(function () {
+            if (document.location.pathname.indexOf($(this).attr('href')) > -1)
+                $(this).parent('li').addClass('active-menu');
+        })
+    </script>
+{% endblock %}

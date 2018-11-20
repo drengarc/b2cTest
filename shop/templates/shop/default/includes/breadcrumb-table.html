@@ -1,0 +1,7 @@
+{% load shop_tags %}
+<tr class="breadcrumb">
+    {% if render_homepage != False %}<li><span typeof="v:Breadcrumb"><a class="no" href="{% url 'shop_homepage' %}" rel="v:url" property="v:title" title="Anasayfa">Anasayfa</a></span></li>{% endif %}
+    {% for item in items %}
+        <td><a href="{% if tag == "url" %}{% url property item.slug %}{% elif tag == "link" %}{{ item.url }}{% else %}{% change_parameter_url property item.slug %}{% endif %}" rel="v:url" property="v:title" title="yedek parça">{{ item.name }}</a></td>
+    {% endfor %}
+</tr>

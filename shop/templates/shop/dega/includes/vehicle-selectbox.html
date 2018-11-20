@@ -1,0 +1,102 @@
+{% load shop_tags %}
+<div id="header_search" style="position:absolute;bottom: -62px;left: 26.2%;">
+
+    <div class="form-group" style="display: inline-block;width: 180px;">
+        <label for="brand" class="brand-model-year">Marka</label>
+
+        <select class="category_selectbox form-control brand-model-year" rakam-event-attribute="brand" rakam-attribute-value="text"
+                style="display: inline-block;width: 180px;">
+            <option value="{% remove_parameter_url 'v' item.slug %}">Seçiniz</option>
+            {% for item in levels.0 %}
+                <option {% if vehicle.level == 0 and vehicle.slug == item.slug or vehiclepath.0.slug == item.slug %}selected{% endif %}
+                        value="{% change_parameter_url 'v' item.slug %}">{{ item.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group" style="display: inline-block;width: 180px;">
+        <label for="brand-model" class="brand-model-year">Model</label>
+
+        <select class="category_selectbox form-control brand-model-year" rakam-event-attribute="model" rakam-attribute-value="text"
+                style="display: inline-block;width: 180px;">
+            {% if vlevel > 0 %}
+                {% for item in levels.1 %}
+                    <option {% if vehiclepath.1.slug == item.slug %}selected{% endif %}
+                              value="{% change_parameter_url 'v' item.slug %}">{{ item.name }}</option>
+                {% endfor %}
+            {% else %}
+                <option>Seçiniz</option>
+                {% if vehicle.level == 0 %}
+                    {% for item in result.facets.vehicle %}
+                        <option value="{% change_parameter_url 'v' item.slug %}">{{ item.name }}</option>
+                    {% endfor %}
+                {% endif %}
+            {% endif %}
+        </select>
+    </div>
+{#    <div class="form-group" style="display: inline-block;width: 120px;">#}
+{#        <label for="brand-model-year" class="brand-model-year">Araç yılı</label>#}
+{#        <select class="category_selectbox form-control brand-model-year" rakam-event-attribute="vehicle_years" rakam-attribute-value="text"#}
+{#                rakam-attribute-value="text">#}
+{#            <option value="{% remove_parameter_url 'vyear' item.slug %}">Seçiniz</option>#}
+{#            {% if vlevel == 4 %}#}
+{#                {% for item in result.facets.vehicle %}#}
+{#                    <option {% if vehicle_year.slug == item.slug %}selected{% endif %}#}
+{#                            value="{% change_parameter_url 'vyear' item.slug %}">{{ item.name }}</option>#}
+{#                {% endfor %}#}
+{#            {% else %}#}
+{#                {% for item in vehicle_years %}#}
+{#                    <option {% if vehicle_year.slug == item.slug %}selected{% endif %}#}
+{#                            value="{% change_parameter_url 'vyear' item.slug %}">{{ item.name }}</option>#}
+{#                {% endfor %}#}
+{#            {% endif %}#}
+{#        </select>#}
+{#    </div>#}
+{##}
+    {##}
+    {#    <select class="category_selectbox">#}
+    {#        {% if vlevel > 2 %}#}
+    {#            {% for item in motor_types %}#}
+    {#                <option {% if motor_type.slug == item.slug %}selected{% endif %} value="{% change_parameter_url 'motor' item.slug %}">{{ item.name }}</option>#}
+    {#            {% endfor %}#}
+    {#        {% else %}#}
+    {#            <option>Motor Tip Seç</option>#}
+    {#            {% if vlevel == 2 %}#}
+    {#                {% for item in result.facets.vehicle %}#}
+    {#                    <option value="{% change_parameter_url 'motor' item.slug %}">{{ item.name }}</option>#}
+    {#                {% endfor %}#}
+    {#            {% endif %}#}
+    {#        {% endif %}#}
+    {#    </select>#}
+    {##}
+    {#    <select class="category_selectbox">#}
+    {#        {% if vlevel > 3 %}#}
+    {#            {% for item in fuel_types %}#}
+    {#                <option {% if fuel_type.slug == item.slug %}selected{% endif %} value="{% change_parameter_url 'fuel' item.slug %}">{{ item.name }}</option>#}
+    {#            {% endfor %}#}
+    {#        {% else %}#}
+    {#            <option>Yakıt Tip Seç</option>#}
+    {#            {% if vlevel == 3 %}#}
+    {#                {% for item in result.facets.vehicle %}#}
+    {#                    <option value="{% change_parameter_url 'fuel' item.slug %}">{{ item.name }}</option>#}
+    {#                {% endfor %}#}
+    {#            {% endif %}#}
+    {#        {% endif %}#}
+    {#    </select>#}
+    {##}
+    {#{% if level <= 4 %}#}
+    {#    <select class="category_selectbox">#}
+    {#        {% if vlevel > 4 %}#}
+    {#            {% for item in vehicle_years %}#}
+    {#                <option {% if vehicle.slug == item.slug %}selected{% endif %} value="{% change_parameter_url 'vyear' item.slug %}">{{ item.name }}</option>#}
+    {#            {% endfor %}#}
+    {#        {% else %}#}
+    {#            <option>Yıl Seç</option>#}
+    {#            {% if vlevel == 4 %}#}
+    {#                {% for item in result.facets.vehicle %}#}
+    {#                    <option value="{% change_parameter_url "vyear" item.slug %}">{{ item.name }}</option>#}
+    {#                {% endfor %}#}
+    {#            {% endif %}#}
+    {#        {% endif %}#}
+    {#    </select>#}
+    {#{% endif %}#}
+</div>

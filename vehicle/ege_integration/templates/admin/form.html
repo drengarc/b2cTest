@@ -1,0 +1,20 @@
+{% load i18n %}
+<form enctype="multipart/form-data" action="" method="post" id="page_form">
+{% csrf_token %}
+<div class="fieldset ">
+
+    <fieldset class="module aligned ">
+        {% include "admin/formfields.html" %}
+    </fieldset>
+</div>
+
+<div class="submit-row">
+    {% if buttons %}
+    {% for button in buttons %}
+        <input type="submit" value="{{ button.0 }}" class="default" name="{{ button.1 }}">
+    {% endfor %}
+    {% else %}
+         <input type="submit" value="{% trans "Save" %}" class="default" name="_save">
+    {% endif %}
+</div>
+</form>

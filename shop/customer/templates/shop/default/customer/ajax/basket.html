@@ -1,0 +1,21 @@
+{% load shop_tags humanize %}
+{% if basket %}
+    <table class="modal-basket">
+        <tr>
+            <th>isim</th>
+            <th>miktar</th>
+            <th>fiyat</th>
+        </tr>
+        {% for item in basket %}
+            <tr>
+                <td class="name" title="{{ item.product.name }}"><a href="{{ item.product|get_product_link }}">{{ item.product.name }}</a></td>
+                <td class="quantity">{{ item.quantity }}</td>
+                <td class="total_price">{{ item.total_price|floatformat:2|intcomma }}</td>
+            </tr>
+        {% endfor %}
+        <tr><td></td><td></td><td>{{ total_basket|floatformat:2|intcomma }} TL</td></tr>
+    </table>
+    <a href="{% url 'shop_customer_basket_page' %}" class="button_blue1 small-btn right">Sepete Git</a>
+{% else %}
+    Sepetinizde henüz bir ürün yok.
+{% endif %}

@@ -1,0 +1,6 @@
+{% extends "shop/"|add:SHOP_TEMPLATE|add:"/base.html" %}
+{% load i18n %}
+
+{% block content %}
+<h1>{% trans "Bad Request" %}{% trans "The request cannot be fulfilled due to bad syntax." %}</h1>
+{% endblock %}

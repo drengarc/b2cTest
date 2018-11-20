@@ -1,0 +1,123 @@
+{% load staticfiles %}
+<div class="field">
+
+    <div class="treeField">
+        <div style="display:inline-block; margin-right:2px" class="tree-select">
+            <div><a href="/admin/vehicle/vehiclebrand/add/" class="add-another" id="add_vehicle_1" onclick="return showAddAnotherPopup(this);"><img src="{% static "admin/img/icon_addlink.gif" %}" width="10" height="10" alt="Add Another"></a></div>
+            <select size="3" class="class_brands" id="vehicle_1">
+                {% for b in brands %}
+                    <option {% if b.id == brand.id %}selected{% endif %} value="{{ b.id }}">{{ b.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div style="display:inline-block; margin-right:2px" class="tree-select">
+            <div><a href="/admin/vehicle/vehiclebrandmodel/add/{% if brand %}?parent={{ brand.id }}{% endif %}" class="add-another tree" id="add_vehiclemodel_1" onclick="return showAddAnotherPopup(this);"><img src="{% static "admin/img/icon_addlink.gif" %}" width="10" height="10" alt="Add Another"></a></div>
+            <select size="3" class="class_brandmodels" id="vehiclemodel_1">
+                {% if brandmodel %}
+                    <option selected value="{{ brandmodel.id }}">{{ brandmodel.name }}</option>
+                {% endif %}
+            </select>
+        </div>
+        <div style="display:inline-block; margin-right:2px" class="tree-select">
+            <div><a href="/admin/vehicle/vehiclebrandmodeltype/add/{% if brandmodel %}?parent={{ brandmodel.id }}{% endif %}" class="add-another tree" id="add_vehiclemodeltype_1" onclick="return showAddAnotherPopup(this);"><img src="{% static "admin/img/icon_addlink.gif" %}" width="10" height="10" alt="Add Another"></a></div>
+            <select size="3" class="class_brandmodeltypes" id="vehiclemodeltype_1">
+                {% if brandmodeltype %}
+                    <option selected value="{{ brandmodeltype.id }}">{{ brandmodeltype.name }}</option>
+                {% endif %}
+            </select>
+        </div>
+        <div style="display:inline-block; margin-right:2px" class="tree-select">
+            <select size="3" class="class_motortypes">
+                {% if motortype %}
+                    <option selected value="{{ motortype.id }}">{{ motortype.name }}</option>
+                {% endif %}
+            </select>
+        </div>
+        <div style="display:inline-block; margin-right:2px" class="tree-select">
+            <select size="3" class="class_fueltypes">
+                {% if fueltype %}
+                    <option selected value="{{ fueltype.id }}">{{ fueltype.name }}</option>
+                {% endif %}
+            </select>
+        </div>
+        <div style="display:inline-block; margin-right:2px" class="tree-select">
+            <div><a href="/admin/vehicle/vehicle/add/?{% if fueltype %}vehicle_model_type={{ brandmodeltype.id }}&fuel_type={{ fueltype.id }}&motor_type={{ motortype.id }}{% endif %}" class="add-another" id="add_vehicle_1" onclick="return showAddAnotherPopup(this);"><img src="{% static "admin/img/icon_addlink.gif" %}" width="10" height="10" alt="Add Another"></a></div>
+            <select size="1" multiple=true class="class_vehicle" id="vehicle_1" name="vehicle">
+                {% for v in vehicles %}
+                    <option value="{{ v.id }}" {% if v.id == vehicle.id %}selected{% endif %}>{{ v.begin_year }}-{{ v.end_year }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    {% if last %}
+    <div>
+        <div class="little_button add_one_more">add</div>
+    </div>
+    {% endif %}
+    <script type="text/javascript">
+        var $ = django.jQuery;
+        function sprintf(format, etc) {
+            var arg = arguments;
+            var i = 1;
+            return format.replace(/%((%)|s)/g, function (m) {
+                return m[2] || arg[i++]
+            })
+        }
+        var rel = [
+            {domClass: 'class_brands', endPoint: '/admin/vehicle/vehiclebrandmodel/fetch/?parent='},
+            {domClass: 'class_brandmodels', endPoint: '/admin/vehicle/vehiclebrandmodeltype/fetch/?parent='},
+            {domClass: 'class_brandmodeltypes', endPoint: '/admin/vehicle/motortype/fetch/?modeltype='},
+            {domClass: 'class_motortypes'}
+        ]
+
+        rel.forEach(function(d, idx, arr) {
+            if (!d['endPoint']) return;
+            $(document).on('change', '.'+d['domClass'], function() {
+                var $col = $(this).closest('.tree-select');
+                $.getJSON(d['endPoint'] + this.value, function(data) {
+                    $col.nextAll('.tree-select').find('select').html('');
+                    var str = '';
+                    for (var i = 0; i < data.length; i++)
+                        str += '<option value="' + data[i].id + '">' + data[i].name + '</option>';
+                    $col.next().find('select').html(str);
+                    var link = $col.next().find('.add-another.tree');
+                    if(link.length>0)
+                        link.attr('href', link.attr('href').replace(/\?parent=.$/, '')+'?parent='+$col.find('select').val());
+                });
+            });
+        });
+        var motortypes = $('.class_motortypes')
+        $(document).on('change', '.class_motortypes', function() {
+            var $col = $(this).closest('.tree-select');
+            $.getJSON('/admin/vehicle/fueltype/fetch/?modeltype='+$('.class_brandmodeltypes').val()+'&motortype=' + this.value, function(data) {
+                $col.nextAll('.tree-select').find('select').html('');
+                var str = '';
+                for (var i = 0; i < data.length; i++)
+                    str += '<option value="' + data[i].id + '">' + data[i].name + '</option>'
+                $col.next().find('select').html(str);
+            });
+        });
+        $(document).on('change', '.class_fueltypes', function() {
+            var $col = $(this).closest('.tree-select');
+            $.getJSON('/admin/vehicle/vehicle/fetch/?modeltype='+$('.class_brandmodeltypes').val()+'&motortype='+motortypes.val()+'&fueltype=' + this.value, function(data) {
+                $col.nextAll('.tree-select').find('select').html('');
+                var str = '';
+                for (var i = 0; i < data.length; i++)
+                    str += '<option value="' + data[i].id + '">' + data[i].begin_year + '-' + (data[i].end_year || '') + '</option>'
+                $col.next().find('select').html(str);
+                var link = $col.next().find('.add-another');
+                link.attr('href', link.attr('href').replace(/(\?.*)$/, '')+'?vehicle_model_type='+$('.class_brandmodeltypes').val()+'&fuel_type='+$('.class_fueltypes').val()+'&motor_type='+$('.class_motortypes').val());
+            });
+        });
+        $('.add_one_more').click(function() {
+            var $field = $(this).closest('.field').find('.treeField:first').clone();
+            var selects = $field.append('<span class="deleteRow" onclick="$(this).closest(\'.treeField\').remove()">delete</span></div>').find('select');
+
+            selects.not('.class_brands').html('');
+            selects.filter('.class_brands').find('option[selected]').removeAttr('selected')
+
+            $(this).closest('.field').find('.treeField:last').after($field);
+        });
+    </script>
+
+</div>

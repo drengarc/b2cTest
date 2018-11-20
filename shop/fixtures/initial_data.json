@@ -1,0 +1,8497 @@
+[
+    {
+        "pk": 1,
+        "model": "shop.producttag",
+        "pk": "1",
+        "fields": {
+            "name": "Yeni urun",
+            "slug": "yeni-urun"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "shop.producttag",
+        "pk": "2",
+        "fields": {
+            "name": "Kampanyali Urun",
+            "slug": "kampanyali-urun"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "simit.customareacategory",
+        "fields": {
+            "name": "Al\u0131\u015fveri\u015f"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "simit.customareacategory",
+        "fields": {
+            "name": "SEO"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "simit.customareacategory",
+        "fields": {
+            "name": "Genel"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "simit.customareacategory",
+        "fields": {
+            "name": "EST"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "simit.customarea",
+        "fields": {
+            "category": 1,
+            "name": "\u00dcretici s\u00fctununu al\u0131\u015fveri\u015f sepetine g\u00f6ster",
+            "extra": "",
+            "value": "True",
+            "type": 5,
+            "slug": "SHOW_MANUFACTURER_IN_BASKET",
+            "description": ""
+        }
+    },
+    {
+        "pk": 2,
+        "model": "simit.customarea",
+        "fields": {
+            "category": 1,
+            "name": "Havale Bilgileri",
+            "extra": "",
+            "value": "<p>buraya havale bilgileri gelecek.</p>\r\n<p>&nbsp;</p>\r\n<h3>Yap\u0131 Kredi</h3>\r\n<p>TR0000000000 000000</p>",
+            "type": 4,
+            "slug": "SHOP_MONEYORDER_INFORMATION",
+            "description": "\u00d6deme sayfas\u0131nda havale ile \u00f6deme se\u00e7ene\u011findeki bilgiler"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "simit.customarea",
+        "fields": {
+            "category": 2,
+            "name": "Site A\u00e7\u0131klamas\u0131",
+            "extra": "",
+            "value": "",
+            "type": 1,
+            "slug": "SITE_DESCRIPTION",
+            "description": "Arama motorlar\u0131 taraf\u0131ndan g\u00f6r\u00fcnen site a\u00e7\u0131klamas\u0131"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "simit.customarea",
+        "fields": {
+            "category": 1,
+            "name": "Odeme modulu",
+            "extra": "[[0, \"3d_est\"], [1, \"3d_denizbank\"]]",
+            "value": "3d_est",
+            "type": 6,
+            "slug": "PAYMENT_GATEWAY",
+            "description": ""
+        }
+    },
+    {
+        "pk": 4,
+        "model": "simit.customarea",
+        "fields": {
+            "category": 2,
+            "name": "Site Etiketleri",
+            "extra": "",
+            "value": "",
+            "type": 1,
+            "slug": "SITE_KEYWORDS",
+            "description": "Arama motorlar\u0131 taraf\u0131ndan g\u00f6r\u00fcnen site etiketleri"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "simit.customarea",
+        "fields": {
+            "category": 3,
+            "name": "Site ba\u015fl\u0131\u011f\u0131",
+            "extra": "",
+            "value": "Yedek Par\u00e7ac\u0131 Geldi Han\u0131m",
+            "type": 1,
+            "slug": "SITE_TITLE",
+            "description": ""
+        }
+    },
+    {
+        "pk": 6,
+        "model": "simit.customarea",
+        "fields": {
+            "category": 4,
+            "name": "\u015eirket Ad\u0131",
+            "extra": "",
+            "value": "Paravan \u015eirketi",
+            "type": 1,
+            "slug": "EST_COMPANY_NAME",
+            "description": ""
+        }
+    },
+    {
+        "model": "shop.Country",
+        "pk": 1,
+        "fields": {
+            "name": "Turkey",
+            "iso_code": "TR"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "shop.config",
+        "fields": {
+            "value": "1",
+            "key": "ACTIVE_PAYMENTPACKAGE"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "shop.config",
+        "fields": {
+            "value": "1",
+            "key": "DEFAULT_KAR_MARJI"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "shop.config",
+        "fields": {
+            "value": "1",
+            "key": "DEFAULT_ESTPACKAGE"
+        }
+    },
+    {
+        "model": "customer.CustomerGroup",
+        "pk": 1,
+        "fields": {
+            "name": "Guest"
+        }
+    },
+    {
+        "model": "payment.PaymentPackage",
+        "pk": 1,
+        "fields": {
+            "name": "Default"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "1",
+        "fields": {
+            "country": 1,
+            "name": "Adana"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "2",
+        "fields": {
+            "country": 1,
+            "name": "Adıyaman"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "3",
+        "fields": {
+            "country": 1,
+            "name": "Afyonkarahisar"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "4",
+        "fields": {
+            "country": 1,
+            "name": "Ağrı"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "5",
+        "fields": {
+            "country": 1,
+            "name": "Amasya"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "6",
+        "fields": {
+            "country": 1,
+            "name": "Ankara"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "7",
+        "fields": {
+            "country": 1,
+            "name": "Antalya"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "8",
+        "fields": {
+            "country": 1,
+            "name": "Artvin"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "9",
+        "fields": {
+            "country": 1,
+            "name": "Aydın"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "10",
+        "fields": {
+            "country": 1,
+            "name": "Balıkesir"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "11",
+        "fields": {
+            "country": 1,
+            "name": "Bilecik"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "12",
+        "fields": {
+            "country": 1,
+            "name": "Bingöl"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "13",
+        "fields": {
+            "country": 1,
+            "name": "Bitlis"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "14",
+        "fields": {
+            "country": 1,
+            "name": "Bolu"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "15",
+        "fields": {
+            "country": 1,
+            "name": "Burdur"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "16",
+        "fields": {
+            "country": 1,
+            "name": "Bursa"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "17",
+        "fields": {
+            "country": 1,
+            "name": "Çanakkale"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "18",
+        "fields": {
+            "country": 1,
+            "name": "Çankırı"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "19",
+        "fields": {
+            "country": 1,
+            "name": "Çorum"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "20",
+        "fields": {
+            "country": 1,
+            "name": "Denizli"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "21",
+        "fields": {
+            "country": 1,
+            "name": "Diyarbakır"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "22",
+        "fields": {
+            "country": 1,
+            "name": "Edirne"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "23",
+        "fields": {
+            "country": 1,
+            "name": "Elazığ"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "24",
+        "fields": {
+            "country": 1,
+            "name": "Erzincan"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "25",
+        "fields": {
+            "country": 1,
+            "name": "Erzurum"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "26",
+        "fields": {
+            "country": 1,
+            "name": "Eskişehir"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "27",
+        "fields": {
+            "country": 1,
+            "name": "Gaziantep"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "28",
+        "fields": {
+            "country": 1,
+            "name": "Giresun"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "29",
+        "fields": {
+            "country": 1,
+            "name": "Gümüşhane"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "30",
+        "fields": {
+            "country": 1,
+            "name": "Hakkâri"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "31",
+        "fields": {
+            "country": 1,
+            "name": "Hatay"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "32",
+        "fields": {
+            "country": 1,
+            "name": "Isparta"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "33",
+        "fields": {
+            "country": 1,
+            "name": "Mersin"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "34",
+        "fields": {
+            "country": 1,
+            "name": "İstanbul"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "35",
+        "fields": {
+            "country": 1,
+            "name": "İzmir"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "36",
+        "fields": {
+            "country": 1,
+            "name": "Kars"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "37",
+        "fields": {
+            "country": 1,
+            "name": "Kastamonu"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "38",
+        "fields": {
+            "country": 1,
+            "name": "Kayseri"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "39",
+        "fields": {
+            "country": 1,
+            "name": "Kırklareli"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "40",
+        "fields": {
+            "country": 1,
+            "name": "Kırşehir"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "41",
+        "fields": {
+            "country": 1,
+            "name": "Kocaeli"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "42",
+        "fields": {
+            "country": 1,
+            "name": "Konya"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "43",
+        "fields": {
+            "country": 1,
+            "name": "Kütahya"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "44",
+        "fields": {
+            "country": 1,
+            "name": "Malatya"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "45",
+        "fields": {
+            "country": 1,
+            "name": "Manisa"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "46",
+        "fields": {
+            "country": 1,
+            "name": "Kahramanmaraş"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "47",
+        "fields": {
+            "country": 1,
+            "name": "Mardin"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "48",
+        "fields": {
+            "country": 1,
+            "name": "Muğla"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "49",
+        "fields": {
+            "country": 1,
+            "name": "Muş"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "50",
+        "fields": {
+            "country": 1,
+            "name": "Nevşehir"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "51",
+        "fields": {
+            "country": 1,
+            "name": "Niğde"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "52",
+        "fields": {
+            "country": 1,
+            "name": "Ordu"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "53",
+        "fields": {
+            "country": 1,
+            "name": "Rize"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "54",
+        "fields": {
+            "country": 1,
+            "name": "Sakarya"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "55",
+        "fields": {
+            "country": 1,
+            "name": "Samsun"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "56",
+        "fields": {
+            "country": 1,
+            "name": "Siirt"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "57",
+        "fields": {
+            "country": 1,
+            "name": "Sinop"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "58",
+        "fields": {
+            "country": 1,
+            "name": "Sivas"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "59",
+        "fields": {
+            "country": 1,
+            "name": "Tekirdağ"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "60",
+        "fields": {
+            "country": 1,
+            "name": "Tokat"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "61",
+        "fields": {
+            "country": 1,
+            "name": "Trabzon"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "62",
+        "fields": {
+            "country": 1,
+            "name": "Tunceli"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "63",
+        "fields": {
+            "country": 1,
+            "name": "Şanlıurfa"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "64",
+        "fields": {
+            "country": 1,
+            "name": "Uşak"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "65",
+        "fields": {
+            "country": 1,
+            "name": "Van"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "66",
+        "fields": {
+            "country": 1,
+            "name": "Yozgat"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "67",
+        "fields": {
+            "country": 1,
+            "name": "Zonguldak"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "68",
+        "fields": {
+            "country": 1,
+            "name": "Aksaray"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "69",
+        "fields": {
+            "country": 1,
+            "name": "Bayburt"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "70",
+        "fields": {
+            "country": 1,
+            "name": "Karaman"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "71",
+        "fields": {
+            "country": 1,
+            "name": "Kırıkkale"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "72",
+        "fields": {
+            "country": 1,
+            "name": "Batman"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "73",
+        "fields": {
+            "country": 1,
+            "name": "Şırnak"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "74",
+        "fields": {
+            "country": 1,
+            "name": "Bartın"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "75",
+        "fields": {
+            "country": 1,
+            "name": "Ardahan"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "76",
+        "fields": {
+            "country": 1,
+            "name": "Iğdır"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "77",
+        "fields": {
+            "country": 1,
+            "name": "Yalova"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "78",
+        "fields": {
+            "country": 1,
+            "name": "Karabük"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "79",
+        "fields": {
+            "country": 1,
+            "name": "Kilis"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "80",
+        "fields": {
+            "country": 1,
+            "name": "Osmaniye"
+        }
+    },
+    {
+        "model": "shop.City",
+        "pk": "81",
+        "fields": {
+            "country": 1,
+            "name": "Düzce"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 1,
+            "name": "ALADAĞ(KARSANTI)"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 1,
+            "name": "CEYHAN"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 1,
+            "name": "ÇUKUROVA"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 1,
+            "name": "FEKE"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 1,
+            "name": "İMAMOĞLU"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 1,
+            "name": "KARAİSALI"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 1,
+            "name": "KARATAŞ"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 1,
+            "name": "KOZAN"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 1,
+            "name": "POZANTI"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 1,
+            "name": "SAİMBEYLİ"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 1,
+            "name": "SARIÇAM"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 1,
+            "name": "SEYHAN"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 1,
+            "name": "TUFANBEYLİ"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 1,
+            "name": "YUMURTALIK"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 1,
+            "name": "YÜREĞİR"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 2,
+            "name": "ADIYAMAN"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 2,
+            "name": "BESNİ"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 2,
+            "name": "ÇELİKHAN"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 2,
+            "name": "GERGER"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 2,
+            "name": "GÖLBAŞI"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 2,
+            "name": "KAHTA"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 2,
+            "name": "SAMSAT"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 2,
+            "name": "SİNCİK"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 2,
+            "name": "TUT"
+        }
+    },
+    {
+        "pk": 25,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 3,
+            "name": "AFYON"
+        }
+    },
+    {
+        "pk": 26,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 3,
+            "name": "BAŞMAKÇI"
+        }
+    },
+    {
+        "pk": 27,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 3,
+            "name": "BAYAT"
+        }
+    },
+    {
+        "pk": 28,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 3,
+            "name": "BOLVADİN"
+        }
+    },
+    {
+        "pk": 29,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 3,
+            "name": "ÇAY"
+        }
+    },
+    {
+        "pk": 30,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 3,
+            "name": "ÇOBANLAR"
+        }
+    },
+    {
+        "pk": 31,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 3,
+            "name": "DAZKIRI"
+        }
+    },
+    {
+        "pk": 32,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 3,
+            "name": "DİNAR"
+        }
+    },
+    {
+        "pk": 33,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 3,
+            "name": "EMİRDAĞ"
+        }
+    },
+    {
+        "pk": 34,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 3,
+            "name": "EVCİLER"
+        }
+    },
+    {
+        "pk": 35,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 3,
+            "name": "HOCALAR"
+        }
+    },
+    {
+        "pk": 36,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 3,
+            "name": "İHSANİYE"
+        }
+    },
+    {
+        "pk": 37,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 3,
+            "name": "İSCEHİSAR"
+        }
+    },
+    {
+        "pk": 38,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 3,
+            "name": "KIZILÖREN"
+        }
+    },
+    {
+        "pk": 39,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 3,
+            "name": "SANDIKLI"
+        }
+    },
+    {
+        "pk": 40,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 3,
+            "name": "SİNCANLI(SİNANPAŞA)"
+        }
+    },
+    {
+        "pk": 41,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 3,
+            "name": "SULTANDAĞI"
+        }
+    },
+    {
+        "pk": 42,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 3,
+            "name": "ŞUHUT"
+        }
+    },
+    {
+        "pk": 43,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 4,
+            "name": "AĞRI"
+        }
+    },
+    {
+        "pk": 44,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 4,
+            "name": "DİYADİN"
+        }
+    },
+    {
+        "pk": 45,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 4,
+            "name": "DOĞUBAYAZIT(DOĞUBEYAZIT)"
+        }
+    },
+    {
+        "pk": 46,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 4,
+            "name": "ELEŞKİRT"
+        }
+    },
+    {
+        "pk": 47,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 4,
+            "name": "HAMUR"
+        }
+    },
+    {
+        "pk": 48,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 4,
+            "name": "PATNOS"
+        }
+    },
+    {
+        "pk": 49,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 4,
+            "name": "TAŞLIÇAY"
+        }
+    },
+    {
+        "pk": 50,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 4,
+            "name": "TUTAK"
+        }
+    },
+    {
+        "pk": 51,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 5,
+            "name": "AMASYA"
+        }
+    },
+    {
+        "pk": 52,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 5,
+            "name": "GÖYNÜCEK"
+        }
+    },
+    {
+        "pk": 53,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 5,
+            "name": "GÜMÜŞHACIKÖY"
+        }
+    },
+    {
+        "pk": 54,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 5,
+            "name": "HAMAMÖZÜ"
+        }
+    },
+    {
+        "pk": 55,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 5,
+            "name": "MERZİFON"
+        }
+    },
+    {
+        "pk": 56,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 5,
+            "name": "SULUOVA"
+        }
+    },
+    {
+        "pk": 57,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 5,
+            "name": "TAŞOVA"
+        }
+    },
+    {
+        "pk": 58,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 6,
+            "name": "AKYURT"
+        }
+    },
+    {
+        "pk": 59,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 6,
+            "name": "ALTINDAĞ"
+        }
+    },
+    {
+        "pk": 60,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 6,
+            "name": "AYAŞ"
+        }
+    },
+    {
+        "pk": 61,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 6,
+            "name": "BALA"
+        }
+    },
+    {
+        "pk": 62,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 6,
+            "name": "BEYPAZARI"
+        }
+    },
+    {
+        "pk": 63,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 6,
+            "name": "ÇAMLIDERE"
+        }
+    },
+    {
+        "pk": 64,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 6,
+            "name": "ÇANKAYA"
+        }
+    },
+    {
+        "pk": 65,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 6,
+            "name": "ÇUBUK"
+        }
+    },
+    {
+        "pk": 66,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 6,
+            "name": "ELMADAĞ"
+        }
+    },
+    {
+        "pk": 67,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 6,
+            "name": "ETİMESGUT"
+        }
+    },
+    {
+        "pk": 68,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 6,
+            "name": "EVREN"
+        }
+    },
+    {
+        "pk": 69,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 6,
+            "name": "GÖLBAŞI"
+        }
+    },
+    {
+        "pk": 70,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 6,
+            "name": "GÜDÜL"
+        }
+    },
+    {
+        "pk": 71,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 6,
+            "name": "HAYMANA"
+        }
+    },
+    {
+        "pk": 72,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 6,
+            "name": "KALECİK"
+        }
+    },
+    {
+        "pk": 73,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 6,
+            "name": "KAZAN"
+        }
+    },
+    {
+        "pk": 74,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 6,
+            "name": "KEÇİÖREN"
+        }
+    },
+    {
+        "pk": 75,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 6,
+            "name": "KIZILCAHAMAM"
+        }
+    },
+    {
+        "pk": 76,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 6,
+            "name": "MAMAK"
+        }
+    },
+    {
+        "pk": 77,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 6,
+            "name": "NALLIHAN"
+        }
+    },
+    {
+        "pk": 78,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 6,
+            "name": "POLATLI"
+        }
+    },
+    {
+        "pk": 79,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 6,
+            "name": "PURSAKLAR"
+        }
+    },
+    {
+        "pk": 80,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 6,
+            "name": "SİNCAN"
+        }
+    },
+    {
+        "pk": 81,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 6,
+            "name": "ŞEREFLİKOÇHİSAR"
+        }
+    },
+    {
+        "pk": 82,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 6,
+            "name": "YENİMAHALLE"
+        }
+    },
+    {
+        "pk": 83,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 7,
+            "name": "AKSEKİ"
+        }
+    },
+    {
+        "pk": 84,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 7,
+            "name": "AKSU"
+        }
+    },
+    {
+        "pk": 85,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 7,
+            "name": "ALANYA"
+        }
+    },
+    {
+        "pk": 86,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 7,
+            "name": "DEMRE(KALE)"
+        }
+    },
+    {
+        "pk": 87,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 7,
+            "name": "DÖŞEMEALTI"
+        }
+    },
+    {
+        "pk": 88,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 7,
+            "name": "ELMALI"
+        }
+    },
+    {
+        "pk": 89,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 7,
+            "name": "FİNİKE"
+        }
+    },
+    {
+        "pk": 90,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 7,
+            "name": "GAZİPAŞA"
+        }
+    },
+    {
+        "pk": 91,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 7,
+            "name": "GÜNDOĞMUŞ"
+        }
+    },
+    {
+        "pk": 92,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 7,
+            "name": "İBRADI(AYDINKENT)"
+        }
+    },
+    {
+        "pk": 93,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 7,
+            "name": "KAŞ"
+        }
+    },
+    {
+        "pk": 94,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 7,
+            "name": "KEMER"
+        }
+    },
+    {
+        "pk": 95,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 7,
+            "name": "KEPEZ"
+        }
+    },
+    {
+        "pk": 96,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 7,
+            "name": "KONYAALTI"
+        }
+    },
+    {
+        "pk": 97,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 7,
+            "name": "KORKUTELİ"
+        }
+    },
+    {
+        "pk": 98,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 7,
+            "name": "KUMLUCA"
+        }
+    },
+    {
+        "pk": 99,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 7,
+            "name": "MANAVGAT"
+        }
+    },
+    {
+        "pk": 100,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 7,
+            "name": "MURATPAŞA"
+        }
+    },
+    {
+        "pk": 101,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 7,
+            "name": "SERİK"
+        }
+    },
+    {
+        "pk": 102,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 8,
+            "name": "ARDANUÇ"
+        }
+    },
+    {
+        "pk": 103,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 8,
+            "name": "ARHAVİ"
+        }
+    },
+    {
+        "pk": 104,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 8,
+            "name": "ARTVİN"
+        }
+    },
+    {
+        "pk": 105,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 8,
+            "name": "BORÇKA"
+        }
+    },
+    {
+        "pk": 106,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 8,
+            "name": "HOPA"
+        }
+    },
+    {
+        "pk": 107,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 8,
+            "name": "MURGUL(GÖKTAŞ)"
+        }
+    },
+    {
+        "pk": 108,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 8,
+            "name": "ŞAVŞAT"
+        }
+    },
+    {
+        "pk": 109,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 8,
+            "name": "YUSUFELİ"
+        }
+    },
+    {
+        "pk": 110,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 9,
+            "name": "AYDIN"
+        }
+    },
+    {
+        "pk": 111,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 9,
+            "name": "BOZDOĞAN"
+        }
+    },
+    {
+        "pk": 112,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 9,
+            "name": "BUHARKENT(ÇUBUKDAĞI)"
+        }
+    },
+    {
+        "pk": 113,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 9,
+            "name": "ÇİNE"
+        }
+    },
+    {
+        "pk": 114,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 9,
+            "name": "DİDİM(YENİHİSAR)"
+        }
+    },
+    {
+        "pk": 115,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 9,
+            "name": "GERMENCİK"
+        }
+    },
+    {
+        "pk": 116,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 9,
+            "name": "İNCİRLİOVA"
+        }
+    },
+    {
+        "pk": 117,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 9,
+            "name": "KARACASU"
+        }
+    },
+    {
+        "pk": 118,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 9,
+            "name": "KARPUZLU"
+        }
+    },
+    {
+        "pk": 119,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 9,
+            "name": "KOÇARLI"
+        }
+    },
+    {
+        "pk": 120,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 9,
+            "name": "KÖŞK"
+        }
+    },
+    {
+        "pk": 121,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 9,
+            "name": "KUŞADASI"
+        }
+    },
+    {
+        "pk": 122,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 9,
+            "name": "KUYUCAK"
+        }
+    },
+    {
+        "pk": 123,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 9,
+            "name": "NAZİLLİ"
+        }
+    },
+    {
+        "pk": 124,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 9,
+            "name": "SÖKE"
+        }
+    },
+    {
+        "pk": 125,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 9,
+            "name": "SULTANHİSAR"
+        }
+    },
+    {
+        "pk": 126,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 9,
+            "name": "YENİPAZAR"
+        }
+    },
+    {
+        "pk": 127,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 10,
+            "name": "AYVALIK"
+        }
+    },
+    {
+        "pk": 128,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 10,
+            "name": "BALIKESİR"
+        }
+    },
+    {
+        "pk": 129,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 10,
+            "name": "BALYA"
+        }
+    },
+    {
+        "pk": 130,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 10,
+            "name": "BANDIRMA"
+        }
+    },
+    {
+        "pk": 131,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 10,
+            "name": "BİGADİÇ"
+        }
+    },
+    {
+        "pk": 132,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 10,
+            "name": "BURHANİYE"
+        }
+    },
+    {
+        "pk": 133,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 10,
+            "name": "DURSUNBEY"
+        }
+    },
+    {
+        "pk": 134,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 10,
+            "name": "EDREMİT"
+        }
+    },
+    {
+        "pk": 135,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 10,
+            "name": "ERDEK"
+        }
+    },
+    {
+        "pk": 136,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 10,
+            "name": "GÖMEÇ"
+        }
+    },
+    {
+        "pk": 137,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 10,
+            "name": "GÖNEN"
+        }
+    },
+    {
+        "pk": 138,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 10,
+            "name": "HAVRAN"
+        }
+    },
+    {
+        "pk": 139,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 10,
+            "name": "İVRİNDİ"
+        }
+    },
+    {
+        "pk": 140,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 10,
+            "name": "KEPSUT"
+        }
+    },
+    {
+        "pk": 141,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 10,
+            "name": "MANYAS"
+        }
+    },
+    {
+        "pk": 142,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 10,
+            "name": "MARMARA"
+        }
+    },
+    {
+        "pk": 143,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 10,
+            "name": "SAVAŞTEPE"
+        }
+    },
+    {
+        "pk": 144,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 10,
+            "name": "SINDIRGI"
+        }
+    },
+    {
+        "pk": 145,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 10,
+            "name": "SUSURLUK"
+        }
+    },
+    {
+        "pk": 146,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 11,
+            "name": "BİLECİK"
+        }
+    },
+    {
+        "pk": 147,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 11,
+            "name": "BOZÜYÜK"
+        }
+    },
+    {
+        "pk": 148,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 11,
+            "name": "GÖLPAZARI"
+        }
+    },
+    {
+        "pk": 149,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 11,
+            "name": "İNHİSAR"
+        }
+    },
+    {
+        "pk": 150,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 11,
+            "name": "OSMANELİ"
+        }
+    },
+    {
+        "pk": 151,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 11,
+            "name": "PAZARYERİ"
+        }
+    },
+    {
+        "pk": 152,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 11,
+            "name": "SÖĞÜT"
+        }
+    },
+    {
+        "pk": 153,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 11,
+            "name": "YENİPAZAR"
+        }
+    },
+    {
+        "pk": 154,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 12,
+            "name": "ADAKLI"
+        }
+    },
+    {
+        "pk": 155,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 12,
+            "name": "BİNGÖL"
+        }
+    },
+    {
+        "pk": 156,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 12,
+            "name": "GENÇ"
+        }
+    },
+    {
+        "pk": 157,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 12,
+            "name": "KARLIOVA"
+        }
+    },
+    {
+        "pk": 158,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 12,
+            "name": "KİĞI"
+        }
+    },
+    {
+        "pk": 159,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 12,
+            "name": "SOLHAN"
+        }
+    },
+    {
+        "pk": 160,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 12,
+            "name": "YAYLADERE"
+        }
+    },
+    {
+        "pk": 161,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 12,
+            "name": "YEDİSU"
+        }
+    },
+    {
+        "pk": 162,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 13,
+            "name": "ADİLCEVAZ"
+        }
+    },
+    {
+        "pk": 163,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 13,
+            "name": "AHLAT"
+        }
+    },
+    {
+        "pk": 164,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 13,
+            "name": "BİTLİS"
+        }
+    },
+    {
+        "pk": 165,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 13,
+            "name": "GÜROYMAK"
+        }
+    },
+    {
+        "pk": 166,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 13,
+            "name": "HİZAN"
+        }
+    },
+    {
+        "pk": 167,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 13,
+            "name": "MUTKİ"
+        }
+    },
+    {
+        "pk": 168,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 13,
+            "name": "TATVAN"
+        }
+    },
+    {
+        "pk": 169,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 14,
+            "name": "BOLU"
+        }
+    },
+    {
+        "pk": 170,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 14,
+            "name": "DÖRTDİVAN"
+        }
+    },
+    {
+        "pk": 171,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 14,
+            "name": "GEREDE"
+        }
+    },
+    {
+        "pk": 172,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 14,
+            "name": "GÖYNÜK"
+        }
+    },
+    {
+        "pk": 173,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 14,
+            "name": "KIBRISCIK"
+        }
+    },
+    {
+        "pk": 174,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 14,
+            "name": "MENGEN"
+        }
+    },
+    {
+        "pk": 175,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 14,
+            "name": "MUDURNU"
+        }
+    },
+    {
+        "pk": 176,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 14,
+            "name": "SEBEN"
+        }
+    },
+    {
+        "pk": 177,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 14,
+            "name": "YENİÇAĞA"
+        }
+    },
+    {
+        "pk": 178,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 15,
+            "name": "AĞLASUN"
+        }
+    },
+    {
+        "pk": 179,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 15,
+            "name": "ALTINYAYLA(DİRMİL)"
+        }
+    },
+    {
+        "pk": 180,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 15,
+            "name": "BUCAK"
+        }
+    },
+    {
+        "pk": 181,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 15,
+            "name": "BURDUR"
+        }
+    },
+    {
+        "pk": 182,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 15,
+            "name": "ÇAVDIR"
+        }
+    },
+    {
+        "pk": 183,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 15,
+            "name": "ÇELTİKÇİ"
+        }
+    },
+    {
+        "pk": 184,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 15,
+            "name": "GÖLHİSAR"
+        }
+    },
+    {
+        "pk": 185,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 15,
+            "name": "KARAMANLI"
+        }
+    },
+    {
+        "pk": 186,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 15,
+            "name": "KEMER"
+        }
+    },
+    {
+        "pk": 187,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 15,
+            "name": "TEFENNİ"
+        }
+    },
+    {
+        "pk": 188,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 15,
+            "name": "YEŞİLOVA"
+        }
+    },
+    {
+        "pk": 189,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 16,
+            "name": "BÜYÜKORHAN"
+        }
+    },
+    {
+        "pk": 190,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 16,
+            "name": "GEMLİK"
+        }
+    },
+    {
+        "pk": 191,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 16,
+            "name": "GÜRSU"
+        }
+    },
+    {
+        "pk": 192,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 16,
+            "name": "HARMANCIK"
+        }
+    },
+    {
+        "pk": 193,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 16,
+            "name": "İNEGÖL"
+        }
+    },
+    {
+        "pk": 194,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 16,
+            "name": "İZNİK"
+        }
+    },
+    {
+        "pk": 195,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 16,
+            "name": "KARACABEY"
+        }
+    },
+    {
+        "pk": 196,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 16,
+            "name": "KELES"
+        }
+    },
+    {
+        "pk": 197,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 16,
+            "name": "KESTEL"
+        }
+    },
+    {
+        "pk": 198,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 16,
+            "name": "MUDANYA"
+        }
+    },
+    {
+        "pk": 199,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 16,
+            "name": "MUSTAFAKEMALPAŞA"
+        }
+    },
+    {
+        "pk": 200,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 16,
+            "name": "NİLÜFER"
+        }
+    },
+    {
+        "pk": 201,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 16,
+            "name": "ORHANELİ"
+        }
+    },
+    {
+        "pk": 202,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 16,
+            "name": "ORHANGAZİ"
+        }
+    },
+    {
+        "pk": 203,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 16,
+            "name": "OSMANGAZİ"
+        }
+    },
+    {
+        "pk": 204,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 16,
+            "name": "YENİŞEHİR"
+        }
+    },
+    {
+        "pk": 205,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 16,
+            "name": "YILDIRIM"
+        }
+    },
+    {
+        "pk": 206,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 17,
+            "name": "AYVACIK"
+        }
+    },
+    {
+        "pk": 207,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 17,
+            "name": "BAYRAMİÇ"
+        }
+    },
+    {
+        "pk": 208,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 17,
+            "name": "BİGA"
+        }
+    },
+    {
+        "pk": 209,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 17,
+            "name": "BOZCAADA"
+        }
+    },
+    {
+        "pk": 210,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 17,
+            "name": "ÇAN"
+        }
+    },
+    {
+        "pk": 211,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 17,
+            "name": "ÇANAKKALE"
+        }
+    },
+    {
+        "pk": 212,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 17,
+            "name": "ECEABAT"
+        }
+    },
+    {
+        "pk": 213,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 17,
+            "name": "EZİNE"
+        }
+    },
+    {
+        "pk": 214,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 17,
+            "name": "GELİBOLU"
+        }
+    },
+    {
+        "pk": 215,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 17,
+            "name": "GÖKÇEADA(İMROZ)"
+        }
+    },
+    {
+        "pk": 216,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 17,
+            "name": "LAPSEKİ"
+        }
+    },
+    {
+        "pk": 217,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 17,
+            "name": "YENİCE"
+        }
+    },
+    {
+        "pk": 218,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 18,
+            "name": "ATKARACALAR"
+        }
+    },
+    {
+        "pk": 219,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 18,
+            "name": "BAYRAMÖREN"
+        }
+    },
+    {
+        "pk": 220,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 18,
+            "name": "ÇANKIRI"
+        }
+    },
+    {
+        "pk": 221,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 18,
+            "name": "ÇERKEŞ"
+        }
+    },
+    {
+        "pk": 222,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 18,
+            "name": "ELDİVAN"
+        }
+    },
+    {
+        "pk": 223,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 18,
+            "name": "ILGAZ"
+        }
+    },
+    {
+        "pk": 224,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 18,
+            "name": "KIZILIRMAK"
+        }
+    },
+    {
+        "pk": 225,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 18,
+            "name": "KORGUN"
+        }
+    },
+    {
+        "pk": 226,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 18,
+            "name": "KURŞUNLU"
+        }
+    },
+    {
+        "pk": 227,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 18,
+            "name": "ORTA"
+        }
+    },
+    {
+        "pk": 228,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 18,
+            "name": "ŞABANÖZÜ"
+        }
+    },
+    {
+        "pk": 229,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 18,
+            "name": "YAPRAKLI"
+        }
+    },
+    {
+        "pk": 230,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 19,
+            "name": "ALACA"
+        }
+    },
+    {
+        "pk": 231,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 19,
+            "name": "BAYAT"
+        }
+    },
+    {
+        "pk": 232,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 19,
+            "name": "BOĞAZKALE"
+        }
+    },
+    {
+        "pk": 233,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 19,
+            "name": "ÇORUM"
+        }
+    },
+    {
+        "pk": 234,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 19,
+            "name": "DODURGA"
+        }
+    },
+    {
+        "pk": 235,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 19,
+            "name": "İSKİLİP"
+        }
+    },
+    {
+        "pk": 236,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 19,
+            "name": "KARGI"
+        }
+    },
+    {
+        "pk": 237,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 19,
+            "name": "LAÇİN"
+        }
+    },
+    {
+        "pk": 238,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 19,
+            "name": "MECİTÖZÜ"
+        }
+    },
+    {
+        "pk": 239,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 19,
+            "name": "OĞUZLAR(KARAÖREN)"
+        }
+    },
+    {
+        "pk": 240,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 19,
+            "name": "ORTAKÖY"
+        }
+    },
+    {
+        "pk": 241,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 19,
+            "name": "OSMANCIK"
+        }
+    },
+    {
+        "pk": 242,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 19,
+            "name": "SUNGURLU"
+        }
+    },
+    {
+        "pk": 243,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 19,
+            "name": "UĞURLUDAĞ"
+        }
+    },
+    {
+        "pk": 244,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 20,
+            "name": "ACIPAYAM"
+        }
+    },
+    {
+        "pk": 245,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 20,
+            "name": "AKKÖY"
+        }
+    },
+    {
+        "pk": 246,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 20,
+            "name": "BABADAĞ"
+        }
+    },
+    {
+        "pk": 247,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 20,
+            "name": "BAKLAN"
+        }
+    },
+    {
+        "pk": 248,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 20,
+            "name": "BEKİLLİ"
+        }
+    },
+    {
+        "pk": 249,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 20,
+            "name": "BEYAĞAÇ"
+        }
+    },
+    {
+        "pk": 250,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 20,
+            "name": "BOZKURT"
+        }
+    },
+    {
+        "pk": 251,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 20,
+            "name": "BULDAN"
+        }
+    },
+    {
+        "pk": 252,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 20,
+            "name": "ÇAL"
+        }
+    },
+    {
+        "pk": 253,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 20,
+            "name": "ÇAMELİ"
+        }
+    },
+    {
+        "pk": 254,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 20,
+            "name": "ÇARDAK"
+        }
+    },
+    {
+        "pk": 255,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 20,
+            "name": "ÇİVRİL"
+        }
+    },
+    {
+        "pk": 256,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 20,
+            "name": "DENİZLİ"
+        }
+    },
+    {
+        "pk": 257,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 20,
+            "name": "GÜNEY"
+        }
+    },
+    {
+        "pk": 258,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 20,
+            "name": "HONAZ"
+        }
+    },
+    {
+        "pk": 259,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 20,
+            "name": "KALE"
+        }
+    },
+    {
+        "pk": 260,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 20,
+            "name": "SARAYKÖY"
+        }
+    },
+    {
+        "pk": 261,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 20,
+            "name": "SERİNHİSAR"
+        }
+    },
+    {
+        "pk": 262,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 20,
+            "name": "TAVAS"
+        }
+    },
+    {
+        "pk": 263,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 21,
+            "name": "BAĞLAR"
+        }
+    },
+    {
+        "pk": 264,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 21,
+            "name": "BİSMİL"
+        }
+    },
+    {
+        "pk": 265,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 21,
+            "name": "ÇERMİK"
+        }
+    },
+    {
+        "pk": 266,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 21,
+            "name": "ÇINAR"
+        }
+    },
+    {
+        "pk": 267,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 21,
+            "name": "ÇÜNGÜŞ"
+        }
+    },
+    {
+        "pk": 268,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 21,
+            "name": "DİCLE"
+        }
+    },
+    {
+        "pk": 269,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 21,
+            "name": "EĞİL"
+        }
+    },
+    {
+        "pk": 270,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 21,
+            "name": "ERGANİ"
+        }
+    },
+    {
+        "pk": 271,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 21,
+            "name": "HANİ"
+        }
+    },
+    {
+        "pk": 272,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 21,
+            "name": "HAZRO"
+        }
+    },
+    {
+        "pk": 273,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 21,
+            "name": "KAYAPINAR"
+        }
+    },
+    {
+        "pk": 274,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 21,
+            "name": "KOCAKÖY"
+        }
+    },
+    {
+        "pk": 275,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 21,
+            "name": "KULP"
+        }
+    },
+    {
+        "pk": 276,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 21,
+            "name": "LİCE"
+        }
+    },
+    {
+        "pk": 277,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 21,
+            "name": "SİLVAN"
+        }
+    },
+    {
+        "pk": 278,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 21,
+            "name": "SUR"
+        }
+    },
+    {
+        "pk": 279,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 21,
+            "name": "YENİŞEHİR"
+        }
+    },
+    {
+        "pk": 280,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 22,
+            "name": "EDİRNE"
+        }
+    },
+    {
+        "pk": 281,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 22,
+            "name": "ENEZ"
+        }
+    },
+    {
+        "pk": 282,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 22,
+            "name": "HAVSA"
+        }
+    },
+    {
+        "pk": 283,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 22,
+            "name": "İPSALA"
+        }
+    },
+    {
+        "pk": 284,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 22,
+            "name": "KEŞAN"
+        }
+    },
+    {
+        "pk": 285,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 22,
+            "name": "LALAPAŞA"
+        }
+    },
+    {
+        "pk": 286,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 22,
+            "name": "MERİÇ"
+        }
+    },
+    {
+        "pk": 287,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 22,
+            "name": "SÜLOĞLU(SÜLEOĞLU)"
+        }
+    },
+    {
+        "pk": 288,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 22,
+            "name": "UZUNKÖPRÜ"
+        }
+    },
+    {
+        "pk": 289,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 23,
+            "name": "AĞIN"
+        }
+    },
+    {
+        "pk": 290,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 23,
+            "name": "ALACAKAYA"
+        }
+    },
+    {
+        "pk": 291,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 23,
+            "name": "ARICAK"
+        }
+    },
+    {
+        "pk": 292,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 23,
+            "name": "BASKİL"
+        }
+    },
+    {
+        "pk": 293,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 23,
+            "name": "ELAZIĞ"
+        }
+    },
+    {
+        "pk": 294,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 23,
+            "name": "KARAKOÇAN"
+        }
+    },
+    {
+        "pk": 295,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 23,
+            "name": "KEBAN"
+        }
+    },
+    {
+        "pk": 296,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 23,
+            "name": "KOVANCILAR"
+        }
+    },
+    {
+        "pk": 297,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 23,
+            "name": "MADEN"
+        }
+    },
+    {
+        "pk": 298,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 23,
+            "name": "PALU"
+        }
+    },
+    {
+        "pk": 299,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 23,
+            "name": "SİVRİCE"
+        }
+    },
+    {
+        "pk": 300,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 24,
+            "name": "ÇAYIRLI"
+        }
+    },
+    {
+        "pk": 301,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 24,
+            "name": "ERZİNCAN"
+        }
+    },
+    {
+        "pk": 302,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 24,
+            "name": "ILIÇ(İLİÇ)"
+        }
+    },
+    {
+        "pk": 303,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 24,
+            "name": "KEMAH"
+        }
+    },
+    {
+        "pk": 304,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 24,
+            "name": "KEMALİYE"
+        }
+    },
+    {
+        "pk": 305,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 24,
+            "name": "OTLUKBELİ"
+        }
+    },
+    {
+        "pk": 306,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 24,
+            "name": "REFAHİYE"
+        }
+    },
+    {
+        "pk": 307,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 24,
+            "name": "TERCAN"
+        }
+    },
+    {
+        "pk": 308,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 24,
+            "name": "ÜZÜMLÜ"
+        }
+    },
+    {
+        "pk": 309,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 25,
+            "name": "AŞKALE"
+        }
+    },
+    {
+        "pk": 310,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 25,
+            "name": "AZİZİYE(ILICA)"
+        }
+    },
+    {
+        "pk": 311,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 25,
+            "name": "ÇAT"
+        }
+    },
+    {
+        "pk": 312,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 25,
+            "name": "HINIS"
+        }
+    },
+    {
+        "pk": 313,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 25,
+            "name": "HORASAN"
+        }
+    },
+    {
+        "pk": 314,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 25,
+            "name": "İSPİR"
+        }
+    },
+    {
+        "pk": 315,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 25,
+            "name": "KARAÇOBAN"
+        }
+    },
+    {
+        "pk": 316,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 25,
+            "name": "KARAYAZI"
+        }
+    },
+    {
+        "pk": 317,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 25,
+            "name": "KÖPRÜKÖY"
+        }
+    },
+    {
+        "pk": 318,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 25,
+            "name": "NARMAN"
+        }
+    },
+    {
+        "pk": 319,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 25,
+            "name": "OLTU"
+        }
+    },
+    {
+        "pk": 320,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 25,
+            "name": "OLUR"
+        }
+    },
+    {
+        "pk": 321,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 25,
+            "name": "PALANDÖKEN"
+        }
+    },
+    {
+        "pk": 322,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 25,
+            "name": "PASİNLER"
+        }
+    },
+    {
+        "pk": 323,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 25,
+            "name": "PAZARYOLU"
+        }
+    },
+    {
+        "pk": 324,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 25,
+            "name": "ŞENKAYA"
+        }
+    },
+    {
+        "pk": 325,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 25,
+            "name": "TEKMAN"
+        }
+    },
+    {
+        "pk": 326,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 25,
+            "name": "TORTUM"
+        }
+    },
+    {
+        "pk": 327,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 25,
+            "name": "UZUNDERE"
+        }
+    },
+    {
+        "pk": 328,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 25,
+            "name": "YAKUTİYE"
+        }
+    },
+    {
+        "pk": 329,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 26,
+            "name": "ALPU"
+        }
+    },
+    {
+        "pk": 330,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 26,
+            "name": "BEYLİKOVA"
+        }
+    },
+    {
+        "pk": 331,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 26,
+            "name": "ÇİFTELER"
+        }
+    },
+    {
+        "pk": 332,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 26,
+            "name": "GÜNYÜZÜ"
+        }
+    },
+    {
+        "pk": 333,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 26,
+            "name": "HAN"
+        }
+    },
+    {
+        "pk": 334,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 26,
+            "name": "İNÖNÜ"
+        }
+    },
+    {
+        "pk": 335,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 26,
+            "name": "MAHMUDİYE"
+        }
+    },
+    {
+        "pk": 336,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 26,
+            "name": "MİHALGAZİ"
+        }
+    },
+    {
+        "pk": 337,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 26,
+            "name": "MİHALIÇÇIK"
+        }
+    },
+    {
+        "pk": 338,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 26,
+            "name": "ODUNPAZARI"
+        }
+    },
+    {
+        "pk": 339,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 26,
+            "name": "SARICAKAYA"
+        }
+    },
+    {
+        "pk": 340,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 26,
+            "name": "SEYİTGAZİ"
+        }
+    },
+    {
+        "pk": 341,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 26,
+            "name": "SİVRİHİSAR"
+        }
+    },
+    {
+        "pk": 342,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 26,
+            "name": "TEPEBAŞI"
+        }
+    },
+    {
+        "pk": 343,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 27,
+            "name": "ARABAN"
+        }
+    },
+    {
+        "pk": 344,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 27,
+            "name": "İSLAHİYE"
+        }
+    },
+    {
+        "pk": 345,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 27,
+            "name": "KARKAMIŞ"
+        }
+    },
+    {
+        "pk": 346,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 27,
+            "name": "NİZİP"
+        }
+    },
+    {
+        "pk": 347,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 27,
+            "name": "NURDAĞI"
+        }
+    },
+    {
+        "pk": 348,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 27,
+            "name": "OĞUZELİ"
+        }
+    },
+    {
+        "pk": 349,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 27,
+            "name": "ŞAHİNBEY"
+        }
+    },
+    {
+        "pk": 350,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 27,
+            "name": "ŞEHİTKAMİL"
+        }
+    },
+    {
+        "pk": 351,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 27,
+            "name": "YAVUZELİ"
+        }
+    },
+    {
+        "pk": 352,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 28,
+            "name": "ALUCRA"
+        }
+    },
+    {
+        "pk": 353,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 28,
+            "name": "BULANCAK"
+        }
+    },
+    {
+        "pk": 354,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 28,
+            "name": "ÇAMOLUK"
+        }
+    },
+    {
+        "pk": 355,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 28,
+            "name": "ÇANAKÇI"
+        }
+    },
+    {
+        "pk": 356,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 28,
+            "name": "DERELİ"
+        }
+    },
+    {
+        "pk": 357,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 28,
+            "name": "DOĞANKENT"
+        }
+    },
+    {
+        "pk": 358,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 28,
+            "name": "ESPİYE"
+        }
+    },
+    {
+        "pk": 359,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 28,
+            "name": "EYNESİL"
+        }
+    },
+    {
+        "pk": 360,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 28,
+            "name": "GİRESUN"
+        }
+    },
+    {
+        "pk": 361,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 28,
+            "name": "GÖRELE"
+        }
+    },
+    {
+        "pk": 362,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 28,
+            "name": "GÜCE"
+        }
+    },
+    {
+        "pk": 363,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 28,
+            "name": "KEŞAP"
+        }
+    },
+    {
+        "pk": 364,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 28,
+            "name": "PİRAZİZ"
+        }
+    },
+    {
+        "pk": 365,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 28,
+            "name": "ŞEBİNKARAHİSAR"
+        }
+    },
+    {
+        "pk": 366,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 28,
+            "name": "TİREBOLU"
+        }
+    },
+    {
+        "pk": 367,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 28,
+            "name": "YAĞLIDERE"
+        }
+    },
+    {
+        "pk": 368,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 29,
+            "name": "GÜMÜŞHANE"
+        }
+    },
+    {
+        "pk": 369,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 29,
+            "name": "KELKİT"
+        }
+    },
+    {
+        "pk": 370,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 29,
+            "name": "KÖSE"
+        }
+    },
+    {
+        "pk": 371,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 29,
+            "name": "KÜRTÜN"
+        }
+    },
+    {
+        "pk": 372,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 29,
+            "name": "ŞİRAN"
+        }
+    },
+    {
+        "pk": 373,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 29,
+            "name": "TORUL"
+        }
+    },
+    {
+        "pk": 374,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 30,
+            "name": "ÇUKURCA"
+        }
+    },
+    {
+        "pk": 375,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 30,
+            "name": "HAKKARİ"
+        }
+    },
+    {
+        "pk": 376,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 30,
+            "name": "ŞEMDİNLİ"
+        }
+    },
+    {
+        "pk": 377,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 30,
+            "name": "YÜKSEKOVA"
+        }
+    },
+    {
+        "pk": 378,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 31,
+            "name": "ALTINÖZÜ"
+        }
+    },
+    {
+        "pk": 379,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 31,
+            "name": "ANTAKYA"
+        }
+    },
+    {
+        "pk": 380,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 31,
+            "name": "BELEN"
+        }
+    },
+    {
+        "pk": 381,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 31,
+            "name": "DÖRTYOL"
+        }
+    },
+    {
+        "pk": 382,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 31,
+            "name": "ERZİN"
+        }
+    },
+    {
+        "pk": 383,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 31,
+            "name": "HASSA"
+        }
+    },
+    {
+        "pk": 384,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 31,
+            "name": "İSKENDERUN"
+        }
+    },
+    {
+        "pk": 385,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 31,
+            "name": "KIRIKHAN"
+        }
+    },
+    {
+        "pk": 386,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 31,
+            "name": "KUMLU"
+        }
+    },
+    {
+        "pk": 387,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 31,
+            "name": "REYHANLI"
+        }
+    },
+    {
+        "pk": 388,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 31,
+            "name": "SAMANDAĞ"
+        }
+    },
+    {
+        "pk": 389,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 31,
+            "name": "YAYLADAĞI"
+        }
+    },
+    {
+        "pk": 390,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 32,
+            "name": "AKSU"
+        }
+    },
+    {
+        "pk": 391,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 32,
+            "name": "ATABEY"
+        }
+    },
+    {
+        "pk": 392,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 32,
+            "name": "EĞİRDİR(EĞRİDİR)"
+        }
+    },
+    {
+        "pk": 393,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 32,
+            "name": "GELENDOST"
+        }
+    },
+    {
+        "pk": 394,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 32,
+            "name": "GÖNEN"
+        }
+    },
+    {
+        "pk": 395,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 32,
+            "name": "ISPARTA"
+        }
+    },
+    {
+        "pk": 396,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 32,
+            "name": "KEÇİBORLU"
+        }
+    },
+    {
+        "pk": 397,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 32,
+            "name": "SENİRKENT"
+        }
+    },
+    {
+        "pk": 398,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 32,
+            "name": "SÜTÇÜLER"
+        }
+    },
+    {
+        "pk": 399,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 32,
+            "name": "ŞARKİKARAAĞAÇ"
+        }
+    },
+    {
+        "pk": 400,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 32,
+            "name": "ULUBORLU"
+        }
+    },
+    {
+        "pk": 401,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 32,
+            "name": "YALVAÇ"
+        }
+    },
+    {
+        "pk": 402,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 32,
+            "name": "YENİŞARBADEMLİ"
+        }
+    },
+    {
+        "pk": 403,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 33,
+            "name": "AKDENİZ"
+        }
+    },
+    {
+        "pk": 404,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 33,
+            "name": "ANAMUR"
+        }
+    },
+    {
+        "pk": 405,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 33,
+            "name": "AYDINCIK"
+        }
+    },
+    {
+        "pk": 406,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 33,
+            "name": "BOZYAZI"
+        }
+    },
+    {
+        "pk": 407,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 33,
+            "name": "ÇAMLIYAYLA"
+        }
+    },
+    {
+        "pk": 408,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 33,
+            "name": "ERDEMLİ"
+        }
+    },
+    {
+        "pk": 409,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 33,
+            "name": "GÜLNAR(GÜLPINAR)"
+        }
+    },
+    {
+        "pk": 410,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 33,
+            "name": "MEZİTLİ"
+        }
+    },
+    {
+        "pk": 411,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 33,
+            "name": "MUT"
+        }
+    },
+    {
+        "pk": 412,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 33,
+            "name": "SİLİFKE"
+        }
+    },
+    {
+        "pk": 413,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 33,
+            "name": "TARSUS"
+        }
+    },
+    {
+        "pk": 414,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 33,
+            "name": "TOROSLAR"
+        }
+    },
+    {
+        "pk": 415,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 33,
+            "name": "YENİŞEHİR"
+        }
+    },
+    {
+        "pk": 416,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "ADALAR"
+        }
+    },
+    {
+        "pk": 417,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "ARNAVUTKÖY"
+        }
+    },
+    {
+        "pk": 418,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "ATAŞEHİR"
+        }
+    },
+    {
+        "pk": 419,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "AVCILAR"
+        }
+    },
+    {
+        "pk": 420,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "BAĞCILAR"
+        }
+    },
+    {
+        "pk": 421,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "BAHÇELİEVLER"
+        }
+    },
+    {
+        "pk": 422,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "BAKIRKÖY"
+        }
+    },
+    {
+        "pk": 423,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "BAŞAKŞEHİR"
+        }
+    },
+    {
+        "pk": 424,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "BAYRAMPAŞA"
+        }
+    },
+    {
+        "pk": 425,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "BEŞİKTAŞ"
+        }
+    },
+    {
+        "pk": 426,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "BEYKOZ"
+        }
+    },
+    {
+        "pk": 427,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "BEYLİKDÜZÜ"
+        }
+    },
+    {
+        "pk": 428,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "BEYOĞLU"
+        }
+    },
+    {
+        "pk": 429,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "BÜYÜKÇEKMECE"
+        }
+    },
+    {
+        "pk": 430,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "ÇATALCA"
+        }
+    },
+    {
+        "pk": 431,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "ÇEKMEKÖY"
+        }
+    },
+    {
+        "pk": 432,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "ESENLER"
+        }
+    },
+    {
+        "pk": 433,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "ESENYURT"
+        }
+    },
+    {
+        "pk": 434,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "EYÜP"
+        }
+    },
+    {
+        "pk": 435,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "FATİH"
+        }
+    },
+    {
+        "pk": 436,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "GAZİOSMANPAŞA"
+        }
+    },
+    {
+        "pk": 437,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "GÜNGÖREN"
+        }
+    },
+    {
+        "pk": 438,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "KADIKÖY"
+        }
+    },
+    {
+        "pk": 439,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "KAĞITHANE"
+        }
+    },
+    {
+        "pk": 440,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "KARTAL"
+        }
+    },
+    {
+        "pk": 441,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "KÜÇÜKÇEKMECE"
+        }
+    },
+    {
+        "pk": 442,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "MALTEPE"
+        }
+    },
+    {
+        "pk": 443,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "PENDİK"
+        }
+    },
+    {
+        "pk": 444,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "SANCAKTEPE"
+        }
+    },
+    {
+        "pk": 445,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "SARIYER"
+        }
+    },
+    {
+        "pk": 446,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "SİLİVRİ"
+        }
+    },
+    {
+        "pk": 447,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "SULTANBEYLİ"
+        }
+    },
+    {
+        "pk": 448,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "SULTANGAZİ"
+        }
+    },
+    {
+        "pk": 449,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "ŞİLE"
+        }
+    },
+    {
+        "pk": 450,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "ŞİŞLİ"
+        }
+    },
+    {
+        "pk": 451,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "TUZLA"
+        }
+    },
+    {
+        "pk": 452,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "ÜMRANİYE"
+        }
+    },
+    {
+        "pk": 453,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "ÜSKÜDAR"
+        }
+    },
+    {
+        "pk": 454,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 34,
+            "name": "ZEYTİNBURNU"
+        }
+    },
+    {
+        "pk": 455,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "ALİAĞA"
+        }
+    },
+    {
+        "pk": 456,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "BALÇOVA"
+        }
+    },
+    {
+        "pk": 457,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "BAYINDIR"
+        }
+    },
+    {
+        "pk": 458,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "BAYRAKLI"
+        }
+    },
+    {
+        "pk": 459,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "BERGAMA"
+        }
+    },
+    {
+        "pk": 460,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "BEYDAĞ"
+        }
+    },
+    {
+        "pk": 461,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "BORNOVA"
+        }
+    },
+    {
+        "pk": 462,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "BUCA"
+        }
+    },
+    {
+        "pk": 463,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "ÇEŞME"
+        }
+    },
+    {
+        "pk": 464,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "ÇİĞLİ"
+        }
+    },
+    {
+        "pk": 465,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "DİKİLİ"
+        }
+    },
+    {
+        "pk": 466,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "FOÇA"
+        }
+    },
+    {
+        "pk": 467,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "GAZİEMİR"
+        }
+    },
+    {
+        "pk": 468,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "GÜZELBAHÇE"
+        }
+    },
+    {
+        "pk": 469,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "KARABAĞLAR"
+        }
+    },
+    {
+        "pk": 470,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "KARABURUN"
+        }
+    },
+    {
+        "pk": 471,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "KARŞIYAKA"
+        }
+    },
+    {
+        "pk": 472,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "KEMALPAŞA"
+        }
+    },
+    {
+        "pk": 473,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "KINIK"
+        }
+    },
+    {
+        "pk": 474,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "KİRAZ"
+        }
+    },
+    {
+        "pk": 475,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "KONAK"
+        }
+    },
+    {
+        "pk": 476,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "MENDERES(CUMAOVASI)"
+        }
+    },
+    {
+        "pk": 477,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "MENEMEN"
+        }
+    },
+    {
+        "pk": 478,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "NARLIDERE"
+        }
+    },
+    {
+        "pk": 479,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "ÖDEMİŞ"
+        }
+    },
+    {
+        "pk": 480,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "SEFERİHİSAR"
+        }
+    },
+    {
+        "pk": 481,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "SELÇUK"
+        }
+    },
+    {
+        "pk": 482,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "TİRE"
+        }
+    },
+    {
+        "pk": 483,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "TORBALI"
+        }
+    },
+    {
+        "pk": 484,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 35,
+            "name": "URLA"
+        }
+    },
+    {
+        "pk": 485,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 36,
+            "name": "AKYAKA"
+        }
+    },
+    {
+        "pk": 486,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 36,
+            "name": "ARPAÇAY"
+        }
+    },
+    {
+        "pk": 487,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 36,
+            "name": "DİGOR"
+        }
+    },
+    {
+        "pk": 488,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 36,
+            "name": "KAĞIZMAN"
+        }
+    },
+    {
+        "pk": 489,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 36,
+            "name": "KARS"
+        }
+    },
+    {
+        "pk": 490,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 36,
+            "name": "SARIKAMIŞ"
+        }
+    },
+    {
+        "pk": 491,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 36,
+            "name": "SELİM"
+        }
+    },
+    {
+        "pk": 492,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 36,
+            "name": "SUSUZ"
+        }
+    },
+    {
+        "pk": 493,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 37,
+            "name": "ABANA"
+        }
+    },
+    {
+        "pk": 494,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 37,
+            "name": "AĞLI"
+        }
+    },
+    {
+        "pk": 495,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 37,
+            "name": "ARAÇ"
+        }
+    },
+    {
+        "pk": 496,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 37,
+            "name": "AZDAVAY"
+        }
+    },
+    {
+        "pk": 497,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 37,
+            "name": "BOZKURT"
+        }
+    },
+    {
+        "pk": 498,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 37,
+            "name": "CİDE"
+        }
+    },
+    {
+        "pk": 499,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 37,
+            "name": "ÇATALZEYTİN"
+        }
+    },
+    {
+        "pk": 500,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 37,
+            "name": "DADAY"
+        }
+    },
+    {
+        "pk": 501,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 37,
+            "name": "DEVREKANİ"
+        }
+    },
+    {
+        "pk": 502,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 37,
+            "name": "DOĞANYURT"
+        }
+    },
+    {
+        "pk": 503,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 37,
+            "name": "HANÖNÜ(GÖKÇEAĞAÇ)"
+        }
+    },
+    {
+        "pk": 504,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 37,
+            "name": "İHSANGAZİ"
+        }
+    },
+    {
+        "pk": 505,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 37,
+            "name": "İNEBOLU"
+        }
+    },
+    {
+        "pk": 506,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 37,
+            "name": "KASTAMONU"
+        }
+    },
+    {
+        "pk": 507,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 37,
+            "name": "KÜRE"
+        }
+    },
+    {
+        "pk": 508,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 37,
+            "name": "PINARBAŞI"
+        }
+    },
+    {
+        "pk": 509,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 37,
+            "name": "SEYDİLER"
+        }
+    },
+    {
+        "pk": 510,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 37,
+            "name": "ŞENPAZAR"
+        }
+    },
+    {
+        "pk": 511,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 37,
+            "name": "TAŞKÖPRÜ"
+        }
+    },
+    {
+        "pk": 512,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 37,
+            "name": "TOSYA"
+        }
+    },
+    {
+        "pk": 513,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 38,
+            "name": "AKKIŞLA"
+        }
+    },
+    {
+        "pk": 514,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 38,
+            "name": "BÜNYAN"
+        }
+    },
+    {
+        "pk": 515,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 38,
+            "name": "DEVELİ"
+        }
+    },
+    {
+        "pk": 516,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 38,
+            "name": "FELAHİYE"
+        }
+    },
+    {
+        "pk": 517,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 38,
+            "name": "HACILAR"
+        }
+    },
+    {
+        "pk": 518,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 38,
+            "name": "İNCESU"
+        }
+    },
+    {
+        "pk": 519,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 38,
+            "name": "KOCASİNAN"
+        }
+    },
+    {
+        "pk": 520,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 38,
+            "name": "MELİKGAZİ"
+        }
+    },
+    {
+        "pk": 521,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 38,
+            "name": "ÖZVATAN(ÇUKUR)"
+        }
+    },
+    {
+        "pk": 522,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 38,
+            "name": "PINARBAŞI"
+        }
+    },
+    {
+        "pk": 523,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 38,
+            "name": "SARIOĞLAN"
+        }
+    },
+    {
+        "pk": 524,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 38,
+            "name": "SARIZ"
+        }
+    },
+    {
+        "pk": 525,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 38,
+            "name": "TALAS"
+        }
+    },
+    {
+        "pk": 526,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 38,
+            "name": "TOMARZA"
+        }
+    },
+    {
+        "pk": 527,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 38,
+            "name": "YAHYALI"
+        }
+    },
+    {
+        "pk": 528,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 38,
+            "name": "YEŞİLHİSAR"
+        }
+    },
+    {
+        "pk": 529,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 39,
+            "name": "BABAESKİ"
+        }
+    },
+    {
+        "pk": 530,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 39,
+            "name": "DEMİRKÖY"
+        }
+    },
+    {
+        "pk": 531,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 39,
+            "name": "KIRKLARELİ"
+        }
+    },
+    {
+        "pk": 532,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 39,
+            "name": "KOFÇAZ"
+        }
+    },
+    {
+        "pk": 533,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 39,
+            "name": "LÜLEBURGAZ"
+        }
+    },
+    {
+        "pk": 534,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 39,
+            "name": "PEHLİVANKÖY"
+        }
+    },
+    {
+        "pk": 535,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 39,
+            "name": "PINARHİSAR"
+        }
+    },
+    {
+        "pk": 536,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 39,
+            "name": "VİZE"
+        }
+    },
+    {
+        "pk": 537,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 40,
+            "name": "AKÇAKENT"
+        }
+    },
+    {
+        "pk": 538,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 40,
+            "name": "AKPINAR"
+        }
+    },
+    {
+        "pk": 539,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 40,
+            "name": "BOZTEPE"
+        }
+    },
+    {
+        "pk": 540,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 40,
+            "name": "ÇİÇEKDAĞI"
+        }
+    },
+    {
+        "pk": 541,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 40,
+            "name": "KAMAN"
+        }
+    },
+    {
+        "pk": 542,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 40,
+            "name": "KIRŞEHİR"
+        }
+    },
+    {
+        "pk": 543,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 40,
+            "name": "MUCUR"
+        }
+    },
+    {
+        "pk": 544,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 41,
+            "name": "BAŞİSKELE"
+        }
+    },
+    {
+        "pk": 545,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 41,
+            "name": "ÇAYIROVA"
+        }
+    },
+    {
+        "pk": 546,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 41,
+            "name": "DARICA"
+        }
+    },
+    {
+        "pk": 547,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 41,
+            "name": "DERİNCE"
+        }
+    },
+    {
+        "pk": 548,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 41,
+            "name": "DİLOVASI"
+        }
+    },
+    {
+        "pk": 549,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 41,
+            "name": "GEBZE"
+        }
+    },
+    {
+        "pk": 550,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 41,
+            "name": "GÖLCÜK"
+        }
+    },
+    {
+        "pk": 551,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 41,
+            "name": "İZMİT"
+        }
+    },
+    {
+        "pk": 552,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 41,
+            "name": "KANDIRA"
+        }
+    },
+    {
+        "pk": 553,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 41,
+            "name": "KARAMÜRSEL"
+        }
+    },
+    {
+        "pk": 554,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 41,
+            "name": "KARTEPE"
+        }
+    },
+    {
+        "pk": 555,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 41,
+            "name": "KÖRFEZ(TÜTÜNÇİFTLİK)"
+        }
+    },
+    {
+        "pk": 556,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "AHIRLI"
+        }
+    },
+    {
+        "pk": 557,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "AKÖREN"
+        }
+    },
+    {
+        "pk": 558,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "AKŞEHİR"
+        }
+    },
+    {
+        "pk": 559,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "ALTINEKİN"
+        }
+    },
+    {
+        "pk": 560,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "BEYŞEHİR"
+        }
+    },
+    {
+        "pk": 561,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "BOZKIR"
+        }
+    },
+    {
+        "pk": 562,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "CİHANBEYLİ"
+        }
+    },
+    {
+        "pk": 563,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "ÇELTİK"
+        }
+    },
+    {
+        "pk": 564,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "ÇUMRA"
+        }
+    },
+    {
+        "pk": 565,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "DERBENT"
+        }
+    },
+    {
+        "pk": 566,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "DEREBUCAK"
+        }
+    },
+    {
+        "pk": 567,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "DOĞANHİSAR"
+        }
+    },
+    {
+        "pk": 568,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "EMİRGAZİ"
+        }
+    },
+    {
+        "pk": 569,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "EREĞLİ"
+        }
+    },
+    {
+        "pk": 570,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "GÜNEYSINIR"
+        }
+    },
+    {
+        "pk": 571,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "HADİM"
+        }
+    },
+    {
+        "pk": 572,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "HALKAPINAR"
+        }
+    },
+    {
+        "pk": 573,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "HÜYÜK"
+        }
+    },
+    {
+        "pk": 574,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "ILGIN"
+        }
+    },
+    {
+        "pk": 575,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "KADINHANI"
+        }
+    },
+    {
+        "pk": 576,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "KARAPINAR"
+        }
+    },
+    {
+        "pk": 577,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "KARATAY"
+        }
+    },
+    {
+        "pk": 578,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "KULU"
+        }
+    },
+    {
+        "pk": 579,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "MERAM"
+        }
+    },
+    {
+        "pk": 580,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "SARAYÖNÜ"
+        }
+    },
+    {
+        "pk": 581,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "SELÇUKLU"
+        }
+    },
+    {
+        "pk": 582,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "SEYDİŞEHİR"
+        }
+    },
+    {
+        "pk": 583,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "TAŞKENT"
+        }
+    },
+    {
+        "pk": 584,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "TUZLUKÇU"
+        }
+    },
+    {
+        "pk": 585,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "YALIHÜYÜK"
+        }
+    },
+    {
+        "pk": 586,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 42,
+            "name": "YUNAK"
+        }
+    },
+    {
+        "pk": 587,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 43,
+            "name": "ALTINTAŞ"
+        }
+    },
+    {
+        "pk": 588,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 43,
+            "name": "ASLANAPA"
+        }
+    },
+    {
+        "pk": 589,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 43,
+            "name": "ÇAVDARHİSAR"
+        }
+    },
+    {
+        "pk": 590,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 43,
+            "name": "DOMANİÇ"
+        }
+    },
+    {
+        "pk": 591,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 43,
+            "name": "DUMLUPINAR"
+        }
+    },
+    {
+        "pk": 592,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 43,
+            "name": "EMET"
+        }
+    },
+    {
+        "pk": 593,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 43,
+            "name": "GEDİZ"
+        }
+    },
+    {
+        "pk": 594,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 43,
+            "name": "HİSARCIK"
+        }
+    },
+    {
+        "pk": 595,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 43,
+            "name": "KÜTAHYA"
+        }
+    },
+    {
+        "pk": 596,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 43,
+            "name": "PAZARLAR"
+        }
+    },
+    {
+        "pk": 597,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 43,
+            "name": "SİMAV"
+        }
+    },
+    {
+        "pk": 598,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 43,
+            "name": "ŞAPHANE"
+        }
+    },
+    {
+        "pk": 599,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 43,
+            "name": "TAVŞANLI"
+        }
+    },
+    {
+        "pk": 600,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 44,
+            "name": "AKÇADAĞ"
+        }
+    },
+    {
+        "pk": 601,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 44,
+            "name": "ARAPKİR(ARAPGİR)"
+        }
+    },
+    {
+        "pk": 602,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 44,
+            "name": "ARGUVAN"
+        }
+    },
+    {
+        "pk": 603,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 44,
+            "name": "BATTALGAZİ"
+        }
+    },
+    {
+        "pk": 604,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 44,
+            "name": "DARENDE"
+        }
+    },
+    {
+        "pk": 605,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 44,
+            "name": "DOĞANŞEHİR"
+        }
+    },
+    {
+        "pk": 606,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 44,
+            "name": "DOĞANYOL"
+        }
+    },
+    {
+        "pk": 607,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 44,
+            "name": "HEKİMHAN"
+        }
+    },
+    {
+        "pk": 608,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 44,
+            "name": "KALE"
+        }
+    },
+    {
+        "pk": 609,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 44,
+            "name": "KULUNCAK"
+        }
+    },
+    {
+        "pk": 610,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 44,
+            "name": "MALATYA"
+        }
+    },
+    {
+        "pk": 611,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 44,
+            "name": "PÜTÜRGE(PÖTÜRGE)"
+        }
+    },
+    {
+        "pk": 612,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 44,
+            "name": "YAZIHAN"
+        }
+    },
+    {
+        "pk": 613,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 44,
+            "name": "YEŞİLYURT"
+        }
+    },
+    {
+        "pk": 614,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 45,
+            "name": "AHMETLİ"
+        }
+    },
+    {
+        "pk": 615,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 45,
+            "name": "AKHİSAR"
+        }
+    },
+    {
+        "pk": 616,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 45,
+            "name": "ALAŞEHİR"
+        }
+    },
+    {
+        "pk": 617,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 45,
+            "name": "DEMİRCİ"
+        }
+    },
+    {
+        "pk": 618,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 45,
+            "name": "GÖLMARMARA"
+        }
+    },
+    {
+        "pk": 619,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 45,
+            "name": "GÖRDES"
+        }
+    },
+    {
+        "pk": 620,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 45,
+            "name": "KIRKAĞAÇ"
+        }
+    },
+    {
+        "pk": 621,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 45,
+            "name": "KÖPRÜBAŞI"
+        }
+    },
+    {
+        "pk": 622,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 45,
+            "name": "KULA"
+        }
+    },
+    {
+        "pk": 623,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 45,
+            "name": "MANİSA"
+        }
+    },
+    {
+        "pk": 624,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 45,
+            "name": "SALİHLİ"
+        }
+    },
+    {
+        "pk": 625,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 45,
+            "name": "SARIGÖL"
+        }
+    },
+    {
+        "pk": 626,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 45,
+            "name": "SARUHANLI"
+        }
+    },
+    {
+        "pk": 627,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 45,
+            "name": "SELENDİ"
+        }
+    },
+    {
+        "pk": 628,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 45,
+            "name": "SOMA"
+        }
+    },
+    {
+        "pk": 629,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 45,
+            "name": "TURGUTLU"
+        }
+    },
+    {
+        "pk": 630,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 46,
+            "name": "AFŞİN"
+        }
+    },
+    {
+        "pk": 631,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 46,
+            "name": "ANDIRIN"
+        }
+    },
+    {
+        "pk": 632,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 46,
+            "name": "ÇAĞLIYANCERİT"
+        }
+    },
+    {
+        "pk": 633,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 46,
+            "name": "EKİNÖZÜ"
+        }
+    },
+    {
+        "pk": 634,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 46,
+            "name": "ELBİSTAN"
+        }
+    },
+    {
+        "pk": 635,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 46,
+            "name": "GÖKSUN"
+        }
+    },
+    {
+        "pk": 636,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 46,
+            "name": "KAHRAMANMARAŞ"
+        }
+    },
+    {
+        "pk": 637,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 46,
+            "name": "NURHAK"
+        }
+    },
+    {
+        "pk": 638,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 46,
+            "name": "PAZARCIK"
+        }
+    },
+    {
+        "pk": 639,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 46,
+            "name": "TÜRKOĞLU"
+        }
+    },
+    {
+        "pk": 640,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 47,
+            "name": "DARGEÇİT"
+        }
+    },
+    {
+        "pk": 641,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 47,
+            "name": "DERİK"
+        }
+    },
+    {
+        "pk": 642,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 47,
+            "name": "KIZILTEPE"
+        }
+    },
+    {
+        "pk": 643,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 47,
+            "name": "MARDİN"
+        }
+    },
+    {
+        "pk": 644,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 47,
+            "name": "MAZIDAĞI"
+        }
+    },
+    {
+        "pk": 645,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 47,
+            "name": "MİDYAT(ESTEL)"
+        }
+    },
+    {
+        "pk": 646,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 47,
+            "name": "NUSAYBİN"
+        }
+    },
+    {
+        "pk": 647,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 47,
+            "name": "ÖMERLİ"
+        }
+    },
+    {
+        "pk": 648,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 47,
+            "name": "SAVUR"
+        }
+    },
+    {
+        "pk": 649,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 47,
+            "name": "YEŞİLLİ"
+        }
+    },
+    {
+        "pk": 650,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 48,
+            "name": "BODRUM"
+        }
+    },
+    {
+        "pk": 651,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 48,
+            "name": "DALAMAN"
+        }
+    },
+    {
+        "pk": 652,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 48,
+            "name": "DATÇA"
+        }
+    },
+    {
+        "pk": 653,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 48,
+            "name": "FETHİYE"
+        }
+    },
+    {
+        "pk": 654,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 48,
+            "name": "KAVAKLIDERE"
+        }
+    },
+    {
+        "pk": 655,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 48,
+            "name": "KÖYCEĞİZ"
+        }
+    },
+    {
+        "pk": 656,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 48,
+            "name": "MARMARİS"
+        }
+    },
+    {
+        "pk": 657,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 48,
+            "name": "MİLAS"
+        }
+    },
+    {
+        "pk": 658,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 48,
+            "name": "MUĞLA"
+        }
+    },
+    {
+        "pk": 659,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 48,
+            "name": "ORTACA"
+        }
+    },
+    {
+        "pk": 660,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 48,
+            "name": "ULA"
+        }
+    },
+    {
+        "pk": 661,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 48,
+            "name": "YATAĞAN"
+        }
+    },
+    {
+        "pk": 662,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 49,
+            "name": "BULANIK"
+        }
+    },
+    {
+        "pk": 663,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 49,
+            "name": "HASKÖY"
+        }
+    },
+    {
+        "pk": 664,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 49,
+            "name": "KORKUT"
+        }
+    },
+    {
+        "pk": 665,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 49,
+            "name": "MALAZGİRT"
+        }
+    },
+    {
+        "pk": 666,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 49,
+            "name": "MUŞ"
+        }
+    },
+    {
+        "pk": 667,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 49,
+            "name": "VARTO"
+        }
+    },
+    {
+        "pk": 668,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 50,
+            "name": "ACIGÖL"
+        }
+    },
+    {
+        "pk": 669,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 50,
+            "name": "AVANOS"
+        }
+    },
+    {
+        "pk": 670,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 50,
+            "name": "DERİNKUYU"
+        }
+    },
+    {
+        "pk": 671,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 50,
+            "name": "GÜLŞEHİR"
+        }
+    },
+    {
+        "pk": 672,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 50,
+            "name": "HACIBEKTAŞ"
+        }
+    },
+    {
+        "pk": 673,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 50,
+            "name": "KOZAKLI"
+        }
+    },
+    {
+        "pk": 674,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 50,
+            "name": "NEVŞEHİR"
+        }
+    },
+    {
+        "pk": 675,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 50,
+            "name": "ÜRGÜP"
+        }
+    },
+    {
+        "pk": 676,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 51,
+            "name": "ALTUNHİSAR"
+        }
+    },
+    {
+        "pk": 677,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 51,
+            "name": "BOR"
+        }
+    },
+    {
+        "pk": 678,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 51,
+            "name": "ÇAMARDI"
+        }
+    },
+    {
+        "pk": 679,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 51,
+            "name": "ÇİFTLİK(ÖZYURT)"
+        }
+    },
+    {
+        "pk": 680,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 51,
+            "name": "NİĞDE"
+        }
+    },
+    {
+        "pk": 681,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 51,
+            "name": "ULUKIŞLA"
+        }
+    },
+    {
+        "pk": 682,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 52,
+            "name": "AKKUŞ"
+        }
+    },
+    {
+        "pk": 683,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 52,
+            "name": "AYBASTI"
+        }
+    },
+    {
+        "pk": 684,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 52,
+            "name": "ÇAMAŞ"
+        }
+    },
+    {
+        "pk": 685,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 52,
+            "name": "ÇATALPINAR"
+        }
+    },
+    {
+        "pk": 686,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 52,
+            "name": "ÇAYBAŞI"
+        }
+    },
+    {
+        "pk": 687,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 52,
+            "name": "FATSA"
+        }
+    },
+    {
+        "pk": 688,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 52,
+            "name": "GÖLKÖY"
+        }
+    },
+    {
+        "pk": 689,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 52,
+            "name": "GÜLYALI"
+        }
+    },
+    {
+        "pk": 690,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 52,
+            "name": "GÜRGENTEPE"
+        }
+    },
+    {
+        "pk": 691,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 52,
+            "name": "İKİZCE"
+        }
+    },
+    {
+        "pk": 692,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 52,
+            "name": "KABADÜZ(KARADÜZ)"
+        }
+    },
+    {
+        "pk": 693,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 52,
+            "name": "KABATAŞ"
+        }
+    },
+    {
+        "pk": 694,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 52,
+            "name": "KORGAN"
+        }
+    },
+    {
+        "pk": 695,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 52,
+            "name": "KUMRU"
+        }
+    },
+    {
+        "pk": 696,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 52,
+            "name": "MESUDİYE"
+        }
+    },
+    {
+        "pk": 697,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 52,
+            "name": "ORDU"
+        }
+    },
+    {
+        "pk": 698,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 52,
+            "name": "PERŞEMBE"
+        }
+    },
+    {
+        "pk": 699,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 52,
+            "name": "ULUBEY"
+        }
+    },
+    {
+        "pk": 700,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 52,
+            "name": "ÜNYE"
+        }
+    },
+    {
+        "pk": 701,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 53,
+            "name": "ARDEŞEN"
+        }
+    },
+    {
+        "pk": 702,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 53,
+            "name": "ÇAMLIHEMŞİN"
+        }
+    },
+    {
+        "pk": 703,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 53,
+            "name": "ÇAYELİ"
+        }
+    },
+    {
+        "pk": 704,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 53,
+            "name": "DEREPAZARI"
+        }
+    },
+    {
+        "pk": 705,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 53,
+            "name": "FINDIKLI"
+        }
+    },
+    {
+        "pk": 706,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 53,
+            "name": "GÜNEYSU"
+        }
+    },
+    {
+        "pk": 707,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 53,
+            "name": "HEMŞİN"
+        }
+    },
+    {
+        "pk": 708,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 53,
+            "name": "İKİZDERE"
+        }
+    },
+    {
+        "pk": 709,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 53,
+            "name": "İYİDERE"
+        }
+    },
+    {
+        "pk": 710,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 53,
+            "name": "KALKANDERE"
+        }
+    },
+    {
+        "pk": 711,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 53,
+            "name": "PAZAR"
+        }
+    },
+    {
+        "pk": 712,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 53,
+            "name": "RİZE"
+        }
+    },
+    {
+        "pk": 713,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 54,
+            "name": "ADAPAZARI"
+        }
+    },
+    {
+        "pk": 714,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 54,
+            "name": "AKYAZI"
+        }
+    },
+    {
+        "pk": 715,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 54,
+            "name": "ARİFİYE"
+        }
+    },
+    {
+        "pk": 716,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 54,
+            "name": "ERENLER"
+        }
+    },
+    {
+        "pk": 717,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 54,
+            "name": "FERİZLİ"
+        }
+    },
+    {
+        "pk": 718,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 54,
+            "name": "GEYVE"
+        }
+    },
+    {
+        "pk": 719,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 54,
+            "name": "HENDEK"
+        }
+    },
+    {
+        "pk": 720,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 54,
+            "name": "KARAPÜRÇEK"
+        }
+    },
+    {
+        "pk": 721,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 54,
+            "name": "KARASU"
+        }
+    },
+    {
+        "pk": 722,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 54,
+            "name": "KAYNARCA"
+        }
+    },
+    {
+        "pk": 723,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 54,
+            "name": "KOCAALİ"
+        }
+    },
+    {
+        "pk": 724,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 54,
+            "name": "PAMUKOVA"
+        }
+    },
+    {
+        "pk": 725,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 54,
+            "name": "SAPANCA"
+        }
+    },
+    {
+        "pk": 726,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 54,
+            "name": "SERDİVAN"
+        }
+    },
+    {
+        "pk": 727,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 54,
+            "name": "SÖĞÜTLÜ"
+        }
+    },
+    {
+        "pk": 728,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 54,
+            "name": "TARAKLI"
+        }
+    },
+    {
+        "pk": 729,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 55,
+            "name": "ALAÇAM"
+        }
+    },
+    {
+        "pk": 730,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 55,
+            "name": "ASARCIK"
+        }
+    },
+    {
+        "pk": 731,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 55,
+            "name": "ATAKUM"
+        }
+    },
+    {
+        "pk": 732,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 55,
+            "name": "AYVACIK"
+        }
+    },
+    {
+        "pk": 733,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 55,
+            "name": "BAFRA"
+        }
+    },
+    {
+        "pk": 734,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 55,
+            "name": "CANİK"
+        }
+    },
+    {
+        "pk": 735,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 55,
+            "name": "ÇARŞAMBA"
+        }
+    },
+    {
+        "pk": 736,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 55,
+            "name": "HAVZA"
+        }
+    },
+    {
+        "pk": 737,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 55,
+            "name": "İLKADIM"
+        }
+    },
+    {
+        "pk": 738,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 55,
+            "name": "KAVAK"
+        }
+    },
+    {
+        "pk": 739,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 55,
+            "name": "LADİK"
+        }
+    },
+    {
+        "pk": 740,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 55,
+            "name": "ONDOKUZMAYIS(BALLICA)"
+        }
+    },
+    {
+        "pk": 741,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 55,
+            "name": "SALIPAZARI"
+        }
+    },
+    {
+        "pk": 742,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 55,
+            "name": "TEKKEKÖY"
+        }
+    },
+    {
+        "pk": 743,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 55,
+            "name": "TERME"
+        }
+    },
+    {
+        "pk": 744,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 55,
+            "name": "VEZİRKÖPRÜ"
+        }
+    },
+    {
+        "pk": 745,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 55,
+            "name": "YAKAKENT"
+        }
+    },
+    {
+        "pk": 746,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 56,
+            "name": "AYDINLAR"
+        }
+    },
+    {
+        "pk": 747,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 56,
+            "name": "BAYKAN"
+        }
+    },
+    {
+        "pk": 748,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 56,
+            "name": "ERUH"
+        }
+    },
+    {
+        "pk": 749,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 56,
+            "name": "KURTALAN"
+        }
+    },
+    {
+        "pk": 750,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 56,
+            "name": "PERVARİ"
+        }
+    },
+    {
+        "pk": 751,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 56,
+            "name": "SİİRT"
+        }
+    },
+    {
+        "pk": 752,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 56,
+            "name": "ŞİRVAN"
+        }
+    },
+    {
+        "pk": 753,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 57,
+            "name": "AYANCIK"
+        }
+    },
+    {
+        "pk": 754,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 57,
+            "name": "BOYABAT"
+        }
+    },
+    {
+        "pk": 755,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 57,
+            "name": "DİKMEN"
+        }
+    },
+    {
+        "pk": 756,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 57,
+            "name": "DURAĞAN"
+        }
+    },
+    {
+        "pk": 757,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 57,
+            "name": "ERFELEK"
+        }
+    },
+    {
+        "pk": 758,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 57,
+            "name": "GERZE"
+        }
+    },
+    {
+        "pk": 759,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 57,
+            "name": "SARAYDÜZÜ"
+        }
+    },
+    {
+        "pk": 760,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 57,
+            "name": "SİNOP"
+        }
+    },
+    {
+        "pk": 761,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 57,
+            "name": "TÜRKELİ"
+        }
+    },
+    {
+        "pk": 762,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 58,
+            "name": "AKINCILAR"
+        }
+    },
+    {
+        "pk": 763,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 58,
+            "name": "ALTINYAYLA"
+        }
+    },
+    {
+        "pk": 764,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 58,
+            "name": "DİVRİĞİ"
+        }
+    },
+    {
+        "pk": 765,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 58,
+            "name": "DOĞANŞAR"
+        }
+    },
+    {
+        "pk": 766,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 58,
+            "name": "GEMEREK"
+        }
+    },
+    {
+        "pk": 767,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 58,
+            "name": "GÖLOVA"
+        }
+    },
+    {
+        "pk": 768,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 58,
+            "name": "GÜRÜN"
+        }
+    },
+    {
+        "pk": 769,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 58,
+            "name": "HAFİK"
+        }
+    },
+    {
+        "pk": 770,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 58,
+            "name": "İMRANLI"
+        }
+    },
+    {
+        "pk": 771,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 58,
+            "name": "KANGAL"
+        }
+    },
+    {
+        "pk": 772,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 58,
+            "name": "KOYULHİSAR"
+        }
+    },
+    {
+        "pk": 773,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 58,
+            "name": "SİVAS"
+        }
+    },
+    {
+        "pk": 774,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 58,
+            "name": "SUŞEHRİ"
+        }
+    },
+    {
+        "pk": 775,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 58,
+            "name": "ŞARKIŞLA"
+        }
+    },
+    {
+        "pk": 776,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 58,
+            "name": "ULAŞ"
+        }
+    },
+    {
+        "pk": 777,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 58,
+            "name": "YILDIZELİ"
+        }
+    },
+    {
+        "pk": 778,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 58,
+            "name": "ZARA"
+        }
+    },
+    {
+        "pk": 779,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 59,
+            "name": "ÇERKEZKÖY"
+        }
+    },
+    {
+        "pk": 780,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 59,
+            "name": "ÇORLU"
+        }
+    },
+    {
+        "pk": 781,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 59,
+            "name": "HAYRABOLU"
+        }
+    },
+    {
+        "pk": 782,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 59,
+            "name": "MALKARA"
+        }
+    },
+    {
+        "pk": 783,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 59,
+            "name": "MARMARAEREĞLİSİ"
+        }
+    },
+    {
+        "pk": 784,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 59,
+            "name": "MURATLI"
+        }
+    },
+    {
+        "pk": 785,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 59,
+            "name": "SARAY"
+        }
+    },
+    {
+        "pk": 786,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 59,
+            "name": "ŞARKÖY"
+        }
+    },
+    {
+        "pk": 787,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 59,
+            "name": "TEKİRDAĞ"
+        }
+    },
+    {
+        "pk": 788,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 60,
+            "name": "ALMUS"
+        }
+    },
+    {
+        "pk": 789,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 60,
+            "name": "ARTOVA"
+        }
+    },
+    {
+        "pk": 790,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 60,
+            "name": "BAŞÇİFTLİK"
+        }
+    },
+    {
+        "pk": 791,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 60,
+            "name": "ERBAA"
+        }
+    },
+    {
+        "pk": 792,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 60,
+            "name": "NİKSAR"
+        }
+    },
+    {
+        "pk": 793,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 60,
+            "name": "PAZAR"
+        }
+    },
+    {
+        "pk": 794,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 60,
+            "name": "REŞADİYE"
+        }
+    },
+    {
+        "pk": 795,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 60,
+            "name": "SULUSARAY"
+        }
+    },
+    {
+        "pk": 796,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 60,
+            "name": "TOKAT"
+        }
+    },
+    {
+        "pk": 797,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 60,
+            "name": "TURHAL"
+        }
+    },
+    {
+        "pk": 798,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 60,
+            "name": "YEŞİLYURT"
+        }
+    },
+    {
+        "pk": 799,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 60,
+            "name": "ZİLE"
+        }
+    },
+    {
+        "pk": 800,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 61,
+            "name": "AKÇAABAT"
+        }
+    },
+    {
+        "pk": 801,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 61,
+            "name": "ARAKLI"
+        }
+    },
+    {
+        "pk": 802,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 61,
+            "name": "ARSİN"
+        }
+    },
+    {
+        "pk": 803,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 61,
+            "name": "BEŞİKDÜZÜ"
+        }
+    },
+    {
+        "pk": 804,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 61,
+            "name": "ÇARŞIBAŞI"
+        }
+    },
+    {
+        "pk": 805,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 61,
+            "name": "ÇAYKARA"
+        }
+    },
+    {
+        "pk": 806,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 61,
+            "name": "DERNEKPAZARI"
+        }
+    },
+    {
+        "pk": 807,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 61,
+            "name": "DÜZKÖY"
+        }
+    },
+    {
+        "pk": 808,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 61,
+            "name": "HAYRAT"
+        }
+    },
+    {
+        "pk": 809,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 61,
+            "name": "KÖPRÜBAŞI"
+        }
+    },
+    {
+        "pk": 810,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 61,
+            "name": "MAÇKA"
+        }
+    },
+    {
+        "pk": 811,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 61,
+            "name": "OF"
+        }
+    },
+    {
+        "pk": 812,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 61,
+            "name": "SÜRMENE"
+        }
+    },
+    {
+        "pk": 813,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 61,
+            "name": "ŞALPAZARI"
+        }
+    },
+    {
+        "pk": 814,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 61,
+            "name": "TONYA"
+        }
+    },
+    {
+        "pk": 815,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 61,
+            "name": "TRABZON"
+        }
+    },
+    {
+        "pk": 816,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 61,
+            "name": "VAKFIKEBİR"
+        }
+    },
+    {
+        "pk": 817,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 61,
+            "name": "YOMRA"
+        }
+    },
+    {
+        "pk": 818,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 62,
+            "name": "ÇEMİŞGEZEK"
+        }
+    },
+    {
+        "pk": 819,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 62,
+            "name": "HOZAT"
+        }
+    },
+    {
+        "pk": 820,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 62,
+            "name": "MAZGİRT"
+        }
+    },
+    {
+        "pk": 821,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 62,
+            "name": "NAZIMİYE"
+        }
+    },
+    {
+        "pk": 822,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 62,
+            "name": "OVACIK"
+        }
+    },
+    {
+        "pk": 823,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 62,
+            "name": "PERTEK"
+        }
+    },
+    {
+        "pk": 824,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 62,
+            "name": "PÜLÜMÜR"
+        }
+    },
+    {
+        "pk": 825,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 62,
+            "name": "TUNCELİ"
+        }
+    },
+    {
+        "pk": 826,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 63,
+            "name": "AKÇAKALE"
+        }
+    },
+    {
+        "pk": 827,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 63,
+            "name": "BİRECİK"
+        }
+    },
+    {
+        "pk": 828,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 63,
+            "name": "BOZOVA"
+        }
+    },
+    {
+        "pk": 829,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 63,
+            "name": "CEYLANPINAR"
+        }
+    },
+    {
+        "pk": 830,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 63,
+            "name": "HALFETİ"
+        }
+    },
+    {
+        "pk": 831,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 63,
+            "name": "HARRAN"
+        }
+    },
+    {
+        "pk": 832,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 63,
+            "name": "HİLVAN"
+        }
+    },
+    {
+        "pk": 833,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 63,
+            "name": "SİVEREK"
+        }
+    },
+    {
+        "pk": 834,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 63,
+            "name": "SURUÇ"
+        }
+    },
+    {
+        "pk": 835,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 63,
+            "name": "ŞANLIURFA"
+        }
+    },
+    {
+        "pk": 836,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 63,
+            "name": "VİRANŞEHİR"
+        }
+    },
+    {
+        "pk": 837,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 64,
+            "name": "BANAZ"
+        }
+    },
+    {
+        "pk": 838,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 64,
+            "name": "EŞME"
+        }
+    },
+    {
+        "pk": 839,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 64,
+            "name": "KARAHALLI"
+        }
+    },
+    {
+        "pk": 840,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 64,
+            "name": "SİVASLI"
+        }
+    },
+    {
+        "pk": 841,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 64,
+            "name": "ULUBEY"
+        }
+    },
+    {
+        "pk": 842,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 64,
+            "name": "UŞAK"
+        }
+    },
+    {
+        "pk": 843,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 65,
+            "name": "BAHÇESARAY"
+        }
+    },
+    {
+        "pk": 844,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 65,
+            "name": "BAŞKALE"
+        }
+    },
+    {
+        "pk": 845,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 65,
+            "name": "ÇALDIRAN"
+        }
+    },
+    {
+        "pk": 846,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 65,
+            "name": "ÇATAK"
+        }
+    },
+    {
+        "pk": 847,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 65,
+            "name": "EDREMİT(GÜMÜŞDERE)"
+        }
+    },
+    {
+        "pk": 848,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 65,
+            "name": "ERCİŞ"
+        }
+    },
+    {
+        "pk": 849,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 65,
+            "name": "GEVAŞ"
+        }
+    },
+    {
+        "pk": 850,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 65,
+            "name": "GÜRPINAR"
+        }
+    },
+    {
+        "pk": 851,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 65,
+            "name": "MURADİYE"
+        }
+    },
+    {
+        "pk": 852,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 65,
+            "name": "ÖZALP"
+        }
+    },
+    {
+        "pk": 853,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 65,
+            "name": "SARAY"
+        }
+    },
+    {
+        "pk": 854,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 65,
+            "name": "VAN"
+        }
+    },
+    {
+        "pk": 855,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 66,
+            "name": "AKDAĞMADENİ"
+        }
+    },
+    {
+        "pk": 856,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 66,
+            "name": "AYDINCIK"
+        }
+    },
+    {
+        "pk": 857,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 66,
+            "name": "BOĞAZLIYAN"
+        }
+    },
+    {
+        "pk": 858,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 66,
+            "name": "ÇANDIR"
+        }
+    },
+    {
+        "pk": 859,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 66,
+            "name": "ÇAYIRALAN"
+        }
+    },
+    {
+        "pk": 860,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 66,
+            "name": "ÇEKEREK"
+        }
+    },
+    {
+        "pk": 861,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 66,
+            "name": "KADIŞEHRİ"
+        }
+    },
+    {
+        "pk": 862,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 66,
+            "name": "SARAYKENT"
+        }
+    },
+    {
+        "pk": 863,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 66,
+            "name": "SARIKAYA"
+        }
+    },
+    {
+        "pk": 864,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 66,
+            "name": "SORGUN"
+        }
+    },
+    {
+        "pk": 865,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 66,
+            "name": "ŞEFAATLİ"
+        }
+    },
+    {
+        "pk": 866,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 66,
+            "name": "YENİFAKILI"
+        }
+    },
+    {
+        "pk": 867,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 66,
+            "name": "YERKÖY"
+        }
+    },
+    {
+        "pk": 868,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 66,
+            "name": "YOZGAT"
+        }
+    },
+    {
+        "pk": 869,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 67,
+            "name": "ALAPLI"
+        }
+    },
+    {
+        "pk": 870,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 67,
+            "name": "ÇAYCUMA"
+        }
+    },
+    {
+        "pk": 871,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 67,
+            "name": "DEVREK"
+        }
+    },
+    {
+        "pk": 872,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 67,
+            "name": "GÖKÇEBEY"
+        }
+    },
+    {
+        "pk": 873,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 67,
+            "name": "KARADENİZEREĞLİ"
+        }
+    },
+    {
+        "pk": 874,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 67,
+            "name": "ZONGULDAK"
+        }
+    },
+    {
+        "pk": 875,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 68,
+            "name": "AĞAÇÖREN"
+        }
+    },
+    {
+        "pk": 876,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 68,
+            "name": "AKSARAY"
+        }
+    },
+    {
+        "pk": 877,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 68,
+            "name": "ESKİL"
+        }
+    },
+    {
+        "pk": 878,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 68,
+            "name": "GÜLAĞAÇ"
+        }
+    },
+    {
+        "pk": 879,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 68,
+            "name": "GÜZELYURT"
+        }
+    },
+    {
+        "pk": 880,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 68,
+            "name": "ORTAKÖY"
+        }
+    },
+    {
+        "pk": 881,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 68,
+            "name": "SARIYAHŞİ"
+        }
+    },
+    {
+        "pk": 882,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 69,
+            "name": "AYDINTEPE"
+        }
+    },
+    {
+        "pk": 883,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 69,
+            "name": "BAYBURT"
+        }
+    },
+    {
+        "pk": 884,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 69,
+            "name": "DEMİRÖZÜ"
+        }
+    },
+    {
+        "pk": 885,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 70,
+            "name": "AYRANCI"
+        }
+    },
+    {
+        "pk": 886,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 70,
+            "name": "BAŞYAYLA"
+        }
+    },
+    {
+        "pk": 887,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 70,
+            "name": "ERMENEK"
+        }
+    },
+    {
+        "pk": 888,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 70,
+            "name": "KARAMAN"
+        }
+    },
+    {
+        "pk": 889,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 70,
+            "name": "KAZIMKARABEKİR"
+        }
+    },
+    {
+        "pk": 890,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 70,
+            "name": "SARIVELİLER"
+        }
+    },
+    {
+        "pk": 891,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 71,
+            "name": "BAHŞİLİ"
+        }
+    },
+    {
+        "pk": 892,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 71,
+            "name": "BALIŞEYH"
+        }
+    },
+    {
+        "pk": 893,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 71,
+            "name": "ÇELEBİ"
+        }
+    },
+    {
+        "pk": 894,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 71,
+            "name": "DELİCE"
+        }
+    },
+    {
+        "pk": 895,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 71,
+            "name": "KARAKEÇİLİ"
+        }
+    },
+    {
+        "pk": 896,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 71,
+            "name": "KESKİN"
+        }
+    },
+    {
+        "pk": 897,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 71,
+            "name": "KIRIKKALE"
+        }
+    },
+    {
+        "pk": 898,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 71,
+            "name": "SULAKYURT"
+        }
+    },
+    {
+        "pk": 899,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 71,
+            "name": "YAHŞİHAN"
+        }
+    },
+    {
+        "pk": 900,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 72,
+            "name": "BATMAN"
+        }
+    },
+    {
+        "pk": 901,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 72,
+            "name": "BEŞİRİ"
+        }
+    },
+    {
+        "pk": 902,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 72,
+            "name": "GERCÜŞ"
+        }
+    },
+    {
+        "pk": 903,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 72,
+            "name": "HASANKEYF"
+        }
+    },
+    {
+        "pk": 904,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 72,
+            "name": "KOZLUK"
+        }
+    },
+    {
+        "pk": 905,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 72,
+            "name": "SASON"
+        }
+    },
+    {
+        "pk": 906,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 73,
+            "name": "BEYTÜŞŞEBAP"
+        }
+    },
+    {
+        "pk": 907,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 73,
+            "name": "CİZRE"
+        }
+    },
+    {
+        "pk": 908,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 73,
+            "name": "GÜÇLÜKONAK"
+        }
+    },
+    {
+        "pk": 909,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 73,
+            "name": "İDİL"
+        }
+    },
+    {
+        "pk": 910,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 73,
+            "name": "SİLOPİ"
+        }
+    },
+    {
+        "pk": 911,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 73,
+            "name": "ŞIRNAK"
+        }
+    },
+    {
+        "pk": 912,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 73,
+            "name": "ULUDERE"
+        }
+    },
+    {
+        "pk": 913,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 74,
+            "name": "AMASRA"
+        }
+    },
+    {
+        "pk": 914,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 74,
+            "name": "BARTIN"
+        }
+    },
+    {
+        "pk": 915,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 74,
+            "name": "KURUCAŞİLE"
+        }
+    },
+    {
+        "pk": 916,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 74,
+            "name": "ULUS"
+        }
+    },
+    {
+        "pk": 917,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 75,
+            "name": "ARDAHAN"
+        }
+    },
+    {
+        "pk": 918,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 75,
+            "name": "ÇILDIR"
+        }
+    },
+    {
+        "pk": 919,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 75,
+            "name": "DAMAL"
+        }
+    },
+    {
+        "pk": 920,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 75,
+            "name": "GÖLE"
+        }
+    },
+    {
+        "pk": 921,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 75,
+            "name": "HANAK"
+        }
+    },
+    {
+        "pk": 922,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 75,
+            "name": "POSOF"
+        }
+    },
+    {
+        "pk": 923,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 76,
+            "name": "ARALIK"
+        }
+    },
+    {
+        "pk": 924,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 76,
+            "name": "IĞDIR"
+        }
+    },
+    {
+        "pk": 925,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 76,
+            "name": "KARAKOYUNLU"
+        }
+    },
+    {
+        "pk": 926,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 76,
+            "name": "TUZLUCA"
+        }
+    },
+    {
+        "pk": 927,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 77,
+            "name": "ALTINOVA"
+        }
+    },
+    {
+        "pk": 928,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 77,
+            "name": "ARMUTLU"
+        }
+    },
+    {
+        "pk": 929,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 77,
+            "name": "ÇINARCIK"
+        }
+    },
+    {
+        "pk": 930,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 77,
+            "name": "ÇİFTLİKKÖY"
+        }
+    },
+    {
+        "pk": 931,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 77,
+            "name": "TERMAL"
+        }
+    },
+    {
+        "pk": 932,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 77,
+            "name": "YALOVA"
+        }
+    },
+    {
+        "pk": 933,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 78,
+            "name": "EFLANİ"
+        }
+    },
+    {
+        "pk": 934,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 78,
+            "name": "ESKİPAZAR"
+        }
+    },
+    {
+        "pk": 935,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 78,
+            "name": "KARABÜK"
+        }
+    },
+    {
+        "pk": 936,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 78,
+            "name": "OVACIK"
+        }
+    },
+    {
+        "pk": 937,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 78,
+            "name": "SAFRANBOLU"
+        }
+    },
+    {
+        "pk": 938,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 78,
+            "name": "YENİCE"
+        }
+    },
+    {
+        "pk": 939,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 79,
+            "name": "ELBEYLİ"
+        }
+    },
+    {
+        "pk": 940,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 79,
+            "name": "KİLİS"
+        }
+    },
+    {
+        "pk": 941,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 79,
+            "name": "MUSABEYLİ"
+        }
+    },
+    {
+        "pk": 942,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 79,
+            "name": "POLATELİ"
+        }
+    },
+    {
+        "pk": 943,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 80,
+            "name": "BAHÇE"
+        }
+    },
+    {
+        "pk": 944,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 80,
+            "name": "DÜZİÇİ"
+        }
+    },
+    {
+        "pk": 945,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 80,
+            "name": "HASANBEYLİ"
+        }
+    },
+    {
+        "pk": 946,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 80,
+            "name": "KADİRLİ"
+        }
+    },
+    {
+        "pk": 947,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 80,
+            "name": "OSMANİYE"
+        }
+    },
+    {
+        "pk": 948,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 80,
+            "name": "SUMBAS"
+        }
+    },
+    {
+        "pk": 949,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 80,
+            "name": "TOPRAKKALE"
+        }
+    },
+    {
+        "pk": 950,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 81,
+            "name": "AKÇAKOCA"
+        }
+    },
+    {
+        "pk": 951,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 81,
+            "name": "CUMAYERİ"
+        }
+    },
+    {
+        "pk": 952,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 81,
+            "name": "ÇİLİMLİ"
+        }
+    },
+    {
+        "pk": 953,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 81,
+            "name": "DÜZCE"
+        }
+    },
+    {
+        "pk": 954,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 81,
+            "name": "GÖLYAKA"
+        }
+    },
+    {
+        "pk": 955,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 81,
+            "name": "GÜMÜŞOVA"
+        }
+    },
+    {
+        "pk": 956,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 81,
+            "name": "KAYNAŞLI"
+        }
+    },
+    {
+        "pk": 957,
+        "model": "shop.ilce",
+        "fields": {
+            "city": 81,
+            "name": "YIĞILCA"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "shop.Config",
+        "fields": {
+            "key": "ACTIVE_PAYMENTPACKAGE",
+            "value": 1
+        }
+    }
+]

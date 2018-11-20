@@ -1,0 +1,54 @@
+{% extends "shop/"|add:SHOP_TEMPLATE|add:"/base.html" %}
+{% load shop_tags simit_tags staticfiles compress i18n %}
+
+{% block head_left %}
+    {% include "shop/dega/includes/vehicle-selectbox.html" with level=0 %}
+{% endblock %}
+
+{% block raw_content %}
+    <div id="right_column" class="col-md-3 column">
+        {% include 'shop/dega/includes/top_category_list.html' with categories=result.facets.category %}
+        <img style="margin-top:5px; max-width: 265px" src="{{ MEDIA_URL }}{% variable "HOMEPAGE_SIDEBAR_IMAGE" "Anasayfa yan bar imajı" "IMAGE" "Genel" "Anasayfada sol kısımda görünecek imaj dosyası" %}" >
+    </div>
+
+    <div id="main_center_column" class="main_center_column col-md-9">
+        <div class="center_column clearfix">
+            <div class="home-layout clearfix">
+                <div id="bestwidget-wrap-displayHome3"
+                     class="block products_block clearfix bestwidget-carousel bestwidget_displayHome new-products panel panel-default">
+                    <h4 class="title_block panel-heading"><span>Kampanyalı Ürünler</span></h4>
+
+                    <div class="block_content panel-body">
+                        <div id="carouseldisplayHome3"
+                             class="bestwidget-items clearfix owl-carousel owl-theme"
+                             style="display: block; opacity: 1;">
+                            <div class="owl-wrapper-outer">
+                                <div class="owl-wrapper" style="left: 0px; display: block;">
+                                    {% for product in indirimdekiler %}
+                                        <div class="owl-item" style="width: 274px;display:inline-block">
+                                            {% include "shop/dega/includes/catalog/square.html" with product=product counter=forloop.counter %}
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+
+                            <div class="owl-controls clickable">
+                                {#    <div class="owl-buttons">#}
+                                {#        <div class="owl-prev"><i class="fa fa-chevron-left"></i></div>#}
+                                {#        <div class="owl-next"><i class="fa fa-chevron-right"></i></div>#}
+                                {#    </div>#}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript_end %}
+    {% include 'shop/default/includes/rakam-log-pageview.html' %}
+{% endblock %}

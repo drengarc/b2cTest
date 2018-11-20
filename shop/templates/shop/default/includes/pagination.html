@@ -1,0 +1,10 @@
+{% load shop_tags %}
+<div id="pager">
+    <p>
+        <a {% if previous %} href="{% change_parameter_url param previous %}" {% else %} class="disabled" {% endif %}><code>&#171;</code> Önceki</a>
+        {% for page in pages %}
+            <a {% if current_page == page %}class="selected" rakam-event-attribute="page"{% endif %} {% if current_page != page %}href="{% change_parameter_url "p" page %}"{% endif %}>{{ page }}</a>
+        {% endfor %}
+        <a {% if next %} href="{% change_parameter_url param next %}" {% else %} class="disabled" {% endif %}>Sonraki <code>&#187;</code></a>
+    </p>
+</div>

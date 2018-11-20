@@ -1,0 +1,13 @@
+{% extends "shop/"|add:SHOP_TEMPLATE|add:"/base.html" %}
+{% load i18n %}
+
+{% block content %}
+    <div class="wrapper">
+        <h2>
+            <p>{% trans "The server encountered an error processing the request." %}</p>
+            {% if request.sentry.id %}
+                <p>{% blocktrans with reference=request.sentry.id %}If you need assistance, you may reference this error as {{ reference }}.{% endblocktrans %}</p>
+            {% endif %}
+        </h2>
+    </div>
+{% endblock %}

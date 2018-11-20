@@ -1,0 +1,46 @@
+{% extends "shop/"|add:SHOP_TEMPLATE|add:"/base.html" %}
+
+{% block content %}
+    <div class="wrapper">
+        <div class="loginSection">
+            <div class="LoginHead clearfix">
+                <h1>Üye Ol</h1>
+            </div>
+            <div class="LoginCon">
+                <form action="" method="post" {% if form.is_multipart %}enctype="multipart/form-data"{% endif %}>{% csrf_token %}
+                    {% for field in form %}
+                        {% if field.name != "agreement" %}
+                        <div class="fieldWrapper">
+                            {{ field.errors }}
+                            {% if field.field.required %}<b>{{ field.label_tag }}</b>{% else %}{{ field.label_tag }}{% endif %} {{ field }}
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                    <div class="fieldWrapper">{{ form.agreement.errors }}<input type="checkbox" id="id_agreement" name="agreement"><a href="javascript:void(0)" onclick='box({source: $("#tos").html(), modal: true, width:600, title:"Kullanıcı Sözleşmesi"});' id="open_agreement" style="display: inline-block; font-weight: normal">kullanıcı sözleşmesini kabul ediyorum.</a></div>
+                    <input class="button_blue1 button_size3" type="submit" id="L-Enter" value="Kayıt ol" tabindex="4" name="pass" alt="Kayıt ol" title="Kayıt ol">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div style="display: none" id="tos">
+        {{ agreement|safe }}
+    </div>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 967879405;
+    var google_conversion_language = "tr";
+    var google_conversion_format = "3";
+    var google_conversion_color = "ffffff";
+    var google_conversion_label = "trdPCNPmrQgQ7dXCzQM";
+    var google_remarketing_only = false;
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <noscript>
+    <div style="display:inline;">
+    <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/967879405/?label=trdPCNPmrQgQ7dXCzQM&amp;guid=ON&amp;script=0"/>
+    </div>
+    </noscript>
+
+{% endblock %}

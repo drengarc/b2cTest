@@ -1,0 +1,10 @@
+{% extends "shop/"|add:SHOP_TEMPLATE|add:"/base.html" %}
+{% load simit_tags %}
+
+
+{% block content %}
+    <div class="wrapper">
+        <h1>Kullanım Sözleşmesi</h1>
+        <div>{% variable "TOS" "Kullanım Sözleşmesi" "RICH_TEXT" "Kullanım Sözleşmesi" "Site kullanıcılarının alışveriş yapabilmeleri için imzalamaları gereken sözleşme" %}</div>
+    </div>
+{% endblock %}

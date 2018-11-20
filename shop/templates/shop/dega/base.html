@@ -1,0 +1,459 @@
+{% load shop_tags simit_tags staticfiles compress i18n %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="{% static "favicon.ico" %}">
+    {% block page_description %}
+        <title>{% variable "SITE_TITLE" "Site Başlığı" "TEXT" "Genel" "Site başlığı" %}</title>
+        <meta name="description"
+              content="{% variable "SITE_DESCRIPTION" "Site Açıklaması" "TEXT" "SEO" "Site açıklaması" %}"/>
+        <meta name="keywords"
+              content="{% variable "SITE_KEYWORDS" "Site Etiketleri" "TEXT" "SEO" "Site etiketleri" %}"/>
+    {% endblock %}
+    <link rel="search" href="{% static "opensearch.xml" %}" type="application/opensearchdescription+xml"
+          title="{% variable "SITE_TITLE" %}"/>
+
+    {% compress css %}
+        <link href="{% static "dega/bootstrap.css" %}" rel="stylesheet" type="text/css">
+        <link href="{% static "dega/fonts/font-awesome.css" %}" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static "css/site.css" %}" type="text/css" media="all">
+        <link rel="stylesheet" href="{% static "css/jquery-ui-1.10.4.custom.min.css" %}" type="text/css"/>
+
+        <link rel="stylesheet" href="{% static "dega/global.css" %}" type="text/css" media="all">
+        <link rel="stylesheet" href="{% static "dega/jquery.fancybox.css" %}" type="text/css" media="all">
+        <link rel="stylesheet" href="{% static "dega/blockcart.css" %}" type="text/css" media="all">
+        <link rel="stylesheet" href="{% static "dega/blockspecials.css" %}" type="text/css" media="all">
+        <link rel="stylesheet" href="{% static "dega/blockcontact.css" %}" type="text/css" media="all">
+        <link rel="stylesheet" href="{% static "dega/blockcurrencies.css" %}" type="text/css" media="all">
+        <link rel="stylesheet" href="{% static "dega/blocklanguages.css" %}" type="text/css" media="all">
+        <link rel="stylesheet" href="{% static "dega/blockmyaccount.css" %}" type="text/css" media="all">
+        <link rel="stylesheet" href="{% static "dega/blocktags.css" %}" type="text/css" media="all">
+        <link rel="stylesheet" href="{% static "dega/productcomments.css" %}" type="text/css" media="all">
+        <link rel="stylesheet" href="{% static "dega/blockbestsellers.css" %}" type="text/css" media="all">
+        <link rel="stylesheet" href="{% static "dega/homefeatured.css" %}" type="text/css" media="all">
+        <link rel="stylesheet" href="{% static "dega/blockpermanentlinks.css" %}" type="text/css" media="all">
+        <link rel="stylesheet" href="{% static "dega/blockuserinfo.css" %}" type="text/css" media="all">
+        <link rel="stylesheet" href="{% static "dega/blocknewproducts.css" %}" type="text/css" media="all">
+        <link rel="stylesheet" href="{% static "dega/bestwidget.css" %}" type="text/css" media="all">
+        <link rel="stylesheet" href="{% static "dega/superfish-modified.css" %}" type="text/css" media="all">
+
+    {% endcompress %}
+    <script type="text/javascript" src="{% static "dega/jquery-1.11.0.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "dega/jquery-migrate-1.2.1.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "dega/jquery.easing.js" %}"></script>
+    <script type="text/javascript" src="{% static "dega/tools.js" %}"></script>
+    <script type="text/javascript" src="{% static "dega/global.js" %}"></script>
+    <script type="text/javascript" src="{% static "dega/10-bootstrap.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "dega/15-jquery.total-storage.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "dega/wow.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "dega/jquery.fancybox.js" %}"></script>
+    <script type="text/javascript" src="{% static "dega/ajax-cart.js" %}"></script>
+    <script type="text/javascript" src="{% static "dega/jquery.bxslider.js" %}"></script>
+    <script type="text/javascript" src="{% static "dega/blockfacebook.js" %}"></script>
+    <script type="text/javascript" src="{% static "dega/treeManagement.js" %}"></script>
+    <script type="text/javascript" src="{% static "dega/jquery.skitter.js" %}"></script>
+    <script type="text/javascript" src="{% static "dega/owl.carousel.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "dega/superfish-modified.js" %}"></script>
+    <script type="text/javascript" src="{% static "dega/index.js" %}"></script>
+
+    <script type="text/javascript" src="{% static "js/jquery.cookie.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/jquery-ui-1.10.4.custom.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/underscore-min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/site.js" %}"></script>
+
+    <!--[if IE 8]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" %}"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js" %}"></script>
+    <![endif]-->
+</head>
+<body id="index" class="index lang_en homepage">
+<div id="vp_wrapper">
+<section class="header_nav_section clearfix">
+    <div class="container displayNav">
+        <div class="row">
+            <div class="col-md-12 clearfix">    <span class="shop-phone pull-left">
+        <i class="fa fa-phone"></i> Bizi arayın: <strong> </strong>
+    </span>
+
+                <div class="search-bar pull-right" style="margin-top:6px">
+                    <div class="right-inner-addon">
+                        <form method="get" action="/list">
+                            <i class="fa fa-search" style="color:gray; padding:5px 8px"></i>
+                             <input type="text" class="search-bar" name="q" style="margin:0" id="aramakelime"
+                               placeholder="Ürün Ara" autocomplete="on" role="textbox" aria-autocomplete="list"
+                               aria-haspopup="true" value="">
+                            <!--input type="search" name="q" style="margin:0"
+                                   class="search-bar"
+                                   placeholder="Ürün Ara"/-->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div id="page" class="vp_page clearfix layout-mode-full">
+{% block header %}
+
+    <header id="header_section" class="header_section clearfix">
+    <section class="vp_wrapper_header clearfix">
+        <section id="header" class="row_header">
+            <div class="container">
+                <div class="row">
+                    <div class="header_top col-md-12 clearfix">
+                        <a id="header_logo" href="/" class="top-column site-logo1 col-md-3 col-sm-4 col-xs-5"
+                           tyle="min-height: 82px;">DEPARÇA
+                                    <span><img class="logo img-responsive" src="
+                                            {{ MEDIA_URL }}{% variable "logo" "LOGO" "IMAGE" "Genel" "Site logosu" %}"
+                                               width="350" height="99"></span>
+                        </a>
+
+                        <div id="header_left"><a href=""></a></div>
+                        <div id="header_right"
+                             class="top-column header_right col-md-9 col-sm-8 col-xs-7 clearfix"
+                             style="min-height: 82px;">
+                            <div class="main-cart clearfix">
+                                <div id="cart_block" class="block exclusive panel panel-default">
+                                    <h4 class="title_block panel-heading">
+                                        <a href="" title="Alışveriş sepetimi görüntüle" rel="nofollow">Alışveriş
+                                            sepeti</a>
+                                        <span id="block_cart_expand" class="unvisible">&nbsp;</span>
+                                        <span id="block_cart_collapse">&nbsp;</span>
+                                    </h4>
+
+                                    {#                                    <div class="block_content panel-body">#}
+                                    {#                                        <div id="cart_block_list" class="expanded">#}
+                                    {#                                            <dl class="products">#}
+                                    {#                                                <dt id="cart_block_product_1_1_14" class="clearfix first_item">#}
+                                    {##}
+                                    {#                                                <div class="cart-info">#}
+                                    {#                                                    <div class="product-name">#}
+                                    {#                                                                <span class="quantity-formated"><span#}
+                                    {#                                                                        class="quantity">1</span>&nbsp;x&nbsp;</span>#}
+                                    {#                                                        <a#}
+                                    {#                                                                class="cart_block_product_name" href=""#}
+                                    {#                                                                title="" class="product-atributes">Ürün adı</a>#}
+                                    {#                                                    </div>#}
+                                    {#                                                                                        <span class="price">#}
+                                    {#                                                                                                    20TL                                                                                            </span>#}
+                                    {#                                                </div>#}
+                                    {#                                                </dt>#}
+                                    {#                                                <dd id="cart_block_combination_of_1_1_14" class="first_item">#}
+                                    {#                                                    <!-- Customizable datas -->#}
+                                    {#                                                </dd>#}
+                                    {#                                            </dl>#}
+                                    {#                                            <p class="cart_block_no_products unvisible"#}
+                                    {#                                               id="cart_block_no_products">#}
+                                    {#                                                Sepetinizde ürün yok.#}
+                                    {#                                            </p>#}
+                                    {##}
+                                    {#                                            <div id="cart-prices" class="clearfix">#}
+                                    {#                                                <div class="cart-prices-line first-line">#}
+                                    {#                                <span id="cart_block_shipping_cost" class="price ajax_cart_shipping_cost">#}
+                                    {#                                                                            Bedava Kargo!#}
+                                    {#                                                                    </span>#}
+                                    {#                                <span>#}
+                                    {#                                    Kargo#}
+                                    {#                                </span>#}
+                                    {#                                                </div>#}
+                                    {#                                                <div class="cart-prices-line last-line">#}
+                                    {#                                                            <span id="cart_block_total"#}
+                                    {#                                                                  class="price ajax_block_cart_total">15TL</span>#}
+                                    {#                                                    <span>Toplam</span>#}
+                                    {#                                                </div>#}
+                                    {#                                            </div>#}
+                                    {##}
+                                    {#                                            <p id="cart-buttons">#}
+                                    {#                                                <a id="button_order_cart"#}
+                                    {#                                                   class="btn btn-primary button button-small"#}
+                                    {#                                                   href="{% url "shop_customer_basket_page" %}">#}
+                                    {#                                                    Satın al#}
+                                    {#                                                </a>#}
+                                    {#                                            </p>#}
+                                    {#                                        </div>#}
+                                    {#                                    </div>#}
+                                </div>
+                            </div>
+
+                            <div class="layer_cart_overlay"></div>
+
+                            <div class="menu-warpper clearfix">
+                                <div id="block_top_menu" class="vt_bg_menu sf-contener clearfix">
+                                    <div class="cat-title"><h4 class="title">Kategoriler</h4><span
+                                            class="vt-menu-stick">≡</span></div>
+                                    <ul class="sf-menu menu vt_menu menu-content sf-js-enabled sf-shadow menu-class"
+                                        style="display: none; left: -100%;">
+                                        {#                <li><a href="" title="" class="sf-with-ul">Marka<span#}
+                                        {#                        class="sf-sub-indicator"> »</span></a>#}
+                                        {#                    <ul style="visibility: hidden;">#}
+                                        {#                        <li><a href="" title="">Kategori 1</a>#}
+                                        {#                        </li>#}
+                                        {#                        <li><a href="">Kategori 2</a></li>#}
+                                        {#                        <li class="category-thumbnail"></li>#}
+                                        {#                    </ul>#}
+                                        {#                </li>#}
+<!--
+                                        {% getmenu "ANASAYFA_UST" as top_menu %}
+                                        {% for menu in top_menu %}
+                                            <li><a href="{{ menu.get_url }}"
+                                                   title="{{ menu.name }}">{{ menu.title }}</a></li>
+                                        {% endfor %}
+                                        <li><a href="{% url "shop_customer_orders" %}"
+                                               title="Siparişlerim">Siparişlerim</a></li>
+!-->
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div id="header_user">
+                                <ul id="header_nav">
+                                    <li id="shopping_cart">
+                                        <a href="{% url "shop_customer_basket_page" %}"
+                                           title="Alışveriş sepetini görüntüle" rel="nofollow"><span
+                                                class="glyphicon glyphicon-shopping-cart"></span>
+                                            <span class="ajax_cart_quantity">{% get_basket_item_count request %}</span>
+                                            <span class="ajax_cart_product_txt">ürün</span>
+            <span class="ajax_cart_total">
+                                                                                    15TL
+                                                </span>
+                                            <span class="ajax_cart_no_product hidden">(empty)</span>
+                                        </a>
+                                    </li>
+                                    <li id="your_account"><a href="{% url "shop_customer_orders" %}"
+                                                             rel="nofollow">Hesabın</a></li>
+                                </ul>
+                                <div id="header_user_info" class="hidden-xs">
+                                    <span style="line-height: 30px">Hoşgeldin,</span>
+                                    {% if request.user.is_authenticated %}
+                                        <a href="{% url "shop_customer_profile" %}" class="account"
+                                           rel="nofollow"><span>{{ request.user.first_name }}</span></a>
+                                        <a href="{% url "shop_customer_logout" %}" title="Çıkış yap" rel="nofollow">
+                                        <i class="fa fa-sign-out"></i>
+                                    </a>
+                                    {% else %}
+                                        <div class="right loginModal"><a alt="{% url "shop_customer_login" %}" title="Üye Girişi"
+                                                     id="H-Login" class="head_uye" rel="nofollow">Giriş Yap</a>
+                                        {% include 'shop/default/includes/login_modal.html' %}
+                                         <a href="{% url "shop_customer_register" %}" title="Kayıt Ol"
+                                               id="H-Register"  class="head_uye" rel="nofollow">Kayıt Ol</a>
+                                        </div>
+
+
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% block head_left %}{% endblock %}
+
+                </div>
+            </div>
+        </section>
+    </section>
+{% endblock %}
+</header>
+<main id="main_section" class="main_section clearfix">
+    <section id="columns" class="body-container container">
+        <div class="row">
+            {% block raw_content %}
+                <div class="white-background">
+                    {% block content %}{% endblock %}
+                </div>
+            {% endblock %}
+        </div>
+    </section>
+    <!-- #columns -->
+</main>
+<!-- .columns-container -->
+<!-- Footer -->
+<footer id="footer_section" class="footer_section clearfix">
+    <section id="main-footer" class="main-footer main-footer-section clearfix">
+        <div id="footer" class="footer container">
+            <div class="row"><!-- Block Newsletter module-->
+                <div id="social_block" class="col-sm-6 social_block clearfix">
+                    <h4 class="title_block">Bizi takip edin!</h4>
+                    <ul>
+                        <li class="facebook"><a href="http://www.facebook.com/"><i
+                                class="fa fa-facebook-square"></i></a></li>
+                        <li class="twitter"><a href="http://www.twitter.com/"><i
+                                class="fa fa-twitter-square"></i></a></li>
+                        <li class="google_plus"><a href="https://www.google.com/"><i
+                                class="fa fa-google-plus-square"></i></a></li>
+                    </ul>
+                </div>
+                <div class="line clearfix">&nbsp;</div>
+
+                <div class="blockcategories_footer col-sm-3 clearfix" style="display:none">
+                    <h4 class="title_block">Kategoriler</h4>
+
+                    <div class="category_footer" style="float:left;clear:none;width:100%">
+                        <div style="float:left" class="list">
+                            <ul class="tree dynamized" style="display: block;">
+
+                                <li class="category_63">
+                                    <a href="">Kaporta</a>
+                                </li>
+
+
+                                <li class="category_64">
+                                    <a href="">Ayna</a>
+                                </li>
+
+
+                                <li class="category_65">
+                                    <a href="">Cam</a>
+                                </li>
+
+
+                                <li class="category_66 last">
+                                    <a href="">Silecek</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br class="clear">
+                    <!-- /Block categories module -->
+                </div>
+
+                <!-- MODULE Block footer -->
+                <div class="block_various_links col-sm-4 clearfix" id="block_various_links_footer">
+                    <h4 class="title_block">Site</h4>
+                    <ul class="bullet">
+                        {% getmenu "FOOTER_MENU" as top_menu %}
+                        {% for menu in top_menu %}
+                            <li class="item"><a href="{{ menu.get_url }}" title="{{ menu.name }}">{{ menu.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                </div>
+                <!-- /MODULE Block footer -->
+
+                <!-- Block myaccount module -->
+                <div class="my-account col-sm-4 clearfix">
+                    <h4 class="title_block">Hesabım</h4>
+
+                    <div class="block_content">
+                        <ul class="bullet">
+                            <li><a href="{% url "shop_customer_orders" %}">Siparişlerim</a></li>
+                            <li><a href="{% url "shop_customer_address" %}">Adreslerim</a></li>
+                            <li><a href="{% url "shop_customer_profile" %}">Kişisel bilgilerim</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="block_contact_infos" class="block_contact_infos col-sm-4 clearfix">
+                    <h4 class="title_block">İletişim</h4>
+                    <ul>
+                        <li><strong>DEPARÇA</strong></li>
+                        <li><i class="fa fa-map-marker"></i> <span>Satışlarımız başlamamıştır<br></span></li>
+                        <li><i class="fa fa-phone"></i> Tel <b>444 4 444</b></li>
+                        <li><i class="fa fa-envelope"></i> Email: <b><a>satis@deparca.com</a></b>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
+</div>
+</div>
+<script>
+    var basket_html = null, is_loading_basket = false;
+    $('#shopping_cart').hover(function () {
+        var $this = $(this);
+        $(this).addClass('active');
+        if (!is_loading_basket) {
+            var loading = $(document.createElement('div'));
+            loading.attr('class', 'loadingIcon');
+            $('#cart_block').append(loading);
+        }
+        is_loading_basket = true;
+        if (basket_html)
+            $('#cart_block').html(basket_html);
+        else
+            $.post('{% url 'shop_customer_basket_page' %}', {csrfmiddlewaretoken: $.cookie('csrftoken')}, function (data) {
+                $('#cart_block').html(data);
+                basket_html = data;
+            });
+    }, function () {
+        $(this).removeClass('active');
+    });
+    var ip = "{{ ip }}";
+
+</script>
+<script type="text/javascript">
+  (function(e,t){var r=e.rakam||{};var n=t.createElement("script");n.type="text/javascript";
+  n.async=true;n.src="https://d2f7xo8n6nlhxf.cloudfront.net/rakam.min.js";
+  n.onload=function(){e.rakam.runQueuedFunctions()};var a=t.getElementsByTagName("script")[0];
+  a.parentNode.insertBefore(n,a);function s(e,t){e[t]=function(){this._q.push([t].concat(Array.prototype.slice.call(arguments,0)));
+  return this}}var i=function(){this._q=[];return this};var o=["set","setOnce","increment","unset"];
+  for(var c=0;c<o.length;c++){s(i.prototype,o[c])}r.User=i;r._q=[];var u=["init","logEvent","logInlinedEvent","setUserId","getUserId","getDeviceId","setSuperProperties","setOptOut","setVersionName","setDomain","setUserProperties","setDeviceId","onload","onEvent","getTimeOnPreviousPage","getTimeOnPage","startTimer","isReturningUser"];
+  for(var m=0;m<u.length;m++){s(r,u[m])}e.rakam=r})(window,document);
+
+  rakam.init("shop", {% if request.user.is_authenticated %}'{{ request.user.email }}'{% else %}null{% endif %}, {
+    apiEndpoint:"127.0.0.1:9999",
+    writeKey: "fbvfi1aeorkrmufs811cad12bdnop0l1m0ucd6i3de4in32kqalnj57273994164",
+    includeUtm: true,
+    trackClicks: true,
+    trackForms: true,
+    includeReferrer: true
+  }, function() {
+      rakam.startTimer(true);
+      {% if request.user.is_authenticated %}
+        rakam.setUserProperties({
+            name: '{{ request.user.get_full_name }}',
+            email: '{{ request.user.email }}'
+        });
+      {% endif %}
+  });
+
+</script>
+
+{% block javascript_end %}{% endblock %}
+
+{% if not debug %}
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '{% variable "GOOGLE_ANALYTICS_CODE" "Google Analytics Kodu" "TEXT" "Genel" "Google Analytics izleme kodu" %}');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-W7BSHS"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','{% variable "GOOGLE_TAG_MANAGER_CODE" "Google Tag Manager Kodu" "TEXT" "SEO" "Google Tag Manager izleme kodu" %}');</script>
+<!-- End Google Tag Manager -->
+
+<!--Start of Zopim Live Chat Script-->
+<script type="text/javascript">
+window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
+$.src='//v2.zopim.com/?{% variable "ZOPIM_TRACKING_CODE" "Zopim izleme kodu" "TEXT" "Genel" "Zopim izleme kodunuz" %}';z.t=+new Date;$.
+type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
+{% if request.user.is_authenticated %}
+$zopim(function() {
+    $zopim.livechat.setName('{{ request.user.get_full_name }}');
+    $zopim.livechat.setEmail('{{ request.user.email }}');
+    $zopim.livechat.setPhone('{{ request.user.phone }}');
+});
+{% endif %}
+
+</script>
+<!--End of Zopim Live Chat Script-->
+{% endif %}
+</body>
+</html>

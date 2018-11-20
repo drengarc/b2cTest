@@ -1,0 +1,10 @@
+{% extends "shop/"|add:SHOP_TEMPLATE|add:"/base.html" %}
+{% load simit_tags %}
+
+
+{% block content %}
+    <div class="wrapper">
+        <h1>İletişim</h1>
+        <div>{% variable "CONTACT_US" "İletişim" "RICH_TEXT" "İletişim" "İletişim sayfasının içeriği" %}</div>
+    </div>
+{% endblock %}

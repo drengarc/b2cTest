@@ -1,0 +1,109 @@
+{% extends "shop/dega/base.html" %}
+{% load shop_tags simit_tags staticfiles %}
+
+{% block page_description %}
+    <title>{% if page_title %}{{ page_title }}ki Ürünler{% else %}{% if request.GET.q %}({{ request.GET.q }}) {% endif %}Arama Sonuçları{% endif %}</title>
+    <meta name="description" content="{% if vehiclepath.1.name %}{{ vehiclepath.0.name }} {{ vehiclepath.1.name }} model a{% elif vehiclepath.0.name %}{{ vehiclepath.0.name }} marka a{% else %} A{% endif %}rabanız için ihtiyacınız olan bütün yedek parçaları bulun! {{ category.name }} Karoseri Motor Debriyaj Aydinlatma Filtre Süspansiyon Fren Yakit ürünleri ve daha fazlası!"/>
+    <meta name="keywords" content="{{ category.name }} {{ vehiclepath.0.name }} {{ vehiclepath.1.name }} {{ vehiclepath.2.name }} {{ vehiclepath.3.name }} {{ vehiclepath.4.name }} {% variable "SITE_KEYWORDS" "Site Etiketleri" "TEXT" "SEO" "Site etiketleri" %}"/>
+{% endblock %}
+
+{% block head_left %}
+    {% include "shop/dega/includes/vehicle-selectbox.html" with level=0 %}
+{% endblock %}
+
+{% block raw_content %}
+<div id="right_column" class="col-md-3 column">
+        <div class="block products_block panel panel-default">
+            <h4 class="title_block panel-heading">
+                <a>
+                    Filtreleme
+                </a>
+            </h4>
+
+            <div class="block_content panel-body" id="listpage_content">
+        {% include "shop/dega/includes/filters.html" with show_count=True %}
+                </div>
+    </div>
+</div>
+
+    <div id="main_center_column" class="main_center_column col-md-9">
+        <div class="center_column clearfix">
+            <div class="home-layout clearfix">
+            <div id="bestwidget-wrap-displayHome3"
+                     class="block products_block clearfix bestwidget-carousel bestwidget_displayHome new-products panel panel-default">
+
+        <h4 class="title_block panel-heading">
+        <span style="color:gray; border-bottom:none; float:left; margin-left:10px">Arama sonuçları</span>
+
+            <p class="found-x-times">
+                {% if page_title %}{{ page_title }}{% else %}Arama sonucunda{% endif %} <span rakam-event-attribute="count">{{ result.facets.count }}</span> adet ürün bulundu.
+            </p>
+
+
+        </h4>
+<div class="result-top">
+    {% if request.GET.q %}<a href="{% remove_parameter_url "q" %}" class="disable-query"><span>x</span><div style="display:inline-block" rakam-event-attribute="search_term">{{ request.GET.q }}</div></a>{% endif %}
+
+<div class="gorunum">
+ <ul id="view-options" class="view-options list-unstyled">
+                <li style="display: inline-block" class="list-title">Görünüm</li>
+                <li style="display: inline-block" class="list-option {% if request.GET.catalog == "list" %}selected {% endif %}" {% if request.GET.catalog == "list" %}rakam-event-attribute="display" rakam-event-attribute-value="horizontal"{% endif %}><a href="{% change_parameter_url "catalog" "list" %}" title="Liste Görünümü" class="view-button view-list"></a></li>
+                <li style="display: inline-block" class="list-option {% if request.GET.catalog == "catalog" %}selected{% endif %}" {% if request.GET.catalog == "catalog" %}rakam-event-attribute="display" rakam-event-attribute-value="square"{% endif %}><a href="{% change_parameter_url "catalog" "catalog" %}" title="Liste Görünümü" class="view-button view-catalog"></a></li>
+            </ul>
+                <div class="order-by">
+                    <select id="order_selectbox" style="width:165px" rakam-event-attribute="sorting" rakam-attribute-value="text">
+                        <option value="{% remove_parameter_url "or" %}">Akıllı sıralama</option>
+                        <option {% param_exists "or" "in" %}selected{% endparam_exists %} value="{% change_parameter_url "or" "in" %}">İsme göre artan</option>
+                        <option {% param_exists "or" "dn" %}selected{% endparam_exists %} value="{% change_parameter_url "or" "dn" %}">İsme göre azalan</option>
+                        <option {% param_exists "or" "dp" %}selected{% endparam_exists %} value="{% change_parameter_url "or" "dp" %}">Fiyata göre azalan</option>
+                        <option {% param_exists "or" "ip" %}selected{% endparam_exists %} value="{% change_parameter_url "or" "ip" %}">Fiyata göre artan</option>
+                        <option {% param_exists "or" "ipc" %}selected{% endparam_exists %} value="{% change_parameter_url "or" "ipc" %}">Ürün koduna göre artan</option>
+                        <option {% param_exists "or" "dpc" %}selected{% endparam_exists %} value="{% change_parameter_url "or" "dpc" %}">Ürün koduna göre azalan</option>
+                        <option {% param_exists "or" "ibn" %}selected{% endparam_exists %} value="{% change_parameter_url "or" "ibn" %}">Marka adına göre artan</option>
+                        <option {% param_exists "or" "dbn" %}selected{% endparam_exists %} value="{% change_parameter_url "or" "dbn" %}">Marka adına göre azalan</option>
+                        <option {% param_exists "or" "icn" %}selected{% endparam_exists %} value="{% change_parameter_url "or" "icn" %}">Kategori adına göre artan</option>
+                        <option {% param_exists "or" "dcn" %}selected{% endparam_exists %} value="{% change_parameter_url "or" "dcn" %}">Kategori adına göre azalan</option>
+                    </select>
+
+                </div>
+
+
+                <div class="holder"></div>
+            </div>
+                <div style="clear:both"></div>
+
+
+
+</div>
+
+
+{#        <div class="switch-tab-bottom-line"></div>#}
+
+        <div class="blueWrapper">
+            <ul class="{{ catalog }}-view products_block">
+                {% for product in result.products %}
+                    {% include catalog_template with product=product counter=forloop.counter %}
+                {% endfor %}
+            </ul>
+
+            <div class="holder"></div>
+            {% pagination context=result request=request param="p" %}
+
+            {% if category.description %}
+                <div class="sponsor">
+                    <h3>{{ category.name }} Kategorisi Hakkında Detaylı Bilgi</h3>
+
+                    <p>{{ category.description }}</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+</div></div>
+</div>
+{% endblock %}
+
+{% block javascript_end %}
+    <script type="text/javascript" src="{% static "js/jquery.elevateZoom-3.0.8.min.js" %}"></script>
+    <script>rakam.logInlinedEvent('search', {_user_agent: true})</script>
+{% endblock %}

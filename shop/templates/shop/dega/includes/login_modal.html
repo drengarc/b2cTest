@@ -1,0 +1,25 @@
+{% load i18n %}
+
+<div class="LoginCon modal">
+    <form action="{% url "shop_customer_login" %}" method="post">
+{#    <form action="https://{{ request.get_host }}/{% url "shop_customer_login" %}" method="post">#}
+        {% csrf_token %}
+        <div class="fieldWrapper">
+            <label for="id_email">Eposta:</label> <input id="id_email" maxlength="100"
+                                                         name="email" type="text">
+        </div>
+
+        <div class="fieldWrapper">
+            <label for="id_password">Şifre:</label> <input id="id_password" name="password"
+                                                           type="password">
+        </div>
+
+        <div class="fieldWrapper">
+            <label for="id_remember_me" style="display:inline">{% trans "Remember me" %}:</label> <input
+                id="id_remember_me" name="remember_me" type="checkbox">
+        </div>
+        <div><a href="{% url "password_reset" %}">Şifremi Unuttum</a></div>
+        <input class="button_blue1 right" type="submit" id="L-Enter" value="Giriş Yap"
+               tabindex="4" name="pass" alt="Giriş Yap" title="Giriş Yap">
+    </form>
+</div>

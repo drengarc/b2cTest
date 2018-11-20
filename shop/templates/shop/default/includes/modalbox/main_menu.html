@@ -1,0 +1,20 @@
+{% load shop_tags fb_versions %}
+<div class="vehicle-model-submenu">
+<ul>
+{% for model in vehicle_models %}
+    {% if model.id not in exclude_ids %}
+        <li data-slug="{{ model.slug }}" id="menu-brand-{{ model.slug }}"><a href="{% url "shop_vehicle_page" model.slug %}">{{ model.name }}</a></li>
+    {% endif %}
+{% endfor %}
+</ul>
+</div>
+
+<script>
+    {% for model in vehicle_models %}$('#menu-brand-{{ model.slug }}').data('categories', {{ model.categories|safe }});{% endfor %}
+</script>
+
+<div class="vehicle-category-submenu" style="display:none">
+{% for category in categories %}
+    <a data-slug="{{ category.0 }}" style="background:url({{MEDIA_URL}}main_menu/{{ category.0 }}.png) no-repeat top center" class="{{ category.0 }}" data-url="{% url 'shop_list_page' %}?c={{ category.0 }}" href="">{{ category.1 }}</a>
+{% endfor %}
+</div>

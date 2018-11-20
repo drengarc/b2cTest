@@ -1,0 +1,60 @@
+{% load shop_tags fb_versions %}
+<li class="catalog-seem-cell child-mod{% if counter|divisibleby:"2" %}-clear{% endif %} product-item" itemscope
+    itemtype="http://schema.org/Product" data-id="{{ product.id }}">
+    <div class="cell-border-css">
+        <div class="CategoryMenu">
+            <div class="image-container">
+                <a href="{{ product|get_product_link }}" class="picture" itemprop="url" title="{{ product.name }}">
+                    <img alt="{{ product.name }}" class="image"
+                         {% if product.image %}data-zoom-image="{{ MEDIA_URL }}{{ product.image }}"{% endif %}
+                         src="{% version product.image 'product_list_square' "images/placeholder/default-product-square.png" %}"/>
+
+                    {% if product.image %}
+                        <div class="item-magnify" title="resmi büyüt"></div>{% endif %}
+                    <div class="mask"></div>
+                </a>
+                {% if not product.in_stock %}
+                    <div class="not-in-stock">Geçici olarak temin edilememektedir.</div>
+                {% endif %}
+            </div>
+            <h4 class="product-title">
+                <a href="{{ product|get_product_link }}" itemprop="name" title="{{ product.name }}">
+                    <li class="product-name">{{ product.name }}</li>
+                </a>
+            </h4>
+            <div class="product-subtitle">
+                {{ product.partner_code }}<br>{{ product.manufacturer_name }}
+            </div>
+            <div></div>
+
+            <div class="product-price {% if product.discount_price < product.price %}discount{% endif %}">
+                <span itemprop="price"> {{ product.discount_price|decimalparser:"sup"|safe }} TL</span>
+            </div>
+
+            <div style="float:left;width: 130px;">
+                {% if product.discount_price < product.price %}
+                    {#                    <p class="price-css strike-price"#}
+                    {#                       style="text-decoration: line-through;">{{ product.price|decimalparser:"sup"|safe }} TL</p>#}
+                    {% if 2 in product.tags %}
+                        <div class="promo-product">
+                            <p>kampanya</p>
+                        </div>
+                    {% endif %}
+                {% endif %}
+                {% if product.in_stock %}
+                    <a href="/account/basket-action?quantity=1&product={{ product.id }}&action=add"
+                       class="add-basket-square">sepete ekle</a>
+                {% endif %}
+            </div>
+
+            {% if product.grup_id %}
+                <div class="categorySwitch" rel="popup">
+                    <h5 data-class="bilgi" class="product-bilgi">Bilgiler</h5>
+                    <h5 data-class="esdeger" class="product-esdeger">Eşdeger</h5>
+                    <h5 data-class="oem" class="product-oem">Oem</h5>
+                    <h5 data-class="arac" class="product-arac">Araç</h5>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</li>

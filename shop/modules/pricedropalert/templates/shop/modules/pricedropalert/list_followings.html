@@ -1,0 +1,23 @@
+{% extends "shop/"|add:SHOP_TEMPLATE|add:"/customer/account/base.html" %}
+{% load shop_tags %}
+{% block page_content %}
+    <h2>Takip Ettiklerim</h2>
+    {% if followings %}
+    <table class="basket">
+        <tr>
+            <th>ürün</th>
+            <th>fiyat</th>
+            <th></th>
+        </tr>
+        {% for product in followings %}
+            <tr>
+            <td>{{ product.name }}</td>
+            <td>{{ product|get_price:request.user }} TL</td>
+            <td><form method="post" action="{% url "shop_modules_pricedropalert_remove" %}">{% csrf_token %}<input type="hidden" name="product" value="{{ product.id }}"><input type="submit" class="gray-btn" value="takip etmeyi bırak"></form></td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        Henüz hiçbir ürünü takip etmiyorsunuz.
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "shop/"|add:SHOP_TEMPLATE|add:"/customer/account/base.html" %}
+{% load shop_tags fb_versions %}
+
+{% block page_content %}
+    <h2>Adreslerim</h2>
+    <form method="POST" action="">{% csrf_token %}
+        {% if addresses %}
+        <table class="basket">
+            <tr>
+                <th></th>
+                <th>Adres</th>
+                <th>Varsayılan Fatura Adresi</th>
+                <th>Varsayılan Teslimat Adresi</th>
+            </tr>
+            {% for address in addresses %}
+                <tr>
+                    <td style="width:25px"><a href="{% url "shop_customer_address_edit" address.id %}">Düzenle</a></td>
+                    <td class="name">{{ address.first_name }} {{ address.last_name }}<br>{{ address.address }} {{ address.city.name }} {{ address.postcode }}</td>
+{#                    <td class="radio">#}
+                    <td>
+                        <input type="radio" name="invoice" value="{{ address.id }}" {% if request.user.default_invoice_address_id == address.id %} checked {% endif %}>
+                    </td>
+{#                    <td class="radio">#}
+                    <td>
+                        <input type="radio" name="shipment" value="{{ address.id }}" {% if request.user.default_shipment_address_id == address.id %} checked {% endif %}>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+            <br>
+            <div>Henüz hiçbir adresiniz yok.</div>
+            <br>
+        {% endif %}
+        <div class="buttons" style="clear:both">
+            <a href="{% url "shop_customer_address_add" %}" class="button_blue1">Yeni Adres Ekle</a>
+            {% if addresses %}<input type="submit" class="button_blue1 right" value="Varsayılan olarak Kaydet">{% endif %}
+        </div>
+        <div style="clear:both; height:10px"></div>
+    </form>
+{% endblock %}

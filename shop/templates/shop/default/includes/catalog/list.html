@@ -1,0 +1,58 @@
+{% load shop_tags fb_versions %}
+
+<li itemscope="" itemtype="http://schema.org/Product" class="catalog_list_product product-item"
+    data-id="{{ product.id }}">
+    <a href="{{ product|get_product_link }}" class="avatar left" itemprop="url" title="{{ product.name }}">
+        <img alt="{{ product.name }}" {% if product.image %}data-zoom-image="{{ product.image }}"{% endif %}
+             src="{% version product.image 'fb_thumb' "images/placeholder/default-product-square.png" %}"
+             alt="{{ product.name }}" width="60" itemprop="image"></a>
+
+    {% if product.image %}
+        <div class="item-magnify" title="resmi büyüt"></div>{% endif %}
+    <div class="left product-information">
+
+        <div class="list-view-data-part-0">
+            <h4>
+                <a href="{{ product|get_product_link }}" itemprop="name"
+                   title="{{ product.name }}">{{ product.name }}</a>
+            </h4>
+
+            <p class="list-product-icons">
+                <a class="product-bilgi icon link" title="Bilgiler"></a>
+                <a class="product-esdeger icon link" title="Eşdeğer ürünler"></a>
+                <a class="product-oem icon link" title="Oem Kodları"></a>
+                <a class="product-arac icon link" title="Araç bilgileri"></a>
+            </p>
+            {% if render_manufacturer %}
+                <p class="list-product-icons">
+                    {{ product.manufacturer_name }}
+                </p>
+            {% endif %}
+            <p class="partner_code">{{ product.partner_code }} {{ product.manufacturer_name }}</p>
+
+        </div>
+
+    </div>
+
+    <div class="right" style="margin:16px;">
+        <div class="list-view-data-part-2">
+            <p class="price" itemprop="price"> {{ product.discount_price|decimalparser:"sup"|safe }} TL</p>
+            {% if product.discount_price < product.price %}
+                <span class="price-css strike-price"><strike> {{ product.price|decimalparser:"sup"|safe }}
+                    TL</strike></span>
+            {% endif %}
+            <div class="promo-product">
+                {% if 2 in product.tags %}
+                    <p>kampanya</p>
+                {% endif %}
+                {% if product.in_stock %}
+                <a href="/account/basket-action?quantity=1&product={{ product.id }}&action=add" rakam-event="add_basket" rakam-event-properties='{"product": {{ product.id }}, "fast_add": true}'
+                   class="add-basket-square">sepete ekle</a>
+                {% else %}
+                    <div class="not-in-stock">Geçici olarak temin edilememektedir.</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div style="clear:both"></div>
+</li>

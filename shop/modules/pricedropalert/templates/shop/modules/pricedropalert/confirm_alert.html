@@ -1,0 +1,3 @@
+{% load shop_tags fb_versions %}
+
+<a href="{{ product|get_product_link }}">{{ product.name }}</a> ürününü takip etmek istediyseniz <a href="{% url "shop_pricedropalert_confirm" hash %}">buradaki bağlantıya</a> tıklayınız.

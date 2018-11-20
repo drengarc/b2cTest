@@ -1,0 +1,24 @@
+{% extends "shop/"|add:SHOP_TEMPLATE|add:"/base.html" %}
+
+{% block header %}
+    {{ block.super }}
+    {% if page.tags %}
+        <meta name="keywords" content="{{ page.tags }}">{% endif %}
+    {% if page.description %}
+        <meta name="description" content="{{ page.description }}"> {% endif %}
+{% endblock %}
+
+{% block title %}
+    {% if page.title %} {{ page.title }} {% else %} {{ page.name }} {% endif %}
+{% endblock %}
+
+{% block raw_content %}
+
+    <div class="col-md-9 column wrapper">
+        <h1>{{ page.name }}</h1>
+        <p>{{ page.content|safe }}</p>
+    </div>
+    <div class="col-md-3 column">
+       {% include 'shop/dega/includes/top_category_list.html' %}
+    </div>
+{% endblock %}

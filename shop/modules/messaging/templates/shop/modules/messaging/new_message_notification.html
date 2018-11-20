@@ -1,0 +1,6 @@
+Mesajınıza en kısa sürede yanıt verilecektir.<br><br>
+
+Konu: {{ message.topic }}<br>
+Mesaj: {{ message.message }}<br>
+
+Buradan takip edebilirsiniz: <a href="{{ SITE_URL }}{% url "shop_modules_messaging_display" message.id %}">{{ SITE_URL }}{% url "shop_modules_messaging_display" message.id %}</a>

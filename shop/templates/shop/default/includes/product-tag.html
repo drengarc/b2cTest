@@ -1,0 +1,68 @@
+{% load shop_tags %}
+<div id="ProductsCon" class="">
+    <div class="  ">
+        <div class="bblgray2 mrb10" id="GFContainer">
+            <div class="HeaderBox">
+                <h2><a href="/tag/indirimdekiler" class="black">Günün Ürünü</a></h2>
+
+                <div class="ArrowBox">
+                    <a class="BlueArrows ArrowL info" href="javascript:;" id="GFPrev">
+                        <div class="BlackBubbleCon bbc">
+                            <div class="BBArrow"></div>
+                            <div class="BlackBubble">Önceki</div>
+                        </div>
+                    </a>
+                    <a class="BlueArrows ArrowR info" href="javascript:;" id="GFNext">
+                        <div class="BlackBubbleCon bbc">
+                            <div class="BBArrow"></div>
+                            <div class="BlackBubble">Sonraki</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="ListColumn">
+                <div class="ListConH">
+                    <ul class="ProductList clearfix">
+                        {% for product in gunun_firsati %}
+                            {% include "shop/default/includes/catalog/thumb_square.html" with product=product %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="ProductsCon" class="">
+    <div class="  ">
+        <div class="bblgray2 mrb10" id="GFContainer">
+            <div class="HeaderBox">
+                <h2><a href="/tag/indirimdekiler" class="black">İndirimdekiler</a></h2>
+
+                <div class="ArrowBox">
+                    <a class="BlueArrows ArrowL info" href="javascript:;" id="GFPrev">
+                        <div class="BlackBubbleCon bbc">
+                            <div class="BBArrow"></div>
+                            <div class="BlackBubble">Önceki</div>
+                        </div>
+                    </a>
+                    <a class="BlueArrows ArrowR info" href="javascript:;" id="GFNext">
+                        <div class="BlackBubbleCon bbc">
+                            <div class="BBArrow"></div>
+                            <div class="BlackBubble">Sonraki</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="ListColumn">
+                <div class="ListConH">
+                    <ul class="ProductList clearfix">
+                        {% for product in indirimdekiler %}
+                            {% include "shop/default/includes/catalog/thumb_square.html" with product=product %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+{% extends "shop/"|add:SHOP_TEMPLATE|add:"/customer/account/base.html" %}
+{% load humanize %}
+
+{% block page_content %}
+    <h1>Siparişlerim</h1>
+    {% if orders %}
+        <table class="styled_table" style="width:100%">
+        <th>Sipariş Numarası</th>
+        <th>Sipariş Durumu</th>
+        <th>Kargo Takip</th>
+        <th>Fiyat</th>
+        <th>Tarih</th>
+        <th></th>
+        {% for order in orders %}
+           <tr>
+                <td><a href="{{ order.get_absolute_url }}">{{ order.receipt_id }}</a></td>
+                <td>{{ order.statutes.last }}</td>
+                <td>{% if order.cargo_no %}<a href="http://www.suratkargo.com.tr/kargoweb/bireysel.aspx?no={{ order.cargo_no }}">{{ order.cargo_no }}</a>{% else %}Henüz kargo takip numarası girilmemiş{% endif %}</td>
+                <!--td>{% if order.cargo_no %}{{ order.cargo_no }}{% else %}Henüz kargo takip numarası girilmemiş{% endif %}</td-->
+                <td>{{ order.final_price|floatformat:2|intcomma }} TL</td>
+                <td>{{ order.date_processed }}</td>
+           </tr>
+        {% endfor %}
+        </table>
+    {% else %}
+        <br>
+        Henüz hiçbir siparişiniz yok.
+    {% endif %}
+{% endblock %}

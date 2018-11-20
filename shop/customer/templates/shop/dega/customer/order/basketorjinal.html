@@ -1,0 +1,165 @@
+{% extends "shop/"|add:SHOP_TEMPLATE|add:"/base.html" %}
+{% load shop_tags fb_versions simit_tags i18n humanize %}
+
+{% block content %}
+    {% if basket|length == 0 %}
+        <div class="info">Sepetinizde ürün bulunmamaktadır.</div>
+    {% else %}
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message|safe }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% with "SHOW_MANUFACTURER_IN_BASKET"|variable as show_manufacturer %}
+            <table class="basket">
+                <tr>
+                    <th>Ürün</th>
+                    <th></th>
+                    <th>Kategori</th>
+                    {% if show_manufacturer %}
+                        <th>Marka</th>{% endif %}
+                    <th>Fiyat</th>
+                    <th>Adet</th>
+                    <th class="total-price">Tutar</th>
+                </tr>
+                {% for item in basket %}
+                    <tr class="product" data-id="{{ item.product.id }}">
+                        <td><img style="max-width: 70px; max-height: 60px"
+                                 src="{% version item.product.images.first.image "fb_thumb" "images/placeholder/default-product-square.png" %}">
+                        </td>
+                        <td class="name"><a href="{{ item.product|get_product_link }}">{{ item.product.name }}</a></td>
+                        <td class="category">{{ item.product.category }}</td>
+                        {% if show_manufacturer %}
+                            <td class="manufacturer">{{ item.product.manufacturer }}</td>{% endif %}
+                        <td class="price">
+                            {{ item.product.discount_price|floatformat:2|intcomma }} TL
+                            {% if item.product.discount_price < item.product.price %}<br>
+                                <del>{{ item.product.price|floatformat:2|intcomma }} TL</del> {% endif %}
+                        </td>
+                        <td class="quantity">
+                            <form method="get" action="{% url "shop_customer_basket" %}"> {% csrf_token %}
+                                {% with "depo-miktari-kontrolu"|variable as depo_kontrol %}
+                                    <input value="{{ item.quantity }}" type="text"
+                                           {% if depo_kontrol %}data-step="{{ item.product.minimum_order_amount }}"
+                                           data-max="{{ item.product.quantity }}"{% endif %} name="quantity"
+                                           class="number small-input">
+                                {% endwith %}
+                                <input type="hidden" name="product" value="{{ item.product.id }}">
+                                <input type="hidden" name="action" value="change-quantity">
+                                <input type="submit" class="gray-btn" value="Güncelle">
+                                <a class="remove-basket-item">sil</a>
+                            </form>
+                        </td>
+
+                        <td class="total-price">
+                            {{ item.total_price|floatformat:2|intcomma }} TL
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endwith %}
+        <div class="calculation" style="float: right">
+            <table>
+                <tr>
+                    <td class="medium">Toplam</td>
+                    <td>{{ total_price_without_kdv|floatformat:2|intcomma }} TL</td>
+                </tr>
+                <tr>
+                    <td class="medium">KDV:</td>
+                    <td>{{ kdv|floatformat:2|intcomma }} TL</td>
+                </tr>
+                {% if total_discount > 0 %}
+                    <tr>
+                        <td class="medium">İndirim:</td>
+                        <td>{{ total_discount|floatformat:2|intcomma }} TL</td>
+                    </tr>
+                {% endif %}
+                <tr>
+                    <td class="medium">Genel Toplam:</td>
+                    <td>{{ total_basket|floatformat:2|intcomma }} TL</td>
+                </tr>
+                <div style="clear:both"></div>
+            </table>
+        </div>
+        <div style="clear:both"></div>
+        <a href="javascript: history.go(-1)" class="button_blue1 submitbtn button_size3 left">Alışverişe devam et</a>
+        <a href="{% url "shop_order_address" %}" class="button_blue1 submitbtn button_size3 right" style="margin:4px">Satın
+            Al</a>
+        <div style="clear:both"></div>
+    {% endif %}
+{% endblock %}
+{% block javascript_end %}
+    <script>
+        var makeOptions = function (data) {
+            var a = ""
+            data.forEach(function (item) {
+                a += "<option value='" + item.slug + "'>" + item.name + "</option>";
+            });
+            return a;
+        }
+        $('.category_selectbox.brand').change(function () {
+            $.getJSON('{% url 'shop_api_vehicle_tree' %}', {parent: this.value}, function (data) {
+                $('select.model,select.model_type,select.motor,select.fuel,select.years').find('option').not('.fixed').remove();
+                $('select.model').append(makeOptions(data)).focus();
+            });
+        });
+        $('.category_selectbox.model').change(function () {
+            $.getJSON('{% url 'shop_api_vehicle_tree' %}', {parent: this.value}, function (data) {
+                $('select.model_type,select.motor,select.fuel,select.years').find('option').not('.fixed').remove();
+                $('select.model_type').append(makeOptions(data)).focus();
+            });
+        });
+        $('.category_selectbox.model_type').change(function () {
+            $.getJSON('{% url 'shop_api_vehicle_motor' %}', {vehicle: this.value}, function (data) {
+                $('select.motor,select.fuel,select.years').find('option').not('.fixed').remove();
+                $('select.motor').append(makeOptions(data)).focus();
+            });
+        });
+        $('.category_selectbox.motor').change(function () {
+            $.getJSON('{% url 'shop_api_vehicle_fuel' %}', {vehicle: $('.model_type').val(), motor: this.value}, function (data) {
+                $('select.fuel,select.years').find('option').not('.fixed').remove();
+                $('select.fuel').append(makeOptions(data)).focus();
+            });
+        });
+        $('.category_selectbox.fuel').change(function () {
+            $.getJSON('{% url 'shop_api_vehicle_years' %}', {vehicle: $('.model_type').val(), motor: $('.motor').val(), fuel: this.value}, function (data) {
+                $('select.years').find('option').not('.fixed').remove();
+                $('select.years').append(makeOptions(data)).focus();
+            });
+        });
+        var vehicle_supported;
+        $('.category_selectbox.years').change(function () {
+            var ids = [];
+            $('tr.product').each(function (idx, item) {
+                ids.push(item.getAttribute('data-id'))
+            });
+            $.getJSON('{% url 'shop_api_vehicle_product_support' %}', {products: ids.join("-"), vehicle: $('.model_type').val(), motor: $('.motor').val(), fuel: $('.fuel').val(), years: $('.years').val()}, function (data) {
+                vehicle_supported = 0;
+                for (var key in data) {
+                    var elem = $('tr.product[data-id="' + key + '"]');
+                    if (!data[key]) {
+                        elem.addClass('notsupport').attr('title', 'Bu ürün istediğiniz araca uymamaktadır.');
+                        vehicle_supported += 1;
+                    } else {
+                        elem.addClass('supported').attr('title', 'Bu ürün istediğiniz araca uymaktadır.');
+                    }
+                }
+                if (vehicle_supported > 0)
+                    $('.vehicle_result').html('Sepetinizdeki ' + vehicle_supported + ' ürün seçtiğiniz araca uymamaktadır');
+            });
+        });
+        $('.submitbtn').click(function () {
+            {% if total_basket < 10 %}
+                alert("Sipariş verebilmeniz için sipariş miktarınızın en az 10 lira olması gerekmektedir.")
+                return false;
+            {% endif %}
+        });
+        $('.remove-basket-item').click(function () {
+            var form = $(this).closest('form');
+            form.find('input[name="quantity"]').val(0);
+            form.submit();
+        });
+    </script>
+{% endblock %}

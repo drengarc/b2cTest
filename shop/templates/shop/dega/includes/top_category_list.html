@@ -1,0 +1,22 @@
+{% load shop_tags %}
+
+<div class="block products_block panel panel-default">
+            <h4 class="title_block panel-heading">
+                <a >
+                    Kategoriler
+                </a>
+            </h4>
+
+            <div class="block_content panel-body" id="listpage_content">
+                <ul class="tree list-unstyled">
+                    <ul class="filter-middle">
+                        {% for item in categories %}
+                            <li>
+                            <a href="{% change_parameter_url "c" item.slug %}"
+                               title="{{ item.name }}">{{ item.name }}</a>
+                            {% if show_count %}<span>({{ item.count }})</span>{% endif %}
+                        {% endfor %}
+                    </ul>
+                </ul>
+            </div>
+</div>

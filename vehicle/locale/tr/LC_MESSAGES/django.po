@@ -1,0 +1,152 @@
+# Copyright (C) 2014
+# This file is distributed under the same license as the vehicle package.
+# Burak Emre Kabakcı <emrekabakci@gmail.com>, 2014.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-24 17:54-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: BURAK EMRE KABAKCI <emrekabakci@gmail.com>\n"
+"Language-Team: TURKISH <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: __init__.py:13
+msgid "vehicle"
+msgstr "araç"
+
+#: __init__.py:18
+msgid "vehicle tree"
+msgstr "araç ağacı"
+
+#: admin.py:98 admin.py:133
+msgid "brand"
+msgstr "marka"
+
+#: admin.py:141 admin.py:156 models.py:177
+msgid "brand model"
+msgstr "model"
+
+#: admin.py:164 models.py:194
+msgid "model type"
+msgstr "model tip"
+
+#: models.py:31
+msgid "volume"
+msgstr "hacim"
+
+#: models.py:32
+msgid "weight"
+msgstr ""
+
+#: models.py:33
+msgid "partner code"
+msgstr "stok kodu"
+
+#: models.py:35
+msgid "price by kg"
+msgstr "kg başına fiyat"
+
+#: models.py:65
+msgid "vehicles"
+msgstr "araçlar"
+
+#: models.py:70
+msgid "End year cannot be higher than begin year."
+msgstr ""
+
+#: models.py:77
+msgid "present"
+msgstr "şimdiki"
+
+#: models.py:84 models.py:214 models.py:228
+msgid "slug"
+msgstr "kısa ad"
+
+#: models.py:88
+msgid "description"
+msgstr "açıklama"
+
+#: models.py:178
+msgid "brand models"
+msgstr "modeller"
+
+#: models.py:195
+msgid "model types"
+msgstr "model tipleri"
+
+#: models.py:200 models.py:206
+msgid "tax rate"
+msgstr "vergi oranı"
+
+#: models.py:201
+msgid "added date"
+msgstr "eklenmiş tarih"
+
+#: models.py:205
+msgid "tax rates"
+msgstr "vergi oranları"
+
+#: models.py:219
+msgid "fuel types"
+msgstr "yakıt tipleri"
+
+#: models.py:220
+msgid "fuel type"
+msgstr "yakıt tipi"
+
+#: models.py:233
+msgid "motor types"
+msgstr "motor tipleri"
+
+#: models.py:234
+msgid "motor type"
+msgstr "motor tipi"
+
+#: models.py:242
+msgid "oem number"
+msgstr "oem numarası"
+
+#: models.py:243
+msgid "original oem number"
+msgstr "orijinal oem numarası"
+
+#: models.py:248
+msgid "original products"
+msgstr "orijinal ürünler"
+
+#: models.py:249
+msgid "original product"
+msgstr "orijinal ürün"
+
+#: models.py:269
+msgid "name"
+msgstr "isim"
+
+#: models.py:270
+msgid "redirect to basket"
+msgstr "sepete yönlendir"
+
+#: models.py:271
+msgid ""
+"Whether the user who added to basket an item will be redirected to basket "
+"page or not."
+msgstr ""
+
+#: models.py:272
+msgid "minimum order price for shipment"
+msgstr "kargo için minimum sipariş ücreti"
+
+#: models.py:276
+msgid "firm parameters"
+msgstr "firma parametreleri"
+
+#: models.py:277
+msgid "firm parameter"
+msgstr "firma parametresi"

@@ -1,0 +1,506 @@
+{% extends "shop/"|add:SHOP_TEMPLATE|add:"/base.html" %}
+{% load shop_tags fb_versions pricedropalert simit_tags stockalert %}
+
+{% block page_description %}
+    <title>{{ product.name }} -
+        {% for c in categorytree %}{% if not forloop.first %} > {% endif %}{{ c.name }}{% endfor %}</title>
+    <meta name="description" content="
+            {% for c in categorytree %}{% if not forloop.first %} > {% endif %}{{ c.name }}{% endfor %} kategorisindeki {{ product.name }} ürünü sadece {{ product.discount_price }} TL."/>
+    <meta name="keywords" content="
+            {% for c in categorytree %}{{ c.name }}, {% endfor %}{% variable "SITE_KEYWORDS" "Site Etiketleri" "TEXT" "SEO" "Site etiketleri" %}"/>
+{% endblock %}
+
+{% block raw_content %}
+    <div id="center_column">
+    {% include "shop/default/includes/breadcrumb.html" with items=categorytree property='shop_category_page' tag="url" %}
+    <div id="col-left">
+        <div class="title-container">
+            <div class="h1-container"><h1>{{ product.name }}</h1>
+
+                {% if 2 in product.tags %}
+                    <div class="promo-product" ><p style="top:2px">kampanyalı ürün</p></div>{% endif %}</div>
+        </div>
+        <div id="big-photo-area">
+            {% if product.images.0 %}
+                <img rel="gallery" style="max-height:250px"
+                     src="{% version product.images.0.image 'product_page' "images/placeholder/default-product-square.png" %}"
+                     title="{{ product.name }}" id="big-photo"
+                     data-zoom-image="{% version product.images.0.image None "images/placeholder/default-product-square.png" %}"
+                     data-image="{% version product.images.0.image 'product_page' "images/placeholder/default-product-square.png" %}"
+                     class="fancybox"/>
+            {% else %}
+                <img rel="gallery" src="{{ STATIC_URL }}images/placeholder/default-product-square.png" height="250">
+            {% endif %}
+        </div>
+        <div class="product-thumbnail" id="gallery_01f">
+            {% for image in product.images %}
+                <a class="gallery-image" data-update=""
+                   data-zoom-image="{% version image.image None "images/placeholder/default-product-square.png" %}"
+                   data-image="{% version image.image 'product_page' %}">
+                    <img rel="gallery" style="width:50px" src="{% version image.image 'fb_thumb' %}"
+                         title="{{ product.name }}" class="small-photo fancybox">
+                </a>
+            {% endfor %}
+
+        </div>
+
+
+    </div>
+
+    <div class="col-center">
+        <form action="{% url "shop_customer_basket" %}" method="get">
+            <ul class="table-ul background-f4f4f4">
+                <div class="row-li left">
+                    <div class="set-padding">Stok Kodu:</div>
+                    <div class="product-label">{{ product.partner_code }}</div>
+                    <div style="clear:both"></div>
+                </div>
+                <div class="row-li right">
+                    <div class="set-padding">Marka:</div>
+                    <div class="product-label">{{ product.manufacturer_name }}</div>
+                    <div style="clear:both"></div>
+                </div>
+                <li class="row-li" style="clear:both">
+                    <ul>
+                        <li class="col-li child-2">
+                            <div class="set-padding">
+                                {% with "depo-miktari-kontrolu"|variable as depo_kontrol %}
+                                    {% if product.quantity > 0 %}
+                                        <div class="set-padding special-padding-3">Adet</div>
+                                        <input type="text" name="quantity" class="number small-input"
+                                                {% if depo_kontrol %}
+                                               data-step="{{ product.minimum_order_amount }}"
+                                               data-max="{{ product.quantity }}"
+                                               value="{{ product.minimum_order_amount }}"
+                                                {% else %} value="1" {% endif %}>
+                                    {% endif %}
+                                    <span class="fs10 color-8e8e8e {% if product.quantity == 0 %}notexist{% endif %}"> (<strong>
+                                        {% if product.quantity > 0 %}
+                                            {% with "urun-miktarini-sitede-goster"|variable as miktar_goster %}
+                                                {% if miktar_goster %}{{ product.quantity }} adet mevcut.{% else %}
+                                                    Mevcut{% endif %}
+                                            {% endwith %}
+                                        {% else %}
+                                            Stokta yok
+                                        {% endif %} </strong>)
+                                {% if product.quantity == 0 %}<a href="#product-information ">
+                                    <h3 style="color:#159de9;background: #E4E4E4;padding: 0px 4px;margin: 6px 0 0;">
+                                        Eşdeğerlerine göz atın.</h3></a>{% endif %}
+                                        {% if depo_kontrol and product.minimum_order_amount > 1 %}(Bu ürün
+                                            {{ product.minimum_order_amount }}
+                                            'lü paketler halinde satılmaktadır.{% endif %}</span>
+                                {% endwith %}
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="holder"></div>
+                </li>
+                <li class="row-li">
+                    <ul>
+                        <li class="col-li child-2">
+                            <div class="product-buy">
+
+
+                                <input type="hidden" value="{{ product.id }}" name="product">
+                                <input type="hidden" value="add" name="action">
+                                {% if product.quantity > 0 %}
+{#                                  <input title="Teyit işlemi için aracınızın şase kodunuz girebilirsiniz." placeholder="Şase kodu (opsiyonel)" name="sase" class="product-sase-code">#}
+                                    <input type="submit" class="button_blue1" style="float: right; clear: both; width: 131px;" value="Sepete Ekle">
+                                {% endif %}
+
+                                <span class="price-css"> {{ product.discount_price|decimalparser:"sup"|safe }} TL </span>
+                                <br>
+                                {% if product.discount_price < product.price %}
+                                    <span class="price-css strike-price"><strike> {{ product.price|decimalparser:"sup"|safe }}
+                                        TL</strike></span>
+                                {% endif %}
+
+                                <div class="holder"></div>
+                            </div>
+
+                        </li>
+                    </ul>
+                    <div class="holder"></div>
+                </li>
+            </ul>
+        </form>
+        <li class="holder"></li>
+        </ul>
+
+        <div class="center-bottom-box">
+
+            <div class="share-container">
+                <div id="share">
+                    <ul class="table-ul">
+                        <li class="follow_product">
+
+                            {% if product|is_following_price:request.user %}
+                                <a class="price-alert active">Ürünün fiyatı takip ediliyor</a>
+                            {% else %}
+                                {% if request.user.is_authenticated %}
+                                    <a class="price-alert">Fiyatı düşünce haber ver</a>
+                                {% else %}
+                                    <a href="{% url "shop_customer_login" %}?redirect={{ request.path }}">Fiyatı düşünce
+                                        haber ver</a>
+                                {% endif %}
+                            {% endif %}
+
+                            {% if product.quantity == 0 %}
+                                <br><br>
+                                {% if product|is_following_product:request.user %}
+                                    <a class="stock-alert active">Stok durumu takip ediliyor</a>
+                                {% else %}
+                                    {% if request.user.is_authenticated %}
+                                        <a class="stock-alert">Stoğa girince haber ver</a>
+                                    {% else %}
+                                        <a href="{% url "shop_customer_login" %}?redirect={{ request.path }}">Stoğa
+                                            girince haber ver</a>
+                                    {% endif %}
+                                {% endif %}
+                            {% endif %}
+                            <!--<div id="price-drop-form-div" style="display:none">
+                                <form id="price-alert-form" method="post">{% csrf_token %}Email adresiniz: <input
+                                        type="email" class="email-pricealert"><br> <input type="submit" value="Onayla">
+                                </form>
+                            </div>
+                            -->
+
+                        </li>
+                    </ul>
+                </div>
+                <div class="holder"></div>
+            </div>
+
+            <ul class="table-ul">
+                <li>
+{#                    <div>Taksit Fırsatları</div>#}
+
+                <li class="col-li last-child">
+                    <img style="margin-top:5px" src="{{ MEDIA_URL }}{% variable "TAKSIT_BILGILERI" "Taksit bilgileri" "IMAGE" "Alışveriş" "Taksit bilgileri alanında görünecek imaj" %}">
+                </li>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="col-middle">
+        {#        <a href="javascript:$zopim.livechat.window.show()">#}
+        {#            <div class="live-support"><p>Canlı Destek</p>#}
+        {##}
+        {#                <p class="small">Bu ürünle ilgili destek alın</p></div>#}
+        {#        </a>#}
+
+        {#        {% if product.quantity > 0 %}#}
+        {#            <div title="Siparişiniz 48 saat içinde kargoda!" class="fast-shipment-48">Siparişiniz 48 saat içinde kargoda#}
+        {#            </div>{% endif %}#}
+        {#        {% if product.manufacturer_is_original %}#}
+        {#            <div title="Bu ürün orijinallik garantisi altındadır" class="original-product">Orijinal Ürün#}
+        {#            </div>{% endif %}#}
+    </div>
+    <div class="clear"></div>
+    <div id="product-information">
+
+        <div class="tabContainer">
+
+            <ul class="table-ul switch-tab tabs">
+                <li><a data-href="arac"><h2>Ürünü kullanabileceğiniz araçlar</h2></a></li>
+                {#            <li><a data-href="oem"><h2>Oem Numaraları</h2></a></li>#}
+                {#            <li class="{% if product.quantity == 0 %}active{% endif %}"><a data-href="esdeger"><h2>Eşdeğer Ürünler</h2>#}
+                {#            </a></li>#}
+                {% if product.description %}
+                    <li class="child-4"><a data-href="features" id="tab1"><h2>Ürün Özellikleri</h2></a></li>{% endif %}
+                <li><a data-href="payment"><h3>Taksit Bilgileri</h3></a></li>
+                <!--<li style="float:right;margin-right: 0;"><a data-href="arac_test"><h3>Ürün istediğiniz araca uyuyor mu?</h3>-->
+                </a></li>
+            </ul>
+            <div class="switch-tab-bottom-line"></div>
+
+            <div id="arac" class="box container">
+                {% if vehicle_trees %}
+                    <table class="vehicle-table" style="width:100%">
+                        <tr>
+                            <th>Marka</th>
+                            <th>Model</th>
+                            <!--th>Model Tip</th>
+                            <th>Motor Tip</th>
+                            <th>Yakıt Tip</th-->
+                            <th>Yıl</th>
+                        </tr>
+                        {% for tree in vehicle_trees %}
+                            {% include "shop/dega/includes/breadcrumb-table.html" with items=tree property='shop_category_page' render_homepage=False tag="link" %}
+                        {% endfor %}
+                    </table>
+                {% else %}
+                    <div class="futures-container">
+                        <div style="padding:15px">
+                            Bu ürünün bağlı olduğu bir araç bulunamadı.
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                {% endif %}
+            </div>
+            {% if product.description %}
+                <div id="features" class="box container">
+
+                    <div class="futures-container">
+                        <div style="padding:15px">
+                            {{ product.description|safe }}
+                        </div>
+                        <ul class="futures">
+                            {% for name, value in product.attr.items %}
+                                <li>
+                                    <strong>{{ name }}:</strong>
+                                    {{ value }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+
+
+                    <div class="clear"></div>
+
+                    <div id="product-content">
+                        <div class="clear"></div>
+
+                    </div>
+                </div>
+            {% endif %}
+            <div id="payment" class="box container">
+                {% include "shop/default/includes/installments.html" with price=product.discount_price %}
+
+                <ul id="taksit-sartlari">
+                    {% for alternative in payments %}
+                        {% if alternative.description %}
+                            <li>
+                                <strong>{{ alternative.method_name }} {{ alternative.installment }} Taksit
+                                    <i>({{ alternative.desc_counter }})</i> </strong> :
+                                {{ alternative.description }}
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            {#        <div id="esdeger" class="box container">#}
+            {#            <div class="messages">#}
+            {#                <li class="info">#}
+            {#                    Eşdeğer ürünler, aynı işlevi gören ve birbirlerinin yerine kullanılabilecek parçaların farklı#}
+            {#                    üreticiler tarafından piyasaya sürülmüş versiyonlarıdır.#}
+            {#                </li>#}
+            {#            </div>#}
+            {#            {% if similar_products %}#}
+            {#                <ul class="list-view">#}
+            {#                    {% for item in similar_products %}#}
+            {#                        {% include "shop/default/includes/catalog/list.html" with product=item counter=forloop.counter property="vehicle" render_properties=False render_manufacturer=True %}#}
+            {#                    {% endfor %}#}
+            {#                </ul>#}
+            {#            {% else %}#}
+            {#                <div class="futures-container">#}
+            {#                    <div style="padding:15px">#}
+            {#                        Bu ürüne benzer bir ürün bulunamadı.#}
+            {#                    </div>#}
+            {#                    <div class="clear"></div>#}
+            {#                </div>#}
+            {#            {% endif %}#}
+            {##}
+            {#        </div>#}
+            {#        <div id="oem" class="box container">#}
+            {#            {% if oem_codes %}#}
+            {#                {% include 'shop/api/product_oem.html' with oem_codes=oem_codes %}#}
+            {#            {% else %}#}
+            {#                <div class="futures-container">#}
+            {#                    <div style="padding:15px">#}
+            {#                        Bu ürüne ait OEM kodu bulunamadı.#}
+            {#                    </div>#}
+            {#                    <div class="clear"></div>#}
+            {#                </div>#}
+            {#            {% endif %}#}
+            {#        </div>#}
+            <div id="arac_test" class="box container">
+                <div class="futures-container">
+                    <form id="vehicle_test">
+                        <select class="category_selectbox tree brand">
+                            <option class="fixed">Marka Seç</option>
+                            {% for item in brands %}
+                                <option value="{{ item.slug }}">{{ item.name }}</option>
+                            {% endfor %}
+                        </select>
+                        <select class="category_selectbox tree model">
+                            <option class="fixed" value="">Model Seç</option>
+                        </select>
+                        <select class="category_selectbox tree model_type">
+                            <option class="fixed" value="">Model Tip Seç</option>
+                        </select>
+
+                        <select class="category_selectbox motor">
+                            <option class="fixed" value="">Motor Tip Seç</option>
+                        </select>
+
+                        <input type="text" class="middle" placeholder="Şase numarası">
+                        <input type="submit" class="gray-btn" value="Kontrol Et">
+                    </form>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="bottom-boxes-container">
+
+
+            <!-- End : Seller Cross Promotion Products  -->
+
+            <div id="cargo-details" style="display: none;">
+                <div class="lightbox-borders border-bug">
+                    <div style="width: 450px;">
+                        <a name="cargodetails"></a>
+
+                        <div class="ie-fix-d-n">&nbsp;</div>
+                        <div class="title">Kargo detayları</div>
+
+                        <div class="lightbox-content">
+                            <ul class="cargo-ul table-ul">
+                                <li class="child-0">Satıldığı bölge</li>
+                                <li class="child-1">:</li>
+                                <li class="child-2">İstanbul</li>
+                                <li class="nline"></li>
+
+                                <li class="child-0">Gönderim alanları</li>
+                                <li class="child-1">:</li>
+                                <li class="child-2">
+                                    Tüm Türkiye'ye gönderilir
+                                </li>
+                                <li class="nline"></li>
+
+                                <li class="child-0">Kargo ücreti</li>
+                                <li class="child-1">:</li>
+                                <li class="child-2">
+                                    Ücretsiz Kargo!
+
+                                </li>
+                                <li class="nline"></li>
+
+                                <li class="child-0">Kargo şirketleri</li>
+                                <li class="child-1">:</li>
+                                <li class="child-2 line-height-18px">
+                                    <hr>
+                                    2-3 iş günü içinde kargoya verilir.
+                                </li>
+                                <li class="nline"></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="clear"></div>
+
+
+    </div>
+{% endblock %}
+
+{% block javascript_end %}
+    <script type="text/javascript" src="/static/js/jquery.elevateZoom-3.0.8.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript">
+        $(".fancybox").fancybox({
+            prevEffect: 'none',
+            nextEffect: 'none',
+            closeBtn: false,
+            helpers: {
+                title: { type: 'inside' },
+                buttons: {}
+            }
+        });
+
+        $("#big-photo").elevateZoom({gallery: 'gallery_01f', cursor: 'pointer', galleryActiveClass: "active", loadingIcon: 'http://www.elevateweb.co.uk/spinner.gif'});
+
+        $("#big-photo").on("click", function (e) {
+            var ez = $('#big-photo').data('elevateZoom');
+            ez.closeAll();
+            $.fancybox(ez.getGalleryList());
+            return false;
+        });
+
+        $('a.price-alert').click(function (e) {
+            var $this = $(this);
+            {% if request.user.is_authenticated %}
+                if (!$this.is('.active')) {
+                    $.post('{% url "shop_modules_pricedropalert_add" %}', {product: {{ product.id }}, csrfmiddlewaretoken: $.cookie('csrftoken') }).done(function (data) {
+                        $this.text('Ürünün fiyatı takip ediliyor');
+                        $this.addClass('active');
+                    });
+                } else {
+                    $.post('{% url "shop_modules_pricedropalert_remove" %}', {product: {{ product.id }}, csrfmiddlewaretoken: $.cookie('csrftoken') }).done(function (data) {
+                        $this.text('Fiyat düşünce haber ver');
+                        $this.removeClass('active');
+                    });
+                }
+            {% else %}
+                $('#price-drop-form-div').show();
+            {% endif %}
+        });
+
+        $('a.stock-alert').click(function (e) {
+            var $this = $(this);
+            if (!$this.is('.active')) {
+                $.post('{% url "shop_modules_stockalert_add" %}', {product: {{ product.id }}, csrfmiddlewaretoken: $.cookie('csrftoken') }).done(function (data) {
+                    $this.text('Stok durumu takip ediliyor');
+                    $this.addClass('active');
+                });
+            } else {
+                $.post('{% url "shop_modules_stockalert_remove" %}', {product: {{ product.id }}, csrfmiddlewaretoken: $.cookie('csrftoken') }).done(function (data) {
+                    $this.text('Stoğa girince haber ver');
+                    $this.removeClass('active');
+                });
+            }
+        });
+        $('#price-alert-form').submit(function (e) {
+            e.preventDefault();
+            $.post('{% url "shop_modules_pricedropalert_add" %}', {email: $('input.email-pricealert').val(), product: {{ product.id }}, csrfmiddlewaretoken: $.cookie('csrftoken') }, function (data) {
+                alert('e-mail gönderildi!');
+            });
+        });
+
+        var makeOptions = function (data) {
+            var a = ""
+            data.forEach(function (item) {
+                a += "<option value='" + item.slug + "'>" + item.name + "</option>";
+            });
+            return a;
+        }
+        $('.category_selectbox.brand').change(function () {
+            $.getJSON('{% url 'shop_api_vehicle_tree' %}', {parent: this.value}, function (data) {
+                $('select.model,select.model_type,select.motor,select.fuel,select.years').find('option').not('.fixed').remove();
+                $('select.model').append(makeOptions(data)).focus();
+            });
+        });
+        $('.category_selectbox.model').change(function () {
+            $.getJSON('{% url 'shop_api_vehicle_tree' %}', {parent: this.value}, function (data) {
+                $('select.model_type,select.motor,select.fuel,select.years').find('option').not('.fixed').remove();
+                $('select.model_type').append(makeOptions(data)).focus();
+            });
+        });
+        $('.category_selectbox.model_type').change(function () {
+            $.getJSON('{% url 'shop_api_vehicle_motor' %}', {vehicle: this.value}, function (data) {
+                $('select.motor,select.fuel,select.years').find('option').not('.fixed').remove();
+                $('select.motor').append(makeOptions(data)).focus();
+            });
+        });
+        var vehicle_supported;
+        $('#vehicle_test').submit(function (e) {
+            e.preventDefault();
+            $.getJSON('{% url 'shop_api_vehicle_product_support' %}', {products: {{ product.id }}, vehicle: $('.model_type').val(), motor: $('.motor').val(), fuel: $('.fuel').val(), years: $('.years').val()}, function (data) {
+                if (data[{{ product.id }}]) {
+                    alert("Ürün seçtiğiniz araca uymaktadır.")
+                } else {
+                    alert("Ürün seçtiğiniz araca uymamaktadır.")
+                }
+            });
+        });
+        rakam.logInlinedEvent('view_product', {_user_agent: true})
+    </script>
+{% endblock %}

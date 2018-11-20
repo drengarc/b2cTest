@@ -1,0 +1,46 @@
+{% extends "shop/"|add:SHOP_TEMPLATE|add:"/base.html" %}
+{% load shop_tags fb_versions i18n %}
+
+{% block content %}
+    <div id="crumbs">
+        <ul>
+            <li><a href="{% url "shop_order_address" %}">{% trans "Address" %}</a></li>
+            <li><a class="selected">{% trans "Shipment" %}</a></li>
+            <li><a>{% trans "Payment" %}</a></li>
+        </ul>
+    </div>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <form action="{% url "shop_order_shipment" %}" method="post">{% csrf_token %}
+        <table class="basket">
+            <tr>
+                <th></th>
+                <th></th>
+                <th>Kargo Şirketi</th>
+                <th>Fiyat</th>
+            </tr>
+            {% for shipment in shipments %}
+                <tr class="shipment_row">
+                    <td style="width:25px; text-align:center">
+                        <input type="radio" checked name="shipment_alternative" {% if shipment_alternative == shipment.id %}checked{% endif %} id="shipment_alternative_{{ shipment.id }}" value="{{ shipment.id }}"></td>
+                    <td style="width:35px"><label for="shipment_alternative_{{ shipment.id }}"><img src="{% version shipment.shipmentmethod.image "thumbnail" %}"></label></td>
+                    <td class="name" style="font-size:1.4em"><label for="shipment_alternative_{{ shipment.id }}">{{ shipment.shipmentmethod.name }}</label></td>
+                    <td class="bigPrice">
+                        <label for="shipment_alternative_{{ shipment.id }}">
+                            {{ shipment.price }}
+                        </label>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        <div class="buttons">
+            <input type="submit" class="button_blue1 right" value="{% trans "Continue" %}">
+        </div>
+    </form>
+    <div style="clear:both; height:10px"></div>
+{% endblock %}

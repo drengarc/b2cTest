@@ -1,0 +1,38 @@
+<div id="extendedMenu" class="mr10 extendedMenu tabMenu">
+                <li rel="popup" class="main-menu-category main-menu">
+                    <a href="/v/alfa-romeo" title=""><span>Kategoriler</span></a>
+
+                    <div class="menu-sub" style="display: none;">
+                        <div class="vehicle-model-submenu">
+                            <ul>
+                                {% for item in categories_not_related_vehicle %}
+                                    <li data-slug="{{ item.slug }}" class="menu-category" data-id="{{ item.id }}"><a
+                                            href="/c/{{ item.slug }}">{{ item.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+
+
+                        </div>
+
+                    {% for id, items in categories_not_related_vehicle_sub.items %}
+                                <div class=" category-val" id="category-val-{{ id }}">
+                                    {% for item in items %}
+                                        <a style="background:url(/media/main_menu/{{ item.image }}.png) no-repeat top center"
+                                           href="/list?c={{ item.slug }}">{{ item.name }}</a>
+                                    {% endfor %}
+                                </div>
+
+                            {% endfor %}
+                    </div>
+                </li>
+                <ul class="vehicles menugroup">
+                    {% for category in vehicles %}
+                        <li rel="popup" class="main-menu" data-id="{{ category.id }}">
+                            <h2><a
+                                    href="{% url 'shop_vehicle_page' category.slug %}"
+                                    title="{{ category.name }}"><span>{{ category.name }}</span></a>
+                            </h2>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
